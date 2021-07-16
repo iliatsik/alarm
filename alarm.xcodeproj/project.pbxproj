@@ -1,0 +1,830 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		325C240A266BA1FF009E4E07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C2409266BA1FF009E4E07 /* AppDelegate.swift */; };
+		325C240C266BA1FF009E4E07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C240B266BA1FF009E4E07 /* SceneDelegate.swift */; };
+		325C240E266BA1FF009E4E07 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C240D266BA1FF009E4E07 /* AlarmViewController.swift */; };
+		325C2411266BA1FF009E4E07 /* TabBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325C240F266BA1FF009E4E07 /* TabBarViewController.storyboard */; };
+		325C2413266BA205009E4E07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325C2412266BA205009E4E07 /* Assets.xcassets */; };
+		325C2416266BA205009E4E07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325C2414266BA205009E4E07 /* LaunchScreen.storyboard */; };
+		325C241F266BA287009E4E07 /* WorldClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C241E266BA287009E4E07 /* WorldClockViewController.swift */; };
+		325C2421266BA293009E4E07 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C2420266BA293009E4E07 /* TimerViewController.swift */; };
+		325C2423266BA2B0009E4E07 /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C2422266BA2B0009E4E07 /* StopWatchViewController.swift */; };
+		325C2427266BA3EF009E4E07 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C2426266BA3EF009E4E07 /* TabBarViewController.swift */; };
+		327D6F552677A4C50090A3ED /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327D6F532677A4C50090A3ED /* MainTableViewCell.swift */; };
+		327D6F562677A4C50090A3ED /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327D6F542677A4C50090A3ED /* MainTableViewCell.xib */; };
+		327D6F5B2677C1F70090A3ED /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327D6F592677C1F70090A3ED /* CountryTableViewCell.swift */; };
+		327D6F5C2677C1F70090A3ED /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327D6F5A2677C1F70090A3ED /* CountryTableViewCell.xib */; };
+		32C59EED266FB75100CA6D68 /* TimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C59EEC266FB75100CA6D68 /* TimerExtension.swift */; };
+		32C59EF0266FC93E00CA6D68 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C59EEF266FC93E00CA6D68 /* UIColor+Hex.swift */; };
+		32C59EF3266FD61D00CA6D68 /* SecondAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C59EF2266FD61D00CA6D68 /* SecondAlarmViewController.swift */; };
+		32D4BC2F267404F100A36F46 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC2E267404F100A36F46 /* TimeTableViewCell.swift */; };
+		32D4BC31267404FE00A36F46 /* RepeatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC30267404FE00A36F46 /* RepeatTableViewCell.swift */; };
+		32D4BC332674050D00A36F46 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC322674050D00A36F46 /* LabelTableViewCell.swift */; };
+		32D4BC352674051800A36F46 /* SoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC342674051800A36F46 /* SoundTableViewCell.swift */; };
+		32D4BC372674052C00A36F46 /* SnoozeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC362674052C00A36F46 /* SnoozeTableViewCell.swift */; };
+		32D4BC4026740F0700A36F46 /* SoundTableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D4BC3F26740F0700A36F46 /* SoundTableViewCell.storyboard */; };
+		32D4BC4226740F1500A36F46 /* LabelTableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D4BC4126740F1500A36F46 /* LabelTableViewCell.storyboard */; };
+		32D4BC4A26740FC900A36F46 /* RepeatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC4926740FC900A36F46 /* RepeatTableViewController.swift */; };
+		32D4BC4C26740FE200A36F46 /* LabelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC4B26740FE200A36F46 /* LabelTableViewController.swift */; };
+		32D4BC4E26740FF400A36F46 /* SoundTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC4D26740FF400A36F46 /* SoundTableViewController.swift */; };
+		32D4BC522674E94400A36F46 /* StopwatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC512674E94400A36F46 /* StopwatchTableViewCell.swift */; };
+		32D4BC5526750BAD00A36F46 /* CountriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC5426750BAD00A36F46 /* CountriesManager.swift */; };
+		32D4BC5826750BDF00A36F46 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC5726750BDF00A36F46 /* Country.swift */; };
+		32D4BC5F26750CC000A36F46 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC5E26750CC000A36F46 /* NetworkManager.swift */; };
+		32D4BC6326750CE400A36F46 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC6026750CE400A36F46 /* UITableViewCell+Extension.swift */; };
+		32D4BC6426750CE400A36F46 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC6126750CE400A36F46 /* UITableView+Extensions.swift */; };
+		32D4BC6526750CE400A36F46 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC6226750CE400A36F46 /* UIColor+Extension.swift */; };
+		32D4BC722675101400A36F46 /* CountriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC6F2675101400A36F46 /* CountriesListViewModel.swift */; };
+		32D4BC732675101400A36F46 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC702675101400A36F46 /* CountryViewModel.swift */; };
+		32D4BC742675101400A36F46 /* CountriesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC712675101400A36F46 /* CountriesDataSource.swift */; };
+		32D4BC792676239600A36F46 /* SecondTimerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D4BC782676239600A36F46 /* SecondTimerViewController.storyboard */; };
+		32F2C39526A086F7000BDC24 /* WorldClockViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C39426A086F7000BDC24 /* WorldClockViewController.storyboard */; };
+		32F2C39726A0879D000BDC24 /* AlarmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C39626A0879D000BDC24 /* AlarmViewController.storyboard */; };
+		32F2C39926A087DE000BDC24 /* SecondAlarmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C39826A087DE000BDC24 /* SecondAlarmViewController.storyboard */; };
+		32F2C39B26A08B67000BDC24 /* StopWatchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C39A26A08B67000BDC24 /* StopWatchViewController.storyboard */; };
+		32F2C39D26A08BD0000BDC24 /* TimerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C39C26A08BD0000BDC24 /* TimerViewController.storyboard */; };
+		32F2C3A326A0A72E000BDC24 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C39F26A0A72E000BDC24 /* Storyboarded.swift */; };
+		32F2C3A426A0A72E000BDC24 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3A026A0A72E000BDC24 /* AppCoordinator.swift */; };
+		32F2C3A526A0A72E000BDC24 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3A126A0A72E000BDC24 /* CoordinatorProtocol.swift */; };
+		32F2C3A626A0A72E000BDC24 /* CoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3A226A0A72E000BDC24 /* CoordinatorDelegate.swift */; };
+		32F2C3A926A0A8DE000BDC24 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3A826A0A8DE000BDC24 /* BaseViewController.swift */; };
+		32FC1651267206CF007C60DC /* TimerLocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC1650267206CF007C60DC /* TimerLocalNotification.swift */; };
+		32FC165626722DC5007C60DC /* Daybreak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC165326722DC4007C60DC /* Daybreak.mp3 */; };
+		32FC165726722DC5007C60DC /* EarlyRiser.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC165426722DC4007C60DC /* EarlyRiser.mp3 */; };
+		32FC165826722DC5007C60DC /* SlowMorning.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC165526722DC5007C60DC /* SlowMorning.mp3 */; };
+		32FC165E26722DD2007C60DC /* Softchime.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC165926722DD1007C60DC /* Softchime.mp3 */; };
+		32FC165F26722DD2007C60DC /* Happyday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC165A26722DD1007C60DC /* Happyday.mp3 */; };
+		32FC166026722DD2007C60DC /* Ping2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC165B26722DD1007C60DC /* Ping2.mp3 */; };
+		32FC166126722DD2007C60DC /* Auratone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC165C26722DD1007C60DC /* Auratone.mp3 */; };
+		32FC166226722DD2007C60DC /* Ping1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC165D26722DD1007C60DC /* Ping1.mp3 */; };
+		32FC166726722DE2007C60DC /* 613.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC166326722DE2007C60DC /* 613.mp3 */; };
+		32FC166826722DE2007C60DC /* Saying.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC166426722DE2007C60DC /* Saying.mp3 */; };
+		32FC166926722DE2007C60DC /* Inflicted.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC166526722DE2007C60DC /* Inflicted.mp3 */; };
+		32FC166A26722DE2007C60DC /* Pristine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC166626722DE2007C60DC /* Pristine.mp3 */; };
+		32FC166D26722F6C007C60DC /* SecondTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC166C26722F6C007C60DC /* SecondTimerViewController.swift */; };
+		32FC166F267243B1007C60DC /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC166E267243B1007C60DC /* NavigationBar.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		325C2406266BA1FF009E4E07 /* alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		325C2409266BA1FF009E4E07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		325C240B266BA1FF009E4E07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		325C240D266BA1FF009E4E07 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		325C2410266BA1FF009E4E07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBarViewController.storyboard; sourceTree = "<group>"; };
+		325C2412266BA205009E4E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		325C2415266BA205009E4E07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		325C2417266BA205009E4E07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		325C241E266BA287009E4E07 /* WorldClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldClockViewController.swift; sourceTree = "<group>"; };
+		325C2420266BA293009E4E07 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		325C2422266BA2B0009E4E07 /* StopWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewController.swift; sourceTree = "<group>"; };
+		325C2426266BA3EF009E4E07 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		327D6F532677A4C50090A3ED /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		327D6F542677A4C50090A3ED /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		327D6F592677C1F70090A3ED /* CountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		327D6F5A2677C1F70090A3ED /* CountryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
+		32C59EEC266FB75100CA6D68 /* TimerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerExtension.swift; sourceTree = "<group>"; };
+		32C59EEF266FC93E00CA6D68 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		32C59EF2266FD61D00CA6D68 /* SecondAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondAlarmViewController.swift; sourceTree = "<group>"; };
+		32D4BC2E267404F100A36F46 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
+		32D4BC30267404FE00A36F46 /* RepeatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatTableViewCell.swift; sourceTree = "<group>"; };
+		32D4BC322674050D00A36F46 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
+		32D4BC342674051800A36F46 /* SoundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTableViewCell.swift; sourceTree = "<group>"; };
+		32D4BC362674052C00A36F46 /* SnoozeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnoozeTableViewCell.swift; sourceTree = "<group>"; };
+		32D4BC3F26740F0700A36F46 /* SoundTableViewCell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SoundTableViewCell.storyboard; sourceTree = "<group>"; };
+		32D4BC4126740F1500A36F46 /* LabelTableViewCell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LabelTableViewCell.storyboard; sourceTree = "<group>"; };
+		32D4BC4926740FC900A36F46 /* RepeatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatTableViewController.swift; sourceTree = "<group>"; };
+		32D4BC4B26740FE200A36F46 /* LabelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewController.swift; sourceTree = "<group>"; };
+		32D4BC4D26740FF400A36F46 /* SoundTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTableViewController.swift; sourceTree = "<group>"; };
+		32D4BC512674E94400A36F46 /* StopwatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchTableViewCell.swift; sourceTree = "<group>"; };
+		32D4BC5426750BAD00A36F46 /* CountriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesManager.swift; sourceTree = "<group>"; };
+		32D4BC5726750BDF00A36F46 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		32D4BC5E26750CC000A36F46 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		32D4BC6026750CE400A36F46 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		32D4BC6126750CE400A36F46 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		32D4BC6226750CE400A36F46 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		32D4BC6F2675101400A36F46 /* CountriesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesListViewModel.swift; sourceTree = "<group>"; };
+		32D4BC702675101400A36F46 /* CountryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
+		32D4BC712675101400A36F46 /* CountriesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesDataSource.swift; sourceTree = "<group>"; };
+		32D4BC782676239600A36F46 /* SecondTimerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondTimerViewController.storyboard; sourceTree = "<group>"; };
+		32F2C39426A086F7000BDC24 /* WorldClockViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorldClockViewController.storyboard; sourceTree = "<group>"; };
+		32F2C39626A0879D000BDC24 /* AlarmViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmViewController.storyboard; sourceTree = "<group>"; };
+		32F2C39826A087DE000BDC24 /* SecondAlarmViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondAlarmViewController.storyboard; sourceTree = "<group>"; };
+		32F2C39A26A08B67000BDC24 /* StopWatchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StopWatchViewController.storyboard; sourceTree = "<group>"; };
+		32F2C39C26A08BD0000BDC24 /* TimerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerViewController.storyboard; sourceTree = "<group>"; };
+		32F2C39F26A0A72E000BDC24 /* Storyboarded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		32F2C3A026A0A72E000BDC24 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		32F2C3A126A0A72E000BDC24 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		32F2C3A226A0A72E000BDC24 /* CoordinatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorDelegate.swift; sourceTree = "<group>"; };
+		32F2C3A826A0A8DE000BDC24 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		32FC1650267206CF007C60DC /* TimerLocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLocalNotification.swift; sourceTree = "<group>"; };
+		32FC165326722DC4007C60DC /* Daybreak.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Daybreak.mp3; sourceTree = "<group>"; };
+		32FC165426722DC4007C60DC /* EarlyRiser.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = EarlyRiser.mp3; sourceTree = "<group>"; };
+		32FC165526722DC5007C60DC /* SlowMorning.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SlowMorning.mp3; sourceTree = "<group>"; };
+		32FC165926722DD1007C60DC /* Softchime.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Softchime.mp3; sourceTree = "<group>"; };
+		32FC165A26722DD1007C60DC /* Happyday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Happyday.mp3; sourceTree = "<group>"; };
+		32FC165B26722DD1007C60DC /* Ping2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ping2.mp3; sourceTree = "<group>"; };
+		32FC165C26722DD1007C60DC /* Auratone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Auratone.mp3; sourceTree = "<group>"; };
+		32FC165D26722DD1007C60DC /* Ping1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ping1.mp3; sourceTree = "<group>"; };
+		32FC166326722DE2007C60DC /* 613.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 613.mp3; sourceTree = "<group>"; };
+		32FC166426722DE2007C60DC /* Saying.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Saying.mp3; sourceTree = "<group>"; };
+		32FC166526722DE2007C60DC /* Inflicted.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Inflicted.mp3; sourceTree = "<group>"; };
+		32FC166626722DE2007C60DC /* Pristine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pristine.mp3; sourceTree = "<group>"; };
+		32FC166C26722F6C007C60DC /* SecondTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTimerViewController.swift; sourceTree = "<group>"; };
+		32FC166E267243B1007C60DC /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		325C2403266BA1FF009E4E07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		323FD769269CC4C100B91750 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C3A726A0A8D2000BDC24 /* Base */,
+				323FD76A269CC4C800B91750 /* Scene */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		323FD76A269CC4C800B91750 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				325C242A266CE94C009E4E07 /* WorldClock */,
+				325C242B266CE954009E4E07 /* AlarmClock */,
+				325C2429266CE943009E4E07 /* StopWatch */,
+				325C2428266CE93C009E4E07 /* Timer */,
+				325C241D266BA262009E4E07 /* TabBar */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		325C23FD266BA1FF009E4E07 = {
+			isa = PBXGroup;
+			children = (
+				325C2408266BA1FF009E4E07 /* alarm */,
+				325C2407266BA1FF009E4E07 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		325C2407266BA1FF009E4E07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				325C2406266BA1FF009E4E07 /* alarm.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		325C2408266BA1FF009E4E07 /* alarm */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC5926750C8700A36F46 /* Infrastructure */,
+				323FD769269CC4C100B91750 /* Presentation */,
+				325C2425266BA2D1009E4E07 /* Resources */,
+				325C2424266BA2C7009E4E07 /* App */,
+				325C2417266BA205009E4E07 /* Info.plist */,
+			);
+			path = alarm;
+			sourceTree = "<group>";
+		};
+		325C241D266BA262009E4E07 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				325C240F266BA1FF009E4E07 /* TabBarViewController.storyboard */,
+				325C2426266BA3EF009E4E07 /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		325C2424266BA2C7009E4E07 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				325C2409266BA1FF009E4E07 /* AppDelegate.swift */,
+				325C240B266BA1FF009E4E07 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		325C2425266BA2D1009E4E07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				32FC165226722DB0007C60DC /* NotificationSounds */,
+				32FC164D2671FCD1007C60DC /* Reusables */,
+				32C59EEE266FC90100CA6D68 /* Extensions */,
+				325C2414266BA205009E4E07 /* LaunchScreen.storyboard */,
+				325C2412266BA205009E4E07 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		325C2428266CE93C009E4E07 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				32FC166B26722F58007C60DC /* SecondTimer */,
+				32FC1650267206CF007C60DC /* TimerLocalNotification.swift */,
+				32C59EEC266FB75100CA6D68 /* TimerExtension.swift */,
+				325C2420266BA293009E4E07 /* TimerViewController.swift */,
+				32F2C39C26A08BD0000BDC24 /* TimerViewController.storyboard */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		325C2429266CE943009E4E07 /* StopWatch */ = {
+			isa = PBXGroup;
+			children = (
+				325C2422266BA2B0009E4E07 /* StopWatchViewController.swift */,
+				32D4BC512674E94400A36F46 /* StopwatchTableViewCell.swift */,
+				32F2C39A26A08B67000BDC24 /* StopWatchViewController.storyboard */,
+			);
+			path = StopWatch;
+			sourceTree = "<group>";
+		};
+		325C242A266CE94C009E4E07 /* WorldClock */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC6626750DB600A36F46 /* View */,
+				32D4BC6826750DD200A36F46 /* ViewModel */,
+			);
+			path = WorldClock;
+			sourceTree = "<group>";
+		};
+		325C242B266CE954009E4E07 /* AlarmClock */ = {
+			isa = PBXGroup;
+			children = (
+				327D6F522677A46F0090A3ED /* AlarmTableViewCell */,
+				32D4BC2D267404C700A36F46 /* AlarmTableViewCells */,
+				32C59EF1266FD5F500CA6D68 /* SecondAlarmViewController */,
+				325C240D266BA1FF009E4E07 /* AlarmViewController.swift */,
+				32F2C39626A0879D000BDC24 /* AlarmViewController.storyboard */,
+			);
+			path = AlarmClock;
+			sourceTree = "<group>";
+		};
+		327D6F522677A46F0090A3ED /* AlarmTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				327D6F532677A4C50090A3ED /* MainTableViewCell.swift */,
+				327D6F542677A4C50090A3ED /* MainTableViewCell.xib */,
+			);
+			path = AlarmTableViewCell;
+			sourceTree = "<group>";
+		};
+		32C59EEE266FC90100CA6D68 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				32C59EEF266FC93E00CA6D68 /* UIColor+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		32C59EF1266FD5F500CA6D68 /* SecondAlarmViewController */ = {
+			isa = PBXGroup;
+			children = (
+				32C59EF2266FD61D00CA6D68 /* SecondAlarmViewController.swift */,
+				32F2C39826A087DE000BDC24 /* SecondAlarmViewController.storyboard */,
+			);
+			path = SecondAlarmViewController;
+			sourceTree = "<group>";
+		};
+		32D4BC2D267404C700A36F46 /* AlarmTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC3C26740ECF00A36F46 /* SnoozeCell */,
+				32D4BC3B26740EBF00A36F46 /* SoundCell */,
+				32D4BC3A26740EB400A36F46 /* LabelCell */,
+				32D4BC3926740EAB00A36F46 /* RepeatCell */,
+				32D4BC3826740EA100A36F46 /* TimeCell */,
+			);
+			path = AlarmTableViewCells;
+			sourceTree = "<group>";
+		};
+		32D4BC3826740EA100A36F46 /* TimeCell */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC2E267404F100A36F46 /* TimeTableViewCell.swift */,
+			);
+			path = TimeCell;
+			sourceTree = "<group>";
+		};
+		32D4BC3926740EAB00A36F46 /* RepeatCell */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC30267404FE00A36F46 /* RepeatTableViewCell.swift */,
+				32D4BC4926740FC900A36F46 /* RepeatTableViewController.swift */,
+			);
+			path = RepeatCell;
+			sourceTree = "<group>";
+		};
+		32D4BC3A26740EB400A36F46 /* LabelCell */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC322674050D00A36F46 /* LabelTableViewCell.swift */,
+				32D4BC4126740F1500A36F46 /* LabelTableViewCell.storyboard */,
+				32D4BC4B26740FE200A36F46 /* LabelTableViewController.swift */,
+			);
+			path = LabelCell;
+			sourceTree = "<group>";
+		};
+		32D4BC3B26740EBF00A36F46 /* SoundCell */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC342674051800A36F46 /* SoundTableViewCell.swift */,
+				32D4BC3F26740F0700A36F46 /* SoundTableViewCell.storyboard */,
+				32D4BC4D26740FF400A36F46 /* SoundTableViewController.swift */,
+			);
+			path = SoundCell;
+			sourceTree = "<group>";
+		};
+		32D4BC3C26740ECF00A36F46 /* SnoozeCell */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC362674052C00A36F46 /* SnoozeTableViewCell.swift */,
+			);
+			path = SnoozeCell;
+			sourceTree = "<group>";
+		};
+		32D4BC5326750B8400A36F46 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC5426750BAD00A36F46 /* CountriesManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		32D4BC5626750BC800A36F46 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC5726750BDF00A36F46 /* Country.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		32D4BC5926750C8700A36F46 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C39E26A0A71F000BDC24 /* Coordinator */,
+				32D4BC5326750B8400A36F46 /* API */,
+				32D4BC5626750BC800A36F46 /* Models */,
+				32D4BC5C26750CA100A36F46 /* Network */,
+				32D4BC5B26750C9800A36F46 /* Extensions */,
+				32D4BC5A26750C8D00A36F46 /* Utilities */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		32D4BC5A26750C8D00A36F46 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		32D4BC5B26750C9800A36F46 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC6226750CE400A36F46 /* UIColor+Extension.swift */,
+				32D4BC6126750CE400A36F46 /* UITableView+Extensions.swift */,
+				32D4BC6026750CE400A36F46 /* UITableViewCell+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		32D4BC5C26750CA100A36F46 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC5E26750CC000A36F46 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		32D4BC6626750DB600A36F46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C39326A086A8000BDC24 /* TableCells */,
+				325C241E266BA287009E4E07 /* WorldClockViewController.swift */,
+				32F2C39426A086F7000BDC24 /* WorldClockViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		32D4BC6826750DD200A36F46 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC712675101400A36F46 /* CountriesDataSource.swift */,
+				32D4BC6F2675101400A36F46 /* CountriesListViewModel.swift */,
+				32D4BC702675101400A36F46 /* CountryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		32F2C39326A086A8000BDC24 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				327D6F592677C1F70090A3ED /* CountryTableViewCell.swift */,
+				327D6F5A2677C1F70090A3ED /* CountryTableViewCell.xib */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		32F2C39E26A0A71F000BDC24 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C3A026A0A72E000BDC24 /* AppCoordinator.swift */,
+				32F2C3A226A0A72E000BDC24 /* CoordinatorDelegate.swift */,
+				32F2C3A126A0A72E000BDC24 /* CoordinatorProtocol.swift */,
+				32F2C39F26A0A72E000BDC24 /* Storyboarded.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		32F2C3A726A0A8D2000BDC24 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C3A826A0A8DE000BDC24 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		32FC164D2671FCD1007C60DC /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				32FC166E267243B1007C60DC /* NavigationBar.swift */,
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		32FC165226722DB0007C60DC /* NotificationSounds */ = {
+			isa = PBXGroup;
+			children = (
+				32FC165C26722DD1007C60DC /* Auratone.mp3 */,
+				32FC165A26722DD1007C60DC /* Happyday.mp3 */,
+				32FC165D26722DD1007C60DC /* Ping1.mp3 */,
+				32FC165B26722DD1007C60DC /* Ping2.mp3 */,
+				32FC165926722DD1007C60DC /* Softchime.mp3 */,
+				32FC165326722DC4007C60DC /* Daybreak.mp3 */,
+				32FC165426722DC4007C60DC /* EarlyRiser.mp3 */,
+				32FC165526722DC5007C60DC /* SlowMorning.mp3 */,
+				32FC166426722DE2007C60DC /* Saying.mp3 */,
+				32FC166326722DE2007C60DC /* 613.mp3 */,
+				32FC166526722DE2007C60DC /* Inflicted.mp3 */,
+				32FC166626722DE2007C60DC /* Pristine.mp3 */,
+			);
+			path = NotificationSounds;
+			sourceTree = "<group>";
+		};
+		32FC166B26722F58007C60DC /* SecondTimer */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC782676239600A36F46 /* SecondTimerViewController.storyboard */,
+				32FC166C26722F6C007C60DC /* SecondTimerViewController.swift */,
+			);
+			path = SecondTimer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		325C2405266BA1FF009E4E07 /* alarm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 325C241A266BA205009E4E07 /* Build configuration list for PBXNativeTarget "alarm" */;
+			buildPhases = (
+				325C2402266BA1FF009E4E07 /* Sources */,
+				325C2403266BA1FF009E4E07 /* Frameworks */,
+				325C2404266BA1FF009E4E07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = alarm;
+			productName = alarm;
+			productReference = 325C2406266BA1FF009E4E07 /* alarm.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		325C23FE266BA1FF009E4E07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					325C2405266BA1FF009E4E07 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 325C2401266BA1FF009E4E07 /* Build configuration list for PBXProject "alarm" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 325C23FD266BA1FF009E4E07;
+			productRefGroup = 325C2407266BA1FF009E4E07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				325C2405266BA1FF009E4E07 /* alarm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		325C2404266BA1FF009E4E07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				327D6F5C2677C1F70090A3ED /* CountryTableViewCell.xib in Resources */,
+				32F2C39B26A08B67000BDC24 /* StopWatchViewController.storyboard in Resources */,
+				32FC165726722DC5007C60DC /* EarlyRiser.mp3 in Resources */,
+				32D4BC4026740F0700A36F46 /* SoundTableViewCell.storyboard in Resources */,
+				325C2416266BA205009E4E07 /* LaunchScreen.storyboard in Resources */,
+				32D4BC792676239600A36F46 /* SecondTimerViewController.storyboard in Resources */,
+				32FC165F26722DD2007C60DC /* Happyday.mp3 in Resources */,
+				327D6F562677A4C50090A3ED /* MainTableViewCell.xib in Resources */,
+				32FC166726722DE2007C60DC /* 613.mp3 in Resources */,
+				32F2C39526A086F7000BDC24 /* WorldClockViewController.storyboard in Resources */,
+				32FC166026722DD2007C60DC /* Ping2.mp3 in Resources */,
+				32FC165826722DC5007C60DC /* SlowMorning.mp3 in Resources */,
+				32FC165626722DC5007C60DC /* Daybreak.mp3 in Resources */,
+				325C2413266BA205009E4E07 /* Assets.xcassets in Resources */,
+				32FC165E26722DD2007C60DC /* Softchime.mp3 in Resources */,
+				32D4BC4226740F1500A36F46 /* LabelTableViewCell.storyboard in Resources */,
+				32F2C39926A087DE000BDC24 /* SecondAlarmViewController.storyboard in Resources */,
+				32FC166226722DD2007C60DC /* Ping1.mp3 in Resources */,
+				325C2411266BA1FF009E4E07 /* TabBarViewController.storyboard in Resources */,
+				32F2C39726A0879D000BDC24 /* AlarmViewController.storyboard in Resources */,
+				32F2C39D26A08BD0000BDC24 /* TimerViewController.storyboard in Resources */,
+				32FC166926722DE2007C60DC /* Inflicted.mp3 in Resources */,
+				32FC166826722DE2007C60DC /* Saying.mp3 in Resources */,
+				32FC166126722DD2007C60DC /* Auratone.mp3 in Resources */,
+				32FC166A26722DE2007C60DC /* Pristine.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		325C2402266BA1FF009E4E07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32D4BC2F267404F100A36F46 /* TimeTableViewCell.swift in Sources */,
+				32C59EF3266FD61D00CA6D68 /* SecondAlarmViewController.swift in Sources */,
+				32D4BC722675101400A36F46 /* CountriesListViewModel.swift in Sources */,
+				325C2421266BA293009E4E07 /* TimerViewController.swift in Sources */,
+				325C241F266BA287009E4E07 /* WorldClockViewController.swift in Sources */,
+				327D6F5B2677C1F70090A3ED /* CountryTableViewCell.swift in Sources */,
+				327D6F552677A4C50090A3ED /* MainTableViewCell.swift in Sources */,
+				325C240E266BA1FF009E4E07 /* AlarmViewController.swift in Sources */,
+				32C59EF0266FC93E00CA6D68 /* UIColor+Hex.swift in Sources */,
+				32D4BC332674050D00A36F46 /* LabelTableViewCell.swift in Sources */,
+				32FC166D26722F6C007C60DC /* SecondTimerViewController.swift in Sources */,
+				32D4BC5826750BDF00A36F46 /* Country.swift in Sources */,
+				32FC1651267206CF007C60DC /* TimerLocalNotification.swift in Sources */,
+				32D4BC4C26740FE200A36F46 /* LabelTableViewController.swift in Sources */,
+				32F2C3A526A0A72E000BDC24 /* CoordinatorProtocol.swift in Sources */,
+				32D4BC372674052C00A36F46 /* SnoozeTableViewCell.swift in Sources */,
+				325C240A266BA1FF009E4E07 /* AppDelegate.swift in Sources */,
+				32D4BC6326750CE400A36F46 /* UITableViewCell+Extension.swift in Sources */,
+				32D4BC31267404FE00A36F46 /* RepeatTableViewCell.swift in Sources */,
+				32D4BC6426750CE400A36F46 /* UITableView+Extensions.swift in Sources */,
+				32D4BC732675101400A36F46 /* CountryViewModel.swift in Sources */,
+				325C2427266BA3EF009E4E07 /* TabBarViewController.swift in Sources */,
+				32D4BC742675101400A36F46 /* CountriesDataSource.swift in Sources */,
+				32F2C3A926A0A8DE000BDC24 /* BaseViewController.swift in Sources */,
+				32C59EED266FB75100CA6D68 /* TimerExtension.swift in Sources */,
+				32D4BC5F26750CC000A36F46 /* NetworkManager.swift in Sources */,
+				32F2C3A626A0A72E000BDC24 /* CoordinatorDelegate.swift in Sources */,
+				32D4BC6526750CE400A36F46 /* UIColor+Extension.swift in Sources */,
+				32F2C3A326A0A72E000BDC24 /* Storyboarded.swift in Sources */,
+				32D4BC5526750BAD00A36F46 /* CountriesManager.swift in Sources */,
+				32F2C3A426A0A72E000BDC24 /* AppCoordinator.swift in Sources */,
+				32D4BC522674E94400A36F46 /* StopwatchTableViewCell.swift in Sources */,
+				32D4BC4E26740FF400A36F46 /* SoundTableViewController.swift in Sources */,
+				32D4BC4A26740FC900A36F46 /* RepeatTableViewController.swift in Sources */,
+				32FC166F267243B1007C60DC /* NavigationBar.swift in Sources */,
+				325C2423266BA2B0009E4E07 /* StopWatchViewController.swift in Sources */,
+				325C240C266BA1FF009E4E07 /* SceneDelegate.swift in Sources */,
+				32D4BC352674051800A36F46 /* SoundTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		325C240F266BA1FF009E4E07 /* TabBarViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				325C2410266BA1FF009E4E07 /* Base */,
+			);
+			name = TabBarViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		325C2414266BA205009E4E07 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				325C2415266BA205009E4E07 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		325C2418266BA205009E4E07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		325C2419266BA205009E4E07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		325C241B266BA205009E4E07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PN3BW3P27A;
+				INFOPLIST_FILE = alarm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tsk.alarm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		325C241C266BA205009E4E07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PN3BW3P27A;
+				INFOPLIST_FILE = alarm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tsk.alarm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		325C2401266BA1FF009E4E07 /* Build configuration list for PBXProject "alarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325C2418266BA205009E4E07 /* Debug */,
+				325C2419266BA205009E4E07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		325C241A266BA205009E4E07 /* Build configuration list for PBXNativeTarget "alarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325C241B266BA205009E4E07 /* Debug */,
+				325C241C266BA205009E4E07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 325C23FE266BA1FF009E4E07 /* Project object */;
+}

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z84-xj-Z9W">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Timer View Controller-->
+        <scene sceneID="36x-dd-NX4">
+            <objects>
+                <viewController storyboardIdentifier="TimerViewController" id="GP3-8L-odT" customClass="TimerViewController" customModule="alarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z9V-p6-xIb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eLM-HK-xco">
+                                <rect key="frame" x="0.0" y="111" width="414" height="216"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8s-Nd-mNw">
+                                <rect key="frame" x="72" y="176" width="270" height="95.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="80"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="TD0-dI-fgR">
+                                <rect key="frame" x="142" y="266" width="130.5" height="20"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="bell.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BIF-SZ-STp">
+                                        <rect key="frame" x="0.0" y="0.5" width="130.5" height="19.5"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130.5" id="BXQ-LS-Ffq"/>
+                                            <constraint firstAttribute="height" constant="20" id="dAP-TJ-yCa"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqN-Jk-CLG">
+                                <rect key="frame" x="20" y="649" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.1646876931" green="0.1647174954" blue="0.1646811664" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="When Timer Ends">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="ringtoneButton:" destination="GP3-8L-odT" eventType="touchUpInside" id="mpt-qv-1Go"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AUd-SK-dXh">
+                                <rect key="frame" x="309" y="408" width="80" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekb-IB-BO1">
+                                        <rect key="frame" x="5" y="5" width="70" height="70"/>
+                                        <color key="backgroundColor" red="0.15686274510000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" systemColor="systemGreenColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startAndPauseButton:" destination="GP3-8L-odT" eventType="touchUpInside" id="Vyb-Pi-YmD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="ibP-2m-Rhy"/>
+                                    <constraint firstAttribute="width" constant="80" id="uRr-1e-og3"/>
+                                    <constraint firstItem="Ekb-IB-BO1" firstAttribute="leading" secondItem="AUd-SK-dXh" secondAttribute="leading" constant="5" id="uV6-pL-qfw"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hV3-X4-I8d">
+                                <rect key="frame" x="25" y="408" width="80" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5P-aE-EQR">
+                                        <rect key="frame" x="5" y="5" width="70" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.2442965476" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="0.81006455580000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="GP3-8L-odT" eventType="touchUpInside" id="EhI-0h-sHY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rSb-AG-1Hn"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AUd-SK-dXh" firstAttribute="top" secondItem="eLM-HK-xco" secondAttribute="bottom" constant="81" id="13q-8i-tXv"/>
+                            <constraint firstItem="eLM-HK-xco" firstAttribute="top" secondItem="rSb-AG-1Hn" secondAttribute="top" constant="67" id="24P-Co-XZU"/>
+                            <constraint firstItem="TD0-dI-fgR" firstAttribute="leading" secondItem="rSb-AG-1Hn" secondAttribute="leading" constant="142" id="4VW-p5-hct"/>
+                            <constraint firstItem="rSb-AG-1Hn" firstAttribute="trailing" secondItem="AUd-SK-dXh" secondAttribute="trailing" constant="25" id="BA3-yJ-9oB"/>
+                            <constraint firstItem="eLM-HK-xco" firstAttribute="trailing" secondItem="rSb-AG-1Hn" secondAttribute="trailing" id="BX7-If-CGk"/>
+                            <constraint firstItem="aqN-Jk-CLG" firstAttribute="top" secondItem="hV3-X4-I8d" secondAttribute="bottom" constant="161" id="D0u-RU-092"/>
+                            <constraint firstItem="rSb-AG-1Hn" firstAttribute="trailing" secondItem="T8s-Nd-mNw" secondAttribute="trailing" constant="72" id="Hnm-MQ-NUr"/>
+                            <constraint firstItem="rSb-AG-1Hn" firstAttribute="trailing" secondItem="aqN-Jk-CLG" secondAttribute="trailing" constant="20" id="IVj-Zn-tFJ"/>
+                            <constraint firstItem="rSb-AG-1Hn" firstAttribute="bottom" secondItem="aqN-Jk-CLG" secondAttribute="bottom" constant="134" id="Ne5-Lx-M15"/>
+                            <constraint firstItem="hV3-X4-I8d" firstAttribute="top" secondItem="eLM-HK-xco" secondAttribute="bottom" constant="81" id="PJn-B8-kcS"/>
+                            <constraint firstItem="T8s-Nd-mNw" firstAttribute="leading" secondItem="rSb-AG-1Hn" secondAttribute="leading" constant="72" id="PiF-ol-UVN"/>
+                            <constraint firstItem="eLM-HK-xco" firstAttribute="leading" secondItem="rSb-AG-1Hn" secondAttribute="leading" id="UCa-JN-YZK"/>
+                            <constraint firstItem="aqN-Jk-CLG" firstAttribute="leading" secondItem="rSb-AG-1Hn" secondAttribute="leading" constant="20" id="YTP-zT-QyW"/>
+                            <constraint firstItem="aqN-Jk-CLG" firstAttribute="top" secondItem="AUd-SK-dXh" secondAttribute="bottom" constant="161" id="YUV-IM-yhY"/>
+                            <constraint firstItem="rSb-AG-1Hn" firstAttribute="trailing" secondItem="TD0-dI-fgR" secondAttribute="trailing" constant="141.5" id="g7k-9J-z4C"/>
+                            <constraint firstItem="hV3-X4-I8d" firstAttribute="leading" secondItem="rSb-AG-1Hn" secondAttribute="leading" constant="25" id="lUA-X0-At6"/>
+                            <constraint firstItem="T8s-Nd-mNw" firstAttribute="top" secondItem="rSb-AG-1Hn" secondAttribute="top" constant="132" id="z1Q-Kf-7ff"/>
+                            <constraint firstItem="AUd-SK-dXh" firstAttribute="leading" secondItem="hV3-X4-I8d" secondAttribute="trailing" constant="204" id="z2l-jj-L2a"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="XhR-6G-GsC"/>
+                    <connections>
+                        <outlet property="bell" destination="BIF-SZ-STp" id="Wqg-1X-CvL"/>
+                        <outlet property="cancelButton" destination="j5P-aE-EQR" id="nr0-n6-BcE"/>
+                        <outlet property="cancelView" destination="hV3-X4-I8d" id="4Hd-lr-feX"/>
+                        <outlet property="pickerV" destination="eLM-HK-xco" id="R2B-00-cge"/>
+                        <outlet property="ringtoneRegisterLabel" destination="aqN-Jk-CLG" id="rVs-5G-DuM"/>
+                        <outlet property="startAndPauseButton" destination="Ekb-IB-BO1" id="yuM-D6-HDj"/>
+                        <outlet property="startView" destination="AUd-SK-dXh" id="4zL-wX-6OQ"/>
+                        <outlet property="timeAndRingStack" destination="TD0-dI-fgR" id="p2g-9M-UqZ"/>
+                        <outlet property="timerLabel" destination="T8s-Nd-mNw" id="INy-AO-eov"/>
+                        <segue destination="y6n-XM-RjX" kind="show" identifier="name" id="Zek-bJ-rjI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vz7-f4-PdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892.753623188406" y="-354.24107142857139"/>
+        </scene>
+        <!--SecondTimerViewController-->
+        <scene sceneID="ff1-ah-swD">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SecondTimerViewController" storyboardName="SecondTimerViewController" id="y6n-XM-RjX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VDE-QT-BKu"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="toY-by-0fa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2579" y="-354"/>
+        </scene>
+        <!--Timer-->
+        <scene sceneID="eDY-fg-GST">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="z84-xj-Z9W" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Timer" image="timer" catalog="system" id="C81-zR-4oP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ts0-EO-amL">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GP3-8L-odT" kind="relationship" relationship="rootViewController" id="sBE-QZ-cBl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m9c-94-9pi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="982.60869565217399" y="-354.24107142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bell.fill" catalog="system" width="128" height="124"/>
+        <image name="timer" catalog="system" width="128" height="121"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
