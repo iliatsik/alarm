@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 protocol CountriesManagerProtocol: AnyObject {
     func fetchCountries(completion: @escaping (([Country]) -> Void))
 }

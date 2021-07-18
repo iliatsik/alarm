@@ -1,5 +1,5 @@
 //
-//  StopWatchCoordinator.swift
+//  AlarmClockCoordinator.swift
 //  alarm
 //
 //  Created by Ilia Tsikelashvili on 18.07.21.
@@ -7,8 +7,12 @@
 
 import UIKit
 
-final class StopWatchCoordinator: CoordinatorProtocol {
 
+final class AlarmClockCoordinator: CoordinatorProtocol {
+    func passIndexAndCountry(with index: Int, and country: String) { }
+    func goToCovidViewController() { }
+    
+    func didTapOnCell() { }
     var networkManager: NetworkManagerProtocol?
     var navigationController: UINavigationController?
     
@@ -16,10 +20,10 @@ final class StopWatchCoordinator: CoordinatorProtocol {
         self.navigationController = navigationController
         self.navigationController?.isNavigationBarHidden = true
         
-        let vc = StopWatchViewController.instantiateFromStoryboard()
+        let vc = AlarmViewController.instantiateFromStoryboard()
         vc.coordinator = self
-        vc.tabBarItem.image = UIImage(named: "stopwatch")
-        vc.title = "Stopwatch"
+        vc.tabBarItem.image = UIImage(named: "alarmclock")
+        vc.title = "Alarm"
         
         self.navigationController?.viewControllers = [vc]
         

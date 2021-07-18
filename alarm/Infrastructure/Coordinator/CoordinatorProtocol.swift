@@ -18,6 +18,8 @@ protocol CoordinatorProtocol: AnyObject {
 //    func proceedToBuy(with product: Product?)
     func didTapOnCell()
     
+    func goToCovidViewController()
+    func passIndexAndCountry(with index : Int, and country : String)
 }
 
 extension CoordinatorProtocol {
@@ -27,6 +29,5 @@ extension CoordinatorProtocol {
         get { nil }
     }
     
-    func didTapOnCell() {}
-    func start() {}
+    func start()        {}
 }

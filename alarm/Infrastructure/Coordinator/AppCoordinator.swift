@@ -42,11 +42,21 @@ class AppCoordinator: CoordinatorProtocol {
         }))
         
         alert.addAction(UIAlertAction(title: "Covid Stats", style: .default, handler: { [weak self] action in
-            // go to covid vc
+            self?.goToCovidViewController()
         }))
         self.navigationController?.present(alert, animated: true)
     }
 
+    func goToCovidViewController() {
+        let sb = UIStoryboard(name: "CovidViewController", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "CovidViewController") as! CovidViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func passIndexAndCountry(with index : Int, and country: String){
+        let index = index
+        let country = country
+    }
 }
 
 

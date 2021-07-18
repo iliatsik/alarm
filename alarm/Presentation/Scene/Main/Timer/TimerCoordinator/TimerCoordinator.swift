@@ -1,14 +1,16 @@
 //
-//  WorldClockCoordinator.swift
+//  TimerCoordinator.swift
 //  alarm
 //
 //  Created by Ilia Tsikelashvili on 18.07.21.
 //
 
-
 import UIKit
 
-final class WorldClockCoordinator: CoordinatorProtocol {
+final class TimerCoordinator: CoordinatorProtocol {
+    func passIndexAndCountry(with index: Int, and country: String) { }
+    func goToCovidViewController() { }
+    func didTapOnCell() { }
 
     var networkManager: NetworkManagerProtocol?
     var navigationController: UINavigationController?
@@ -17,11 +19,11 @@ final class WorldClockCoordinator: CoordinatorProtocol {
         self.navigationController = navigationController
         self.navigationController?.isNavigationBarHidden = true
         
-        let vc = WorldClockViewController.instantiateFromStoryboard()
+        let vc = TimerViewController.instantiateFromStoryboard()
         vc.coordinator = self
-        vc.tabBarItem.image = UIImage(named: "worldclock")
-        vc.title = "World Clock"
-        
+        vc.tabBarItem.image = UIImage(named: "timer")
+        vc.title = "Timer"
+
         self.navigationController?.viewControllers = [vc]
         
     }
