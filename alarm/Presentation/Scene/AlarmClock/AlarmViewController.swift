@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlarmViewController: UIViewController, SecondAlarmDelegate {
+class AlarmViewController: BaseViewController, SecondAlarmDelegate {
     func finishPassing(hour: String, minute: String, label: String, index: Int, songName: String) {
         passedMinute   = minute
         passedHour     = hour

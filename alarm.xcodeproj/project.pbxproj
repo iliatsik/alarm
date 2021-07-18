@@ -10,19 +10,16 @@
 		325C240A266BA1FF009E4E07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C2409266BA1FF009E4E07 /* AppDelegate.swift */; };
 		325C240C266BA1FF009E4E07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C240B266BA1FF009E4E07 /* SceneDelegate.swift */; };
 		325C240E266BA1FF009E4E07 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C240D266BA1FF009E4E07 /* AlarmViewController.swift */; };
-		325C2411266BA1FF009E4E07 /* TabBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325C240F266BA1FF009E4E07 /* TabBarViewController.storyboard */; };
 		325C2413266BA205009E4E07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325C2412266BA205009E4E07 /* Assets.xcassets */; };
 		325C2416266BA205009E4E07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325C2414266BA205009E4E07 /* LaunchScreen.storyboard */; };
 		325C241F266BA287009E4E07 /* WorldClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C241E266BA287009E4E07 /* WorldClockViewController.swift */; };
 		325C2421266BA293009E4E07 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C2420266BA293009E4E07 /* TimerViewController.swift */; };
 		325C2423266BA2B0009E4E07 /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C2422266BA2B0009E4E07 /* StopWatchViewController.swift */; };
-		325C2427266BA3EF009E4E07 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C2426266BA3EF009E4E07 /* TabBarViewController.swift */; };
 		327D6F552677A4C50090A3ED /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327D6F532677A4C50090A3ED /* MainTableViewCell.swift */; };
 		327D6F562677A4C50090A3ED /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327D6F542677A4C50090A3ED /* MainTableViewCell.xib */; };
 		327D6F5B2677C1F70090A3ED /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327D6F592677C1F70090A3ED /* CountryTableViewCell.swift */; };
 		327D6F5C2677C1F70090A3ED /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327D6F5A2677C1F70090A3ED /* CountryTableViewCell.xib */; };
 		32C59EED266FB75100CA6D68 /* TimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C59EEC266FB75100CA6D68 /* TimerExtension.swift */; };
-		32C59EF0266FC93E00CA6D68 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C59EEF266FC93E00CA6D68 /* UIColor+Hex.swift */; };
 		32C59EF3266FD61D00CA6D68 /* SecondAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C59EF2266FD61D00CA6D68 /* SecondAlarmViewController.swift */; };
 		32D4BC2F267404F100A36F46 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC2E267404F100A36F46 /* TimeTableViewCell.swift */; };
 		32D4BC31267404FE00A36F46 /* RepeatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC30267404FE00A36F46 /* RepeatTableViewCell.swift */; };
@@ -55,6 +52,12 @@
 		32F2C3A526A0A72E000BDC24 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3A126A0A72E000BDC24 /* CoordinatorProtocol.swift */; };
 		32F2C3A626A0A72E000BDC24 /* CoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3A226A0A72E000BDC24 /* CoordinatorDelegate.swift */; };
 		32F2C3A926A0A8DE000BDC24 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3A826A0A8DE000BDC24 /* BaseViewController.swift */; };
+		32F2C3AF26A1D911000BDC24 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3AE26A1D911000BDC24 /* MainTabBarViewController.swift */; };
+		32F2C3B126A1D926000BDC24 /* MainTabBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C3B026A1D926000BDC24 /* MainTabBarViewController.storyboard */; };
+		32F2C3B726A3F3C0000BDC24 /* WorldClockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3B626A3F3C0000BDC24 /* WorldClockCoordinator.swift */; };
+		32F2C3B926A3F46E000BDC24 /* AlarmClockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3B826A3F46E000BDC24 /* AlarmClockCoordinator.swift */; };
+		32F2C3BC26A3F4D9000BDC24 /* StopWatchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3BB26A3F4D9000BDC24 /* StopWatchCoordinator.swift */; };
+		32F2C3BE26A3F520000BDC24 /* TimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3BD26A3F520000BDC24 /* TimerCoordinator.swift */; };
 		32FC1651267206CF007C60DC /* TimerLocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC1650267206CF007C60DC /* TimerLocalNotification.swift */; };
 		32FC165626722DC5007C60DC /* Daybreak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC165326722DC4007C60DC /* Daybreak.mp3 */; };
 		32FC165726722DC5007C60DC /* EarlyRiser.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC165426722DC4007C60DC /* EarlyRiser.mp3 */; };
@@ -77,20 +80,17 @@
 		325C2409266BA1FF009E4E07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		325C240B266BA1FF009E4E07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		325C240D266BA1FF009E4E07 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
-		325C2410266BA1FF009E4E07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBarViewController.storyboard; sourceTree = "<group>"; };
 		325C2412266BA205009E4E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		325C2415266BA205009E4E07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		325C2417266BA205009E4E07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		325C241E266BA287009E4E07 /* WorldClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldClockViewController.swift; sourceTree = "<group>"; };
 		325C2420266BA293009E4E07 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		325C2422266BA2B0009E4E07 /* StopWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewController.swift; sourceTree = "<group>"; };
-		325C2426266BA3EF009E4E07 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		327D6F532677A4C50090A3ED /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		327D6F542677A4C50090A3ED /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		327D6F592677C1F70090A3ED /* CountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		327D6F5A2677C1F70090A3ED /* CountryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
 		32C59EEC266FB75100CA6D68 /* TimerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerExtension.swift; sourceTree = "<group>"; };
-		32C59EEF266FC93E00CA6D68 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		32C59EF2266FD61D00CA6D68 /* SecondAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondAlarmViewController.swift; sourceTree = "<group>"; };
 		32D4BC2E267404F100A36F46 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
 		32D4BC30267404FE00A36F46 /* RepeatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatTableViewCell.swift; sourceTree = "<group>"; };
@@ -123,6 +123,12 @@
 		32F2C3A126A0A72E000BDC24 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		32F2C3A226A0A72E000BDC24 /* CoordinatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorDelegate.swift; sourceTree = "<group>"; };
 		32F2C3A826A0A8DE000BDC24 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		32F2C3AE26A1D911000BDC24 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		32F2C3B026A1D926000BDC24 /* MainTabBarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBarViewController.storyboard; sourceTree = "<group>"; };
+		32F2C3B626A3F3C0000BDC24 /* WorldClockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldClockCoordinator.swift; sourceTree = "<group>"; };
+		32F2C3B826A3F46E000BDC24 /* AlarmClockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmClockCoordinator.swift; sourceTree = "<group>"; };
+		32F2C3BB26A3F4D9000BDC24 /* StopWatchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchCoordinator.swift; sourceTree = "<group>"; };
+		32F2C3BD26A3F520000BDC24 /* TimerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCoordinator.swift; sourceTree = "<group>"; };
 		32FC1650267206CF007C60DC /* TimerLocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLocalNotification.swift; sourceTree = "<group>"; };
 		32FC165326722DC4007C60DC /* Daybreak.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Daybreak.mp3; sourceTree = "<group>"; };
 		32FC165426722DC4007C60DC /* EarlyRiser.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = EarlyRiser.mp3; sourceTree = "<group>"; };
@@ -154,7 +160,6 @@
 		323FD769269CC4C100B91750 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				32F2C3A726A0A8D2000BDC24 /* Base */,
 				323FD76A269CC4C800B91750 /* Scene */,
 			);
 			path = Presentation;
@@ -163,11 +168,12 @@
 		323FD76A269CC4C800B91750 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				32F2C3A726A0A8D2000BDC24 /* Base */,
+				32F2C3AD26A1D8F7000BDC24 /* MainTabBar */,
 				325C242A266CE94C009E4E07 /* WorldClock */,
 				325C242B266CE954009E4E07 /* AlarmClock */,
 				325C2429266CE943009E4E07 /* StopWatch */,
 				325C2428266CE93C009E4E07 /* Timer */,
-				325C241D266BA262009E4E07 /* TabBar */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -191,22 +197,13 @@
 		325C2408266BA1FF009E4E07 /* alarm */ = {
 			isa = PBXGroup;
 			children = (
+				325C2424266BA2C7009E4E07 /* App */,
 				32D4BC5926750C8700A36F46 /* Infrastructure */,
 				323FD769269CC4C100B91750 /* Presentation */,
 				325C2425266BA2D1009E4E07 /* Resources */,
-				325C2424266BA2C7009E4E07 /* App */,
 				325C2417266BA205009E4E07 /* Info.plist */,
 			);
 			path = alarm;
-			sourceTree = "<group>";
-		};
-		325C241D266BA262009E4E07 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				325C240F266BA1FF009E4E07 /* TabBarViewController.storyboard */,
-				325C2426266BA3EF009E4E07 /* TabBarViewController.swift */,
-			);
-			path = TabBar;
 			sourceTree = "<group>";
 		};
 		325C2424266BA2C7009E4E07 /* App */ = {
@@ -223,7 +220,6 @@
 			children = (
 				32FC165226722DB0007C60DC /* NotificationSounds */,
 				32FC164D2671FCD1007C60DC /* Reusables */,
-				32C59EEE266FC90100CA6D68 /* Extensions */,
 				325C2414266BA205009E4E07 /* LaunchScreen.storyboard */,
 				325C2412266BA205009E4E07 /* Assets.xcassets */,
 			);
@@ -233,6 +229,7 @@
 		325C2428266CE93C009E4E07 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				32F2C3B526A3F38E000BDC24 /* TimerCoordinator */,
 				32FC166B26722F58007C60DC /* SecondTimer */,
 				32FC1650267206CF007C60DC /* TimerLocalNotification.swift */,
 				32C59EEC266FB75100CA6D68 /* TimerExtension.swift */,
@@ -245,6 +242,7 @@
 		325C2429266CE943009E4E07 /* StopWatch */ = {
 			isa = PBXGroup;
 			children = (
+				32F2C3B426A3F381000BDC24 /* StopWatchCoordinator */,
 				325C2422266BA2B0009E4E07 /* StopWatchViewController.swift */,
 				32D4BC512674E94400A36F46 /* StopwatchTableViewCell.swift */,
 				32F2C39A26A08B67000BDC24 /* StopWatchViewController.storyboard */,
@@ -255,6 +253,7 @@
 		325C242A266CE94C009E4E07 /* WorldClock */ = {
 			isa = PBXGroup;
 			children = (
+				32F2C3B226A3F363000BDC24 /* WorldClockCoordinator */,
 				32D4BC6626750DB600A36F46 /* View */,
 				32D4BC6826750DD200A36F46 /* ViewModel */,
 			);
@@ -264,6 +263,7 @@
 		325C242B266CE954009E4E07 /* AlarmClock */ = {
 			isa = PBXGroup;
 			children = (
+				32F2C3B326A3F370000BDC24 /* AlarmClockCoordinator */,
 				327D6F522677A46F0090A3ED /* AlarmTableViewCell */,
 				32D4BC2D267404C700A36F46 /* AlarmTableViewCells */,
 				32C59EF1266FD5F500CA6D68 /* SecondAlarmViewController */,
@@ -280,14 +280,6 @@
 				327D6F542677A4C50090A3ED /* MainTableViewCell.xib */,
 			);
 			path = AlarmTableViewCell;
-			sourceTree = "<group>";
-		};
-		32C59EEE266FC90100CA6D68 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				32C59EEF266FC93E00CA6D68 /* UIColor+Hex.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		32C59EF1266FD5F500CA6D68 /* SecondAlarmViewController */ = {
@@ -458,6 +450,47 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		32F2C3AD26A1D8F7000BDC24 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C3AE26A1D911000BDC24 /* MainTabBarViewController.swift */,
+				32F2C3B026A1D926000BDC24 /* MainTabBarViewController.storyboard */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		32F2C3B226A3F363000BDC24 /* WorldClockCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C3B626A3F3C0000BDC24 /* WorldClockCoordinator.swift */,
+			);
+			path = WorldClockCoordinator;
+			sourceTree = "<group>";
+		};
+		32F2C3B326A3F370000BDC24 /* AlarmClockCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C3B826A3F46E000BDC24 /* AlarmClockCoordinator.swift */,
+			);
+			path = AlarmClockCoordinator;
+			sourceTree = "<group>";
+		};
+		32F2C3B426A3F381000BDC24 /* StopWatchCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C3BB26A3F4D9000BDC24 /* StopWatchCoordinator.swift */,
+			);
+			path = StopWatchCoordinator;
+			sourceTree = "<group>";
+		};
+		32F2C3B526A3F38E000BDC24 /* TimerCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C3BD26A3F520000BDC24 /* TimerCoordinator.swift */,
+			);
+			path = TimerCoordinator;
+			sourceTree = "<group>";
+		};
 		32FC164D2671FCD1007C60DC /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +591,7 @@
 				325C2416266BA205009E4E07 /* LaunchScreen.storyboard in Resources */,
 				32D4BC792676239600A36F46 /* SecondTimerViewController.storyboard in Resources */,
 				32FC165F26722DD2007C60DC /* Happyday.mp3 in Resources */,
+				32F2C3B126A1D926000BDC24 /* MainTabBarViewController.storyboard in Resources */,
 				327D6F562677A4C50090A3ED /* MainTableViewCell.xib in Resources */,
 				32FC166726722DE2007C60DC /* 613.mp3 in Resources */,
 				32F2C39526A086F7000BDC24 /* WorldClockViewController.storyboard in Resources */,
@@ -569,7 +603,6 @@
 				32D4BC4226740F1500A36F46 /* LabelTableViewCell.storyboard in Resources */,
 				32F2C39926A087DE000BDC24 /* SecondAlarmViewController.storyboard in Resources */,
 				32FC166226722DD2007C60DC /* Ping1.mp3 in Resources */,
-				325C2411266BA1FF009E4E07 /* TabBarViewController.storyboard in Resources */,
 				32F2C39726A0879D000BDC24 /* AlarmViewController.storyboard in Resources */,
 				32F2C39D26A08BD0000BDC24 /* TimerViewController.storyboard in Resources */,
 				32FC166926722DE2007C60DC /* Inflicted.mp3 in Resources */,
@@ -592,12 +625,14 @@
 				325C2421266BA293009E4E07 /* TimerViewController.swift in Sources */,
 				325C241F266BA287009E4E07 /* WorldClockViewController.swift in Sources */,
 				327D6F5B2677C1F70090A3ED /* CountryTableViewCell.swift in Sources */,
+				32F2C3B726A3F3C0000BDC24 /* WorldClockCoordinator.swift in Sources */,
 				327D6F552677A4C50090A3ED /* MainTableViewCell.swift in Sources */,
 				325C240E266BA1FF009E4E07 /* AlarmViewController.swift in Sources */,
-				32C59EF0266FC93E00CA6D68 /* UIColor+Hex.swift in Sources */,
+				32F2C3B926A3F46E000BDC24 /* AlarmClockCoordinator.swift in Sources */,
 				32D4BC332674050D00A36F46 /* LabelTableViewCell.swift in Sources */,
 				32FC166D26722F6C007C60DC /* SecondTimerViewController.swift in Sources */,
 				32D4BC5826750BDF00A36F46 /* Country.swift in Sources */,
+				32F2C3BC26A3F4D9000BDC24 /* StopWatchCoordinator.swift in Sources */,
 				32FC1651267206CF007C60DC /* TimerLocalNotification.swift in Sources */,
 				32D4BC4C26740FE200A36F46 /* LabelTableViewController.swift in Sources */,
 				32F2C3A526A0A72E000BDC24 /* CoordinatorProtocol.swift in Sources */,
@@ -607,7 +642,6 @@
 				32D4BC31267404FE00A36F46 /* RepeatTableViewCell.swift in Sources */,
 				32D4BC6426750CE400A36F46 /* UITableView+Extensions.swift in Sources */,
 				32D4BC732675101400A36F46 /* CountryViewModel.swift in Sources */,
-				325C2427266BA3EF009E4E07 /* TabBarViewController.swift in Sources */,
 				32D4BC742675101400A36F46 /* CountriesDataSource.swift in Sources */,
 				32F2C3A926A0A8DE000BDC24 /* BaseViewController.swift in Sources */,
 				32C59EED266FB75100CA6D68 /* TimerExtension.swift in Sources */,
@@ -619,7 +653,9 @@
 				32F2C3A426A0A72E000BDC24 /* AppCoordinator.swift in Sources */,
 				32D4BC522674E94400A36F46 /* StopwatchTableViewCell.swift in Sources */,
 				32D4BC4E26740FF400A36F46 /* SoundTableViewController.swift in Sources */,
+				32F2C3AF26A1D911000BDC24 /* MainTabBarViewController.swift in Sources */,
 				32D4BC4A26740FC900A36F46 /* RepeatTableViewController.swift in Sources */,
+				32F2C3BE26A3F520000BDC24 /* TimerCoordinator.swift in Sources */,
 				32FC166F267243B1007C60DC /* NavigationBar.swift in Sources */,
 				325C2423266BA2B0009E4E07 /* StopWatchViewController.swift in Sources */,
 				325C240C266BA1FF009E4E07 /* SceneDelegate.swift in Sources */,
@@ -630,14 +666,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		325C240F266BA1FF009E4E07 /* TabBarViewController.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				325C2410266BA1FF009E4E07 /* Base */,
-			);
-			name = TabBarViewController.storyboard;
-			sourceTree = "<group>";
-		};
 		325C2414266BA205009E4E07 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

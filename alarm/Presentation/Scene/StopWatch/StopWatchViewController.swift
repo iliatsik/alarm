@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StopWatchViewController: UIViewController {
+class StopWatchViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var timerLabel: UILabel!

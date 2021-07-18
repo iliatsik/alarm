@@ -24,7 +24,7 @@ struct CountryViewModel {
     }
     
     var capital: String {
-        "\(country.capital ?? "")"
+        "\(country.capital ?? "\(country.name)")"
     }
     
     var exactTime: String {

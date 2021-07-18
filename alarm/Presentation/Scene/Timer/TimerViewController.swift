@@ -8,7 +8,7 @@
 import UIKit
 import UserNotifications
 
-class TimerViewController: UIViewController, SecondTimerDelegate {
+class TimerViewController: BaseViewController, SecondTimerDelegate {
     func finishPassing(string: String) {
         selectedAudio = string
     }

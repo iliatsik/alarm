@@ -9,7 +9,7 @@ import UIKit
 
 protocol CoordinatorProtocol: AnyObject {
     
-    var networkManager: NetworkManagerProtocol { get }
+    var networkManager: NetworkManagerProtocol? { get }
     
     init(_ window: UIWindow?, navigationController: UINavigationController?)
     
@@ -20,3 +20,13 @@ protocol CoordinatorProtocol: AnyObject {
     
 }
 
+extension CoordinatorProtocol {
+    
+    var networkManager: NetworkManagerProtocol? {
+        set { print("") }
+        get { nil }
+    }
+    
+    func didTapOnCell() {}
+    func start() {}
+}
