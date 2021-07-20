@@ -9,17 +9,17 @@ import UIKit
 
 class WorldClockViewController: BaseViewController {
 
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar : UISearchBar!
+    @IBOutlet weak var tableView : UITableView!
 
-    private var viewModel: CountriesListViewModelProtocol!
-    private var dataSource: CountriesDataSource!
-    private var countriesManager: CountriesManagerProtocol!
+    private var viewModel        : CountriesListViewModelProtocol!
+    private var dataSource       : CountriesDataSource!
+    private var countriesManager : CountriesManagerProtocol!
+    private var covidManager     : CovidManagerProtocol!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        bindings()
         setupLayout()
         configureViewModel()
         dataSource.refresh()
@@ -43,9 +43,11 @@ class WorldClockViewController: BaseViewController {
     
     private func configureViewModel() {
         countriesManager = CountriesManager()
-        viewModel = CountriesListViewModel(with: countriesManager, controller: self)
-        dataSource = CountriesDataSource(with: tableView, viewModel: viewModel)
+        covidManager     = CovidManager()
+        viewModel        = CountriesListViewModel(with: countriesManager, controller: self, covidManager: covidManager)
+        dataSource       = CountriesDataSource(with: tableView, viewModel: viewModel)
     }
+    
 }
 
 extension WorldClockViewController: UISearchBarDelegate {

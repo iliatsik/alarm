@@ -22,9 +22,10 @@ class CountryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     func configure(with item: CountryViewModel) {
         timezoneLabel.text = item.time
-        countryLabel.text = item.capital
-        timeLabel.text = item.exactTime
+        countryLabel.text  = item.capital
+        timeLabel.text     = item.exactTime
     }
 }

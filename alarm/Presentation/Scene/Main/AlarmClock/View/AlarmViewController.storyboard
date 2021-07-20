@@ -54,7 +54,7 @@
                     <navigationItem key="navigationItem" id="JJQ-zM-BPq"/>
                     <connections>
                         <outlet property="tableView" destination="nQy-SA-s3k" id="xWb-1E-LNx"/>
-                        <segue destination="shj-d9-uha" kind="show" identifier="main_alarm_segue" id="eWx-oC-hZV"/>
+                        <segue destination="shj-d9-uha" kind="presentation" identifier="main_alarm_segue" id="eWx-oC-hZV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yzx-nF-iSo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

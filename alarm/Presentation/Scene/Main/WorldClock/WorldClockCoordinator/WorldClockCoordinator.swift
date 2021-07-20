@@ -42,7 +42,6 @@ final class WorldClockCoordinator: CoordinatorProtocol {
             self?.navigationController?.navigationBar.backgroundColor = .darkGray
             self?.navigationController?.navigationBar.tintColor = .lightGray
             self?.navigationController?.navigationBar.barTintColor = .black
-            
             self?.navigationController?.pushViewController(vc, animated: true)
             
         }))

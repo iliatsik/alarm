@@ -19,8 +19,6 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
     @IBOutlet weak var ringtoneRegisterLabel : UIButton!
     var registerRingtoneLabel : String!
     
-    @IBOutlet weak var bell             : UIImageView!
-    @IBOutlet weak var timeAndRingStack : UIStackView!
     
     @IBOutlet weak var timerLabel          : UILabel!
     @IBOutlet weak var startAndPauseButton : UIButton!
@@ -70,7 +68,6 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
         startView.layer.borderWidth = 1.8
         startView.layer.borderColor = UIColor(named: "start")?.cgColor
         
-        timeAndRingStack.isHidden   = true
         
         UNUserNotificationCenter.current().delegate = self
         
@@ -103,13 +100,11 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
         bgShapeLayer.isHidden       = false
         pickerV.isHidden            = true
         timerLabel.isHidden         = false
-        timeAndRingStack.isHidden   = false
         
         if !isTimerRunning { 
             timeLeft =  TimeInterval(Int((hour * 3600) + (minutes * 60) + seconds))
             setUpShapeLayer()
                         
-            bell.tintColor      = .lightGray
             
             timerLabel.isHidden    = false
             startAndPauseButton.backgroundColor = UIColor(named: "pause")
@@ -128,7 +123,6 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
             startAndPauseButton.setTitle("Resume", for: .normal)
             startView.layer.borderColor = UIColor(named: "start")?.cgColor
 
-            bell.tintColor      = .darkGray
             
             timeLeftShapeLayer.pauseAnimation()
             
@@ -146,7 +140,6 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
             timeLeftShapeLayer.isHidden   = true
             bgShapeLayer.isHidden         = true
             
-            timeAndRingStack.isHidden   = true
             
             timeLeft                      = 0
             isTimerRunning                = false
@@ -167,12 +160,7 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
     
    
     @IBAction func ringtoneButton(_ sender: Any) {
-        let sb = UIStoryboard(name: "SecondTimerViewController", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "SecondTimerViewController")
         performSegue(withIdentifier: "name", sender: nil)
-        
-        ringtoneRegisterLabel.titleLabel?.text = "When Timer Ends: \(selectedAudio ?? "Default")"
-        present(vc, animated: true)
     }
     
 

@@ -51,10 +51,10 @@ class SecondTimerViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = arrayOfRingtones[indexPath.row]
+        cell.textLabel?.text      = arrayOfRingtones[indexPath.row]
         cell.textLabel?.textColor = .white
-        cell.backgroundColor = .darkGray
-        cell.tintColor = .systemOrange
+        cell.backgroundColor      = .darkGray
+        cell.tintColor            = .systemOrange
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -68,8 +68,6 @@ class SecondTimerViewController: UIViewController, UITableViewDelegate, UITableV
         audioPlayer.play()
         } catch{}
     }
-
-    
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath as IndexPath)?.accessoryType = .none

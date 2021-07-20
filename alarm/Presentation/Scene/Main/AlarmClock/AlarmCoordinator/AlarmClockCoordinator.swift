@@ -29,4 +29,9 @@ final class AlarmClockCoordinator: CoordinatorProtocol {
         
     }
     
+    func goToSecondAlarm(){
+        let sb = UIStoryboard(name: "SecondAlarmViewController", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "SecondAlarmViewController")
+        self.navigationController?.present(vc, animated: true)
+    }
 }

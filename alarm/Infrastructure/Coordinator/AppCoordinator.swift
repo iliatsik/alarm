@@ -9,6 +9,7 @@ import UIKit
 
 class AppCoordinator: CoordinatorProtocol {
 
+
     // MARK: - Private properties
     
     private var window: UIWindow?
@@ -53,10 +54,6 @@ class AppCoordinator: CoordinatorProtocol {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func passIndexAndCountry(with index : Int, and country: String){
-        let index = index
-        let country = country
-    }
 }
 
 

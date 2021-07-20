@@ -14,12 +14,14 @@ protocol CoordinatorProtocol: AnyObject {
     init(_ window: UIWindow?, navigationController: UINavigationController?)
     
     func start()
-//    func proceedToProductDetails(with product: Product?)
-//    func proceedToBuy(with product: Product?)
+
     func didTapOnCell()
     
     func goToCovidViewController()
-    func passIndexAndCountry(with index : Int, and country : String)
+    
+    var currentCountry : String? { get }
+    
+    func goToSecondAlarm()
 }
 
 extension CoordinatorProtocol {
@@ -29,5 +31,13 @@ extension CoordinatorProtocol {
         get { nil }
     }
     
-    func start()        {}
+    var currentCountry : String? {
+        set { print("") }
+        get { nil }
+    }
+
+    func start(){}
+    
+    func goToSecondAlarm() {}
+    
 }

@@ -25,7 +25,6 @@ final class TimerCoordinator: CoordinatorProtocol {
         vc.title = "Timer"
 
         self.navigationController?.viewControllers = [vc]
-        
     }
     
 }

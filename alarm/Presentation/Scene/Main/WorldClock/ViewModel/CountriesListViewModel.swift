@@ -13,7 +13,9 @@ protocol CountriesListViewModelProtocol: AnyObject {
     func setTitle(with text: String, on navigationItem: UINavigationItem)
     var controller: CoordinatorDelegate { get }
     
-    init(with countriesManager: CountriesManagerProtocol, controller: CoordinatorDelegate)
+    func getCovidData(completion: @escaping (([CovidViewModel]) -> Void))
+
+    init(with countriesManager: CountriesManagerProtocol, controller: CoordinatorDelegate, covidManager: CovidManagerProtocol)
 }
 
 final class CountriesListViewModel: CountriesListViewModelProtocol {
@@ -21,21 +23,34 @@ final class CountriesListViewModel: CountriesListViewModelProtocol {
     private(set) var controller: CoordinatorDelegate
     
     private var countriesManager: CountriesManagerProtocol!
+    private var covidManager: CovidManagerProtocol!
+    
     var didFinishedLoading: (() -> Void)?
     var navigationItem: UINavigationItem?
     
-    init(with countriesManager: CountriesManagerProtocol, controller: CoordinatorDelegate )  {
+    init(with countriesManager: CountriesManagerProtocol, controller: CoordinatorDelegate, covidManager: CovidManagerProtocol)  {
         self.countriesManager = countriesManager
         self.controller       = controller
+        self.covidManager     = covidManager
     }
     
     func getCountriesList(completion: @escaping (([CountryViewModel]) -> Void)) {
         countriesManager.fetchCountries { countries in
 
             DispatchQueue.main.async {
-                    let countriesViewModels =  countries.map { CountryViewModel(country: $0 ) }
-                    completion(countriesViewModels)
+                let countriesViewModels =  countries.map { CountryViewModel(country: $0 ) }
+                completion(countriesViewModels)
            }
+        }
+    }
+    
+    func getCovidData(completion: @escaping (([CovidViewModel]) -> Void)) {
+        covidManager.fetchCovidStats { result in
+            
+            DispatchQueue.main.async {
+                let covidViewModel = result.map { CovidViewModel(covid: $0) }
+                completion(covidViewModel)
+            }
         }
     }
     

@@ -20,13 +20,11 @@ extension TimerViewController {
         content.body = "Timer"
         content.categoryIdentifier = "Alarm"
         content.userInfo = ["customData": "fizzbuzz"]
-//        content.sound = UNNotificationSound.default
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "\(selectedAudio ?? "613").mp3"))
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01,
                                                         repeats: false)
         
-        //let identifier = UUID().uuidString
         let request = UNNotificationRequest(identifier: "notification_id",
                                             content: content,
                                             trigger: trigger)

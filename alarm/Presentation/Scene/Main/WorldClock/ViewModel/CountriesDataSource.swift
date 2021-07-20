@@ -17,7 +17,8 @@ class CountriesDataSource: NSObject, UITableViewDataSource {
     private var filteredCountriesList = [CountryViewModel]()
     private var countriesList = [CountryViewModel]()
     
-    var currentCountry : String?
+    
+    var coordinator : CoordinatorProtocol?
     
     init(with tableView: UITableView, viewModel: CountriesListViewModelProtocol) {
         super.init()
@@ -55,7 +56,6 @@ class CountriesDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.deque(CountryTableViewCell.self, for: indexPath)
         cell.configure(with: filteredCountriesList[indexPath.row])
-        currentCountry = "\(cell.countryLabel.text ?? "")"
         return cell
     }
     
@@ -67,9 +67,14 @@ class CountriesDataSource: NSObject, UITableViewDataSource {
 
 
 extension CountriesDataSource: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        currentCountry = "\(countriesList[indexPath.row])"
         viewModel.controller.coordinator?.didTapOnCell()
+            
+        viewModel.getCovidData { [weak self] result in
+            print(result)
+        }
+        
         print(indexPath.row)
     }
 }

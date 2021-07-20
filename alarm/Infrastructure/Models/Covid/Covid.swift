@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct CovidAttributes : Codable {
+    let attributes : [Covid]
+}
+
 struct Covid : Codable {
     let Recovered        : Int?
     let Confirmed        : Int?

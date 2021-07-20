@@ -8,5 +8,5 @@
 import Foundation
 
 struct CovidResponse : Codable {
-    let features : [Covid]
+    let features : [CovidAttributes]
 }

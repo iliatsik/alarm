@@ -24,55 +24,45 @@ struct CountryViewModel {
     }
     
     var capital: String {
-        "\(country.capital ?? "\(country.name)")"
+        var capital = "\(String(describing: country.capital!))"
+        if capital == "" {
+            capital = "\(String(describing: country.name!))"
+        }
+        return capital
     }
     
     var exactTime: String {
-        let currentDate = Date()
-        let format = DateFormatter()
-        format.timeZone = TimeZone(abbreviation: "UTC") //"\(country.timezones)")//.current
-        format.dateFormat = "HH:mm"
-        let dateString = format.string(from: currentDate)
+        let initTz = TimeZone(abbreviation: "GMT+4")!
+        let targetTz = TimeZone(abbreviation: country.timezones?[0] ?? "UTC+03:00")!
+        let initDate = Date()
         
-        return dateString
-    }
+        var calendar = Calendar.current
+        calendar.timeZone = initTz
+        let case1TargetDate = calendar.dateBySetting(timeZone: targetTz, of: initDate)!
+        let case2TargetDate = calendar.dateBySettingTimeFrom(timeZone: targetTz, of: initDate)!
 
+        let formatter = ISO8601DateFormatter()
+
+        formatter.formatOptions = [ .withFullTime ]
+        
+//      formatter.timeZone = targetTz
+       
+        formatter.timeZone = initTz
+
+        let index = formatter.string(from: case2TargetDate).index(formatter.string(from: case1TargetDate).startIndex, offsetBy: 5)
+
+        return String(formatter.string(from: case2TargetDate).prefix(upTo: index))
+    }
  
     var time : String {
-        let time = (country.timezones ?? ["00:00"])[0]
+        var time = (country.timezones ?? ["UTC+02:00"])[0]
+        if country.timezones![0] == "UTC" {
+            time = "UTC+00:00"
+        }
         return "\(time)"
     }
+  
 }
 
 
-extension Date {
-   struct Formatter {
-       static let utcFormatter: DateFormatter = {
-           let dateFormatter = DateFormatter()
- 
-           dateFormatter.dateFormat = "mm:ss'Z'"
-           dateFormatter.timeZone = TimeZone(identifier: "UTC")
- 
-           return dateFormatter
-       }()
-   }
- 
-   var dateToUTC: String {
-       return Formatter.utcFormatter.string(from: self)
-   }
-}
- 
-extension String {
-   struct Formatter {
-       static let utcFormatter: DateFormatter = {
-           let dateFormatter = DateFormatter()
-           dateFormatter.dateFormat = "HH:mm:ssz"
-           
-           return dateFormatter
-       }()
-   }
- 
-   var dateFromUTC: Date? {
-       return Formatter.utcFormatter.date(from: self)
-   }
-}
+

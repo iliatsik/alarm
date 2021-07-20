@@ -7,6 +7,7 @@
 
 import UIKit
 import UserNotifications
+import AVFoundation
 
 extension TimerViewController {
     
@@ -14,9 +15,6 @@ extension TimerViewController {
         if timeLeft > 0 {
             timeLeft = endTime?.timeIntervalSinceNow ?? 0
             timerLabel.text = timeLeft.time
-        }else {
-            timerLabel.text = "00:00"
-            timer.invalidate()
         }
         
         if timeLeft.time == "00:00" {
@@ -31,7 +29,7 @@ extension TimerViewController {
             timeLeftShapeLayer.isHidden = true
             bgShapeLayer.isHidden       = true
             pickerV.isHidden            = false
-            timeAndRingStack.isHidden   = true
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             timer.invalidate()
         }
     }
@@ -40,20 +38,18 @@ extension TimerViewController {
     func setUpShapeLayer() {
             drawBgShape()
             drawTimeLeftShape()
-            //define the fromValue, toValue and duration of your animation
             strokeIt.fromValue = 1
             strokeIt.toValue   = 0
             strokeIt.duration  = timeLeft
-            // add the animation to your timeLeftShapeLayer
             timeLeftShapeLayer.add(strokeIt, forKey: nil)
-            // define the future end time by adding the timeLeft to now Date()
             endTime = Date().addingTimeInterval(timeLeft)
             timer   = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
     
     func drawBgShape() {
-        bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX, y: view.frame.midY - 200 ), radius:
-            190, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
+        bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX, y: view.frame.midY - 200 ),
+            radius: (view.frame.size.width / 2) - 17, startAngle: -90.degreesToRadians,
+            endAngle: 270.degreesToRadians, clockwise: true).cgPath
         bgShapeLayer.strokeColor = UIColor.darkGray.cgColor
         bgShapeLayer.fillColor = UIColor.clear.cgColor
         bgShapeLayer.lineWidth = 9
@@ -61,8 +57,8 @@ extension TimerViewController {
     }
     
     func drawTimeLeftShape() {
-        timeLeftShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY - 200), radius:
-            190, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
+        timeLeftShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY - 200), radius: (view.frame.size.width / 2) - 17 , startAngle: -90.degreesToRadians,
+            endAngle: 270.degreesToRadians, clockwise: true).cgPath
         timeLeftShapeLayer.strokeColor = UIColor.systemOrange.cgColor
         timeLeftShapeLayer.fillColor = UIColor.clear.cgColor
         timeLeftShapeLayer.lineWidth = 7
@@ -108,7 +104,7 @@ extension TimerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
          func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
              switch component {
              case 0:
-                 hour = row
+                 hour    = row
              case 1:
                  minutes = row
              case 2:
@@ -140,40 +136,6 @@ extension TimerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
          }
 }
 
-extension TimeInterval {
-    var time: String {
-        return String(format:"%02d:%02d", Int(self/60),  Int(ceil(truncatingRemainder(dividingBy: 60))) )
-    }
-}
-extension Int {
-    var degreesToRadians : CGFloat {
-        return CGFloat(self) * .pi / 180
-    }
-}
 
 
-extension CALayer
-{
-    func pauseAnimation() {
-        if isPaused() == false {
-            let pausedTime = convertTime(CACurrentMediaTime(), from: nil)
-            speed = 0.0
-            timeOffset = pausedTime
-        }
-    }
 
-    func resumeAnimation() {
-        if isPaused() {
-            let pausedTime = timeOffset
-            speed = 1.0
-            timeOffset = 0.0
-            beginTime = 0.0
-            let timeSincePause = convertTime(CACurrentMediaTime(), from: nil) - pausedTime
-            beginTime = timeSincePause
-        }
-    }
-
-    func isPaused() -> Bool {
-        return speed == 0
-    }
-}
