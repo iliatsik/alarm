@@ -14,9 +14,8 @@ class CountriesDataSource: NSObject, UITableViewDataSource {
     private var tableView: UITableView!
     private var viewModel: CountriesListViewModelProtocol!
     
-    private var filteredCountriesList = [CountryViewModel]()
-    private var countriesList = [CountryViewModel]()
-    
+    private var filteredCitiesList = [CountryViewModel]()
+    private var citiesList = [CountryViewModel]()
     
     var coordinator : CoordinatorProtocol?
     
@@ -32,30 +31,31 @@ class CountriesDataSource: NSObject, UITableViewDataSource {
     
     func refresh() {
         viewModel.getCountriesList { countries in
-            self.countriesList.append(contentsOf: countries)
-            self.filteredCountriesList.append(contentsOf: countries)
+            self.citiesList.append(contentsOf: countries)
+            self.filteredCitiesList.append(contentsOf: countries)
             self.tableView.reloadData()
         }
     }
     
     func search(with text: String) {
-        filteredCountriesList.removeAll()
+        filteredCitiesList.removeAll()
         
-        for country in countriesList {
+        for country in citiesList {
             if country.capital.lowercased().contains(text.lowercased()) {
-                filteredCountriesList.append(country)
+                filteredCitiesList.append(country)
             }
+        
         }
         tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredCountriesList.count
+        return filteredCitiesList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.deque(CountryTableViewCell.self, for: indexPath)
-        cell.configure(with: filteredCountriesList[indexPath.row])
+        cell.configure(with: filteredCitiesList[indexPath.row])
         return cell
     }
     
@@ -70,11 +70,17 @@ extension CountriesDataSource: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.controller.coordinator?.didTapOnCell()
-            
+    
         viewModel.getCovidData { [weak self] result in
-            print(result)
+            
+            let filteredData = result.filter { $0.name == ""}
+//            print(filteredData)
         }
         
+        viewModel.getWeatherData(with: "Germany") { [weak self] result in
+            print(result)
+            
+        }
         print(indexPath.row)
     }
 }

@@ -87,6 +87,9 @@
                                                 <constraint firstItem="F5w-pq-cel" firstAttribute="top" secondItem="VYb-WU-FAG" secondAttribute="top" id="xHO-91-IrH"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="repeatLabel" destination="F5w-pq-cel" id="Afp-nq-0ps"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="label" rowHeight="50" id="non-xN-7W7" customClass="LabelTableViewCell" customModule="alarm" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="185.5" width="414" height="50"/>
@@ -190,6 +193,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="glg-Ji-twY" secondAttribute="bottom" constant="10" id="vLP-3u-x7W"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="vibrationSwitch" destination="glg-Ji-twY" id="iG2-TY-1f2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -232,8 +238,9 @@
                     <connections>
                         <outlet property="navigationBar" destination="1qc-6x-n4y" id="eH7-Ih-Dnd"/>
                         <outlet property="tableView" destination="FlU-Hs-nb5" id="ykc-hC-2FI"/>
-                        <segue destination="eDR-7w-qiw" kind="show" identifier="sound_segue" id="vKP-aH-Lan"/>
-                        <segue destination="1es-1g-dLf" kind="show" identifier="label_segue" id="8ob-Mz-w2V"/>
+                        <segue destination="eDR-7w-qiw" kind="presentation" identifier="sound_segue" id="vKP-aH-Lan"/>
+                        <segue destination="1es-1g-dLf" kind="presentation" identifier="label_segue" id="8ob-Mz-w2V"/>
+                        <segue destination="L4I-bC-4tz" kind="presentation" identifier="repeat_segue" id="MI7-bv-hqR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2x-i4-2o0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -248,7 +255,15 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHG-eD-zTm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1824" y="1064"/>
+            <point key="canvasLocation" x="1822" y="975"/>
+        </scene>
+        <!--RepeatTableViewController-->
+        <scene sceneID="jOh-qn-P1Z">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="RepeatTableViewController" storyboardName="RepeatTableViewController" id="L4I-bC-4tz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J6s-Pz-Gb3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1852" y="909"/>
         </scene>
         <!--LabelTableViewCell-->
         <scene sceneID="dZB-L6-Nqm">
@@ -258,7 +273,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="61V-a7-MHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="982"/>
+            <point key="canvasLocation" x="1820" y="942"/>
         </scene>
     </scenes>
     <resources>

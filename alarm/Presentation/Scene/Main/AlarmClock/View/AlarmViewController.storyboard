@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="width" constant="414" id="mgM-hO-w9l"/>
                                 </constraints>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPS-ia-CNn">
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="KPS-ia-CNn">
                                 <rect key="frame" x="0.0" y="42" width="414" height="93"/>
                                 <items>
                                     <navigationItem id="VpP-hR-AXn">
@@ -37,13 +37,24 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dff-iH-rbl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="42"/>
+                                <color key="backgroundColor" red="0.070577852430000004" green="0.070594884459999993" blue="0.070574127139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Svd-XB-UKT"/>
+                                    <constraint firstAttribute="width" constant="414" id="iMK-rc-R2X"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5ta-hu-q31"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nQy-SA-s3k" firstAttribute="bottom" secondItem="5ta-hu-q31" secondAttribute="bottom" id="AP1-bK-FTM"/>
                             <constraint firstItem="KPS-ia-CNn" firstAttribute="leading" secondItem="5ta-hu-q31" secondAttribute="leading" id="CJF-zn-6fR"/>
+                            <constraint firstItem="dff-iH-rbl" firstAttribute="top" secondItem="Ees-bf-N3L" secondAttribute="top" id="I87-je-cMl"/>
+                            <constraint firstItem="dff-iH-rbl" firstAttribute="leading" secondItem="Ees-bf-N3L" secondAttribute="leading" id="JBr-Dt-vB1"/>
                             <constraint firstItem="KPS-ia-CNn" firstAttribute="trailing" secondItem="5ta-hu-q31" secondAttribute="trailing" id="Lfx-y2-ucG"/>
+                            <constraint firstAttribute="trailing" secondItem="dff-iH-rbl" secondAttribute="trailing" id="PBV-VJ-9kG"/>
                             <constraint firstItem="nQy-SA-s3k" firstAttribute="top" secondItem="KPS-ia-CNn" secondAttribute="bottom" id="UTO-vI-buT"/>
                             <constraint firstItem="nQy-SA-s3k" firstAttribute="leading" secondItem="5ta-hu-q31" secondAttribute="leading" id="bfP-VW-QcP"/>
                             <constraint firstItem="nQy-SA-s3k" firstAttribute="top" secondItem="KPS-ia-CNn" secondAttribute="bottom" id="gge-s8-2Cw"/>

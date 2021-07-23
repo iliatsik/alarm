@@ -14,6 +14,7 @@ extension UITableView {
     
     func registerNib<T: UITableViewCell>(class: T.Type) {
         self.register(T.nib, forCellReuseIdentifier: T.identifier)
+        
     }
     
     func registerHeaderFooterNib<T: UIView>(class: T.Type) {
@@ -25,5 +26,7 @@ extension UITableView {
     func deque<T: UITableViewCell>(_ classType: T.Type, for indexPath: IndexPath) -> T {
         return dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as! T
     }
+    
+    
 }
 

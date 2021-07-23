@@ -70,6 +70,34 @@
 		32F2C3E026A60A94000BDC24 /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3DF26A60A94000BDC24 /* Variables.swift */; };
 		32F2C3E226A60AB4000BDC24 /* TimeInterval+Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3E126A60AB4000BDC24 /* TimeInterval+Calendar.swift */; };
 		32F2C3E426A60AE7000BDC24 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3E326A60AE7000BDC24 /* Vibration.swift */; };
+		32F2C3EA26A73BA2000BDC24 /* CovidAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3E926A73BA2000BDC24 /* CovidAttributes.swift */; };
+		32F2C3EF26A80314000BDC24 /* WeatherViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C3EE26A80314000BDC24 /* WeatherViewController.storyboard */; };
+		32F2C3F226A8044A000BDC24 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3F126A8044A000BDC24 /* WeatherViewController.swift */; };
+		32F2C3F426A80472000BDC24 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3F326A80472000BDC24 /* WeatherManager.swift */; };
+		32F2C3F826A8612A000BDC24 /* WeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3F726A8612A000BDC24 /* WeatherDataSource.swift */; };
+		32F2C3FA26A86138000BDC24 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3F926A86138000BDC24 /* WeatherViewModel.swift */; };
+		32F2C3FC26A86146000BDC24 /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3FB26A86146000BDC24 /* ForecastViewModel.swift */; };
+		32F2C40026A86244000BDC24 /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C3FF26A86244000BDC24 /* WeatherLocation.swift */; };
+		32F2C40226A86253000BDC24 /* WeatherCurrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C40126A86253000BDC24 /* WeatherCurrent.swift */; };
+		32F2C40426A86281000BDC24 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C40326A86281000BDC24 /* Weather.swift */; };
+		32F2C40626A862A1000BDC24 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C40526A862A1000BDC24 /* WeatherForecast.swift */; };
+		32F2C40826A9C6D0000BDC24 /* RepeatTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C40726A9C6CF000BDC24 /* RepeatTableViewController.storyboard */; };
+		32F2C40B26AAE8DC000BDC24 /* CovidDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C40A26AAE8DC000BDC24 /* CovidDataSource.swift */; };
+		32F2C40D26AAE8ED000BDC24 /* CovidListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C40C26AAE8ED000BDC24 /* CovidListViewModel.swift */; };
+		32F2C41226AAEF31000BDC24 /* CovidConfirmedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C41026AAEF31000BDC24 /* CovidConfirmedTableViewCell.swift */; };
+		32F2C41326AAEF31000BDC24 /* CovidConfirmedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C41126AAEF31000BDC24 /* CovidConfirmedTableViewCell.xib */; };
+		32F2C41826AAEF59000BDC24 /* ActiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C41626AAEF59000BDC24 /* ActiveTableViewCell.swift */; };
+		32F2C41926AAEF59000BDC24 /* ActiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C41726AAEF59000BDC24 /* ActiveTableViewCell.xib */; };
+		32F2C42026AAEF94000BDC24 /* DeathTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C41E26AAEF94000BDC24 /* DeathTableViewCell.swift */; };
+		32F2C42126AAEF94000BDC24 /* DeathTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C41F26AAEF94000BDC24 /* DeathTableViewCell.xib */; };
+		32F2C42426AAEFA1000BDC24 /* RecoveredTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C42226AAEFA1000BDC24 /* RecoveredTableViewCell.swift */; };
+		32F2C42526AAEFA1000BDC24 /* RecoveredTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C42326AAEFA1000BDC24 /* RecoveredTableViewCell.xib */; };
+		32F2C42826AAEFB1000BDC24 /* MortalityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C42626AAEFB1000BDC24 /* MortalityTableViewCell.swift */; };
+		32F2C42926AAEFB1000BDC24 /* MortalityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C42726AAEFB1000BDC24 /* MortalityTableViewCell.xib */; };
+		32F2C42C26AAEFC1000BDC24 /* IncidentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C42A26AAEFC1000BDC24 /* IncidentTableViewCell.swift */; };
+		32F2C42D26AAEFC1000BDC24 /* IncidentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C42B26AAEFC1000BDC24 /* IncidentTableViewCell.xib */; };
+		32F2C43126AAF52F000BDC24 /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C42F26AAF52F000BDC24 /* ChartTableViewCell.swift */; };
+		32F2C43226AAF52F000BDC24 /* ChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C43026AAF52F000BDC24 /* ChartTableViewCell.xib */; };
 		32FC1651267206CF007C60DC /* TimerLocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC1650267206CF007C60DC /* TimerLocalNotification.swift */; };
 		32FC165626722DC5007C60DC /* Daybreak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC165326722DC4007C60DC /* Daybreak.mp3 */; };
 		32FC165726722DC5007C60DC /* EarlyRiser.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC165426722DC4007C60DC /* EarlyRiser.mp3 */; };
@@ -153,6 +181,34 @@
 		32F2C3DF26A60A94000BDC24 /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		32F2C3E126A60AB4000BDC24 /* TimeInterval+Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Calendar.swift"; sourceTree = "<group>"; };
 		32F2C3E326A60AE7000BDC24 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
+		32F2C3E926A73BA2000BDC24 /* CovidAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidAttributes.swift; sourceTree = "<group>"; };
+		32F2C3EE26A80314000BDC24 /* WeatherViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeatherViewController.storyboard; sourceTree = "<group>"; };
+		32F2C3F126A8044A000BDC24 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		32F2C3F326A80472000BDC24 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		32F2C3F726A8612A000BDC24 /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
+		32F2C3F926A86138000BDC24 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		32F2C3FB26A86146000BDC24 /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
+		32F2C3FF26A86244000BDC24 /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
+		32F2C40126A86253000BDC24 /* WeatherCurrent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCurrent.swift; sourceTree = "<group>"; };
+		32F2C40326A86281000BDC24 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		32F2C40526A862A1000BDC24 /* WeatherForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
+		32F2C40726A9C6CF000BDC24 /* RepeatTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepeatTableViewController.storyboard; sourceTree = "<group>"; };
+		32F2C40A26AAE8DC000BDC24 /* CovidDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidDataSource.swift; sourceTree = "<group>"; };
+		32F2C40C26AAE8ED000BDC24 /* CovidListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidListViewModel.swift; sourceTree = "<group>"; };
+		32F2C41026AAEF31000BDC24 /* CovidConfirmedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidConfirmedTableViewCell.swift; sourceTree = "<group>"; };
+		32F2C41126AAEF31000BDC24 /* CovidConfirmedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CovidConfirmedTableViewCell.xib; sourceTree = "<group>"; };
+		32F2C41626AAEF59000BDC24 /* ActiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTableViewCell.swift; sourceTree = "<group>"; };
+		32F2C41726AAEF59000BDC24 /* ActiveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveTableViewCell.xib; sourceTree = "<group>"; };
+		32F2C41E26AAEF94000BDC24 /* DeathTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathTableViewCell.swift; sourceTree = "<group>"; };
+		32F2C41F26AAEF94000BDC24 /* DeathTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeathTableViewCell.xib; sourceTree = "<group>"; };
+		32F2C42226AAEFA1000BDC24 /* RecoveredTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveredTableViewCell.swift; sourceTree = "<group>"; };
+		32F2C42326AAEFA1000BDC24 /* RecoveredTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecoveredTableViewCell.xib; sourceTree = "<group>"; };
+		32F2C42626AAEFB1000BDC24 /* MortalityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortalityTableViewCell.swift; sourceTree = "<group>"; };
+		32F2C42726AAEFB1000BDC24 /* MortalityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MortalityTableViewCell.xib; sourceTree = "<group>"; };
+		32F2C42A26AAEFC1000BDC24 /* IncidentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentTableViewCell.swift; sourceTree = "<group>"; };
+		32F2C42B26AAEFC1000BDC24 /* IncidentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncidentTableViewCell.xib; sourceTree = "<group>"; };
+		32F2C42F26AAF52F000BDC24 /* ChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
+		32F2C43026AAF52F000BDC24 /* ChartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartTableViewCell.xib; sourceTree = "<group>"; };
 		32FC1650267206CF007C60DC /* TimerLocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLocalNotification.swift; sourceTree = "<group>"; };
 		32FC165326722DC4007C60DC /* Daybreak.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Daybreak.mp3; sourceTree = "<group>"; };
 		32FC165426722DC4007C60DC /* EarlyRiser.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = EarlyRiser.mp3; sourceTree = "<group>"; };
@@ -298,6 +354,7 @@
 		32C59EF1266FD5F500CA6D68 /* SecondAlarm */ = {
 			isa = PBXGroup;
 			children = (
+				32F2C40926AAC118000BDC24 /* SecondAlarmCells */,
 				32C59EF2266FD61D00CA6D68 /* SecondAlarmViewController.swift */,
 				32F2C39826A087DE000BDC24 /* SecondAlarmViewController.storyboard */,
 			);
@@ -307,7 +364,6 @@
 		32D4BC2D267404C700A36F46 /* AlarmCells */ = {
 			isa = PBXGroup;
 			children = (
-				32F2C3D526A5D0AA000BDC24 /* OtherCells */,
 				327D6F522677A46F0090A3ED /* MainCell */,
 			);
 			path = AlarmCells;
@@ -326,6 +382,7 @@
 			children = (
 				32D4BC30267404FE00A36F46 /* RepeatTableViewCell.swift */,
 				32D4BC4926740FC900A36F46 /* RepeatTableViewController.swift */,
+				32F2C40726A9C6CF000BDC24 /* RepeatTableViewController.storyboard */,
 			);
 			path = RepeatCell;
 			sourceTree = "<group>";
@@ -363,6 +420,7 @@
 			children = (
 				32D4BC5426750BAD00A36F46 /* CountriesManager.swift */,
 				32F2C3D026A43971000BDC24 /* CovidManager.swift */,
+				32F2C3F326A80472000BDC24 /* WeatherManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -371,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				32F2C3CB26A436F7000BDC24 /* Responses */,
+				32F2C3EB26A802F4000BDC24 /* Weather */,
 				32F2C3C826A43557000BDC24 /* Covid */,
 				32F2C3C726A43547000BDC24 /* Country */,
 			);
@@ -528,8 +587,7 @@
 			isa = PBXGroup;
 			children = (
 				32F2C3D226A57FE7000BDC24 /* ViewModel */,
-				32F2C3C326A43450000BDC24 /* CovidViewController.swift */,
-				32F2C3C526A4345F000BDC24 /* CovidViewController.storyboard */,
+				32F2C40E26AAE93A000BDC24 /* View */,
 			);
 			path = Covid;
 			sourceTree = "<group>";
@@ -537,6 +595,8 @@
 		32F2C3C226A4343C000BDC24 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				32F2C3F526A80EAD000BDC24 /* ViewModel */,
+				32F2C3F026A80332000BDC24 /* View */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -560,7 +620,8 @@
 		32F2C3CB26A436F7000BDC24 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				32F2C3CC26A4370A000BDC24 /* CovidResponse.swift */,
+				32F2C3FE26A86178000BDC24 /* WeatherResponse */,
+				32F2C3FD26A86160000BDC24 /* CovidResponse */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -569,20 +630,10 @@
 			isa = PBXGroup;
 			children = (
 				32F2C3D326A57FF6000BDC24 /* CovidViewModel.swift */,
+				32F2C40A26AAE8DC000BDC24 /* CovidDataSource.swift */,
+				32F2C40C26AAE8ED000BDC24 /* CovidListViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		32F2C3D526A5D0AA000BDC24 /* OtherCells */ = {
-			isa = PBXGroup;
-			children = (
-				32D4BC3C26740ECF00A36F46 /* SnoozeCell */,
-				32D4BC3B26740EBF00A36F46 /* SoundCell */,
-				32D4BC3A26740EB400A36F46 /* LabelCell */,
-				32D4BC3926740EAB00A36F46 /* RepeatCell */,
-				32D4BC3826740EA100A36F46 /* TimeCell */,
-			);
-			path = OtherCells;
 			sourceTree = "<group>";
 		};
 		32F2C3D626A5D0F7000BDC24 /* View */ = {
@@ -613,6 +664,159 @@
 				32F2C39C26A08BD0000BDC24 /* TimerViewController.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		32F2C3EB26A802F4000BDC24 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C3FF26A86244000BDC24 /* WeatherLocation.swift */,
+				32F2C40126A86253000BDC24 /* WeatherCurrent.swift */,
+				32F2C40526A862A1000BDC24 /* WeatherForecast.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		32F2C3F026A80332000BDC24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C3F626A85E05000BDC24 /* WeatherCell */,
+				32F2C3EE26A80314000BDC24 /* WeatherViewController.storyboard */,
+				32F2C3F126A8044A000BDC24 /* WeatherViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		32F2C3F526A80EAD000BDC24 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C3F726A8612A000BDC24 /* WeatherDataSource.swift */,
+				32F2C3F926A86138000BDC24 /* WeatherViewModel.swift */,
+				32F2C3FB26A86146000BDC24 /* ForecastViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		32F2C3F626A85E05000BDC24 /* WeatherCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WeatherCell;
+			sourceTree = "<group>";
+		};
+		32F2C3FD26A86160000BDC24 /* CovidResponse */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C3CC26A4370A000BDC24 /* CovidResponse.swift */,
+				32F2C3E926A73BA2000BDC24 /* CovidAttributes.swift */,
+			);
+			path = CovidResponse;
+			sourceTree = "<group>";
+		};
+		32F2C3FE26A86178000BDC24 /* WeatherResponse */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C40326A86281000BDC24 /* Weather.swift */,
+			);
+			path = WeatherResponse;
+			sourceTree = "<group>";
+		};
+		32F2C40926AAC118000BDC24 /* SecondAlarmCells */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC3C26740ECF00A36F46 /* SnoozeCell */,
+				32D4BC3B26740EBF00A36F46 /* SoundCell */,
+				32D4BC3A26740EB400A36F46 /* LabelCell */,
+				32D4BC3926740EAB00A36F46 /* RepeatCell */,
+				32D4BC3826740EA100A36F46 /* TimeCell */,
+			);
+			path = SecondAlarmCells;
+			sourceTree = "<group>";
+		};
+		32F2C40E26AAE93A000BDC24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C40F26AAEE5B000BDC24 /* CovidCells */,
+				32F2C3C326A43450000BDC24 /* CovidViewController.swift */,
+				32F2C3C526A4345F000BDC24 /* CovidViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		32F2C40F26AAEE5B000BDC24 /* CovidCells */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C42E26AAF51D000BDC24 /* ChartCell */,
+				32F2C41D26AAEF82000BDC24 /* IncidentCell */,
+				32F2C41C26AAEF75000BDC24 /* MortalityCell */,
+				32F2C41B26AAEF6F000BDC24 /* RecoveredCell */,
+				32F2C41A26AAEF68000BDC24 /* DeathCell */,
+				32F2C41526AAEF47000BDC24 /* ActiveCell */,
+				32F2C41426AAEF36000BDC24 /* ConfirmedCell */,
+			);
+			path = CovidCells;
+			sourceTree = "<group>";
+		};
+		32F2C41426AAEF36000BDC24 /* ConfirmedCell */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C41026AAEF31000BDC24 /* CovidConfirmedTableViewCell.swift */,
+				32F2C41126AAEF31000BDC24 /* CovidConfirmedTableViewCell.xib */,
+			);
+			path = ConfirmedCell;
+			sourceTree = "<group>";
+		};
+		32F2C41526AAEF47000BDC24 /* ActiveCell */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C41626AAEF59000BDC24 /* ActiveTableViewCell.swift */,
+				32F2C41726AAEF59000BDC24 /* ActiveTableViewCell.xib */,
+			);
+			path = ActiveCell;
+			sourceTree = "<group>";
+		};
+		32F2C41A26AAEF68000BDC24 /* DeathCell */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C41E26AAEF94000BDC24 /* DeathTableViewCell.swift */,
+				32F2C41F26AAEF94000BDC24 /* DeathTableViewCell.xib */,
+			);
+			path = DeathCell;
+			sourceTree = "<group>";
+		};
+		32F2C41B26AAEF6F000BDC24 /* RecoveredCell */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C42226AAEFA1000BDC24 /* RecoveredTableViewCell.swift */,
+				32F2C42326AAEFA1000BDC24 /* RecoveredTableViewCell.xib */,
+			);
+			path = RecoveredCell;
+			sourceTree = "<group>";
+		};
+		32F2C41C26AAEF75000BDC24 /* MortalityCell */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C42626AAEFB1000BDC24 /* MortalityTableViewCell.swift */,
+				32F2C42726AAEFB1000BDC24 /* MortalityTableViewCell.xib */,
+			);
+			path = MortalityCell;
+			sourceTree = "<group>";
+		};
+		32F2C41D26AAEF82000BDC24 /* IncidentCell */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C42A26AAEFC1000BDC24 /* IncidentTableViewCell.swift */,
+				32F2C42B26AAEFC1000BDC24 /* IncidentTableViewCell.xib */,
+			);
+			path = IncidentCell;
+			sourceTree = "<group>";
+		};
+		32F2C42E26AAF51D000BDC24 /* ChartCell */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C42F26AAF52F000BDC24 /* ChartTableViewCell.swift */,
+				32F2C43026AAF52F000BDC24 /* ChartTableViewCell.xib */,
+			);
+			path = ChartCell;
 			sourceTree = "<group>";
 		};
 		32FC164D2671FCD1007C60DC /* Reusables */ = {
@@ -708,19 +912,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F2C41326AAEF31000BDC24 /* CovidConfirmedTableViewCell.xib in Resources */,
+				32F2C42D26AAEFC1000BDC24 /* IncidentTableViewCell.xib in Resources */,
+				32F2C41926AAEF59000BDC24 /* ActiveTableViewCell.xib in Resources */,
 				327D6F5C2677C1F70090A3ED /* CountryTableViewCell.xib in Resources */,
+				32F2C43226AAF52F000BDC24 /* ChartTableViewCell.xib in Resources */,
 				32F2C39B26A08B67000BDC24 /* StopWatchViewController.storyboard in Resources */,
+				32F2C42926AAEFB1000BDC24 /* MortalityTableViewCell.xib in Resources */,
 				32FC165726722DC5007C60DC /* EarlyRiser.mp3 in Resources */,
+				32F2C40826A9C6D0000BDC24 /* RepeatTableViewController.storyboard in Resources */,
 				32D4BC4026740F0700A36F46 /* SoundTableViewCell.storyboard in Resources */,
+				32F2C3EF26A80314000BDC24 /* WeatherViewController.storyboard in Resources */,
 				325C2416266BA205009E4E07 /* LaunchScreen.storyboard in Resources */,
 				32D4BC792676239600A36F46 /* SecondTimerViewController.storyboard in Resources */,
 				32FC165F26722DD2007C60DC /* Happyday.mp3 in Resources */,
 				32F2C3B126A1D926000BDC24 /* MainTabBarViewController.storyboard in Resources */,
 				327D6F562677A4C50090A3ED /* MainTableViewCell.xib in Resources */,
+				32F2C42526AAEFA1000BDC24 /* RecoveredTableViewCell.xib in Resources */,
 				32FC166726722DE2007C60DC /* 613.mp3 in Resources */,
 				32F2C39526A086F7000BDC24 /* WorldClockViewController.storyboard in Resources */,
 				32FC166026722DD2007C60DC /* Ping2.mp3 in Resources */,
 				32FC165826722DC5007C60DC /* SlowMorning.mp3 in Resources */,
+				32F2C42126AAEF94000BDC24 /* DeathTableViewCell.xib in Resources */,
 				32FC165626722DC5007C60DC /* Daybreak.mp3 in Resources */,
 				325C2413266BA205009E4E07 /* Assets.xcassets in Resources */,
 				32FC165E26722DD2007C60DC /* Softchime.mp3 in Resources */,
@@ -745,6 +958,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D4BC2F267404F100A36F46 /* TimeTableViewCell.swift in Sources */,
+				32F2C3F226A8044A000BDC24 /* WeatherViewController.swift in Sources */,
+				32F2C40226A86253000BDC24 /* WeatherCurrent.swift in Sources */,
 				32C59EF3266FD61D00CA6D68 /* SecondAlarmViewController.swift in Sources */,
 				32D4BC722675101400A36F46 /* CountriesListViewModel.swift in Sources */,
 				325C2421266BA293009E4E07 /* TimerViewController.swift in Sources */,
@@ -753,47 +968,64 @@
 				32F2C3B726A3F3C0000BDC24 /* WorldClockCoordinator.swift in Sources */,
 				327D6F552677A4C50090A3ED /* MainTableViewCell.swift in Sources */,
 				325C240E266BA1FF009E4E07 /* AlarmViewController.swift in Sources */,
+				32F2C43126AAF52F000BDC24 /* ChartTableViewCell.swift in Sources */,
+				32F2C41226AAEF31000BDC24 /* CovidConfirmedTableViewCell.swift in Sources */,
 				32F2C3B926A3F46E000BDC24 /* AlarmClockCoordinator.swift in Sources */,
 				32D4BC332674050D00A36F46 /* LabelTableViewCell.swift in Sources */,
+				32F2C40626A862A1000BDC24 /* WeatherForecast.swift in Sources */,
+				32F2C41826AAEF59000BDC24 /* ActiveTableViewCell.swift in Sources */,
 				32FC166D26722F6C007C60DC /* SecondTimerViewController.swift in Sources */,
 				32D4BC5826750BDF00A36F46 /* Country.swift in Sources */,
 				32F2C3BC26A3F4D9000BDC24 /* StopWatchCoordinator.swift in Sources */,
 				32F2C3CD26A4370A000BDC24 /* CovidResponse.swift in Sources */,
 				32FC1651267206CF007C60DC /* TimerLocalNotification.swift in Sources */,
+				32F2C3F426A80472000BDC24 /* WeatherManager.swift in Sources */,
 				32F2C3D426A57FF6000BDC24 /* CovidViewModel.swift in Sources */,
 				32F2C3CA26A43564000BDC24 /* Covid.swift in Sources */,
+				32F2C40426A86281000BDC24 /* Weather.swift in Sources */,
 				32D4BC4C26740FE200A36F46 /* LabelTableViewController.swift in Sources */,
 				32F2C3E026A60A94000BDC24 /* Variables.swift in Sources */,
 				32F2C3A526A0A72E000BDC24 /* CoordinatorProtocol.swift in Sources */,
 				32D4BC372674052C00A36F46 /* SnoozeTableViewCell.swift in Sources */,
 				325C240A266BA1FF009E4E07 /* AppDelegate.swift in Sources */,
+				32F2C40026A86244000BDC24 /* WeatherLocation.swift in Sources */,
 				32D4BC6326750CE400A36F46 /* UITableViewCell+Extension.swift in Sources */,
 				32F2C3E426A60AE7000BDC24 /* Vibration.swift in Sources */,
 				32D4BC31267404FE00A36F46 /* RepeatTableViewCell.swift in Sources */,
 				32F2C3DB26A5D1B7000BDC24 /* AlarmDataSource.swift in Sources */,
 				32D4BC6426750CE400A36F46 /* UITableView+Extensions.swift in Sources */,
+				32F2C42026AAEF94000BDC24 /* DeathTableViewCell.swift in Sources */,
 				32D4BC732675101400A36F46 /* CountryViewModel.swift in Sources */,
 				32D4BC742675101400A36F46 /* CountriesDataSource.swift in Sources */,
 				32F2C3A926A0A8DE000BDC24 /* BaseViewController.swift in Sources */,
 				32C59EED266FB75100CA6D68 /* TimerExtension.swift in Sources */,
+				32F2C3FA26A86138000BDC24 /* WeatherViewModel.swift in Sources */,
 				32D4BC5F26750CC000A36F46 /* NetworkManager.swift in Sources */,
 				32F2C3A626A0A72E000BDC24 /* CoordinatorDelegate.swift in Sources */,
+				32F2C42826AAEFB1000BDC24 /* MortalityTableViewCell.swift in Sources */,
 				32F2C3D926A5D1AA000BDC24 /* AlarmViewModel.swift in Sources */,
 				32D4BC6526750CE400A36F46 /* UIColor+Extension.swift in Sources */,
 				32F2C3A326A0A72E000BDC24 /* Storyboarded.swift in Sources */,
 				32F2C3C426A43450000BDC24 /* CovidViewController.swift in Sources */,
 				32F2C3E226A60AB4000BDC24 /* TimeInterval+Calendar.swift in Sources */,
 				32D4BC5526750BAD00A36F46 /* CountriesManager.swift in Sources */,
+				32F2C3FC26A86146000BDC24 /* ForecastViewModel.swift in Sources */,
+				32F2C40D26AAE8ED000BDC24 /* CovidListViewModel.swift in Sources */,
 				32F2C3A426A0A72E000BDC24 /* AppCoordinator.swift in Sources */,
 				32D4BC522674E94400A36F46 /* StopwatchTableViewCell.swift in Sources */,
+				32F2C40B26AAE8DC000BDC24 /* CovidDataSource.swift in Sources */,
 				32F2C3DE26A60A4D000BDC24 /* CALayer.swift in Sources */,
+				32F2C3F826A8612A000BDC24 /* WeatherDataSource.swift in Sources */,
 				32D4BC4E26740FF400A36F46 /* SoundTableViewController.swift in Sources */,
 				32F2C3AF26A1D911000BDC24 /* MainTabBarViewController.swift in Sources */,
+				32F2C3EA26A73BA2000BDC24 /* CovidAttributes.swift in Sources */,
+				32F2C42C26AAEFC1000BDC24 /* IncidentTableViewCell.swift in Sources */,
 				32F2C3D126A43971000BDC24 /* CovidManager.swift in Sources */,
 				32D4BC4A26740FC900A36F46 /* RepeatTableViewController.swift in Sources */,
 				32F2C3BE26A3F520000BDC24 /* TimerCoordinator.swift in Sources */,
 				32FC166F267243B1007C60DC /* NavigationBar.swift in Sources */,
 				325C2423266BA2B0009E4E07 /* StopWatchViewController.swift in Sources */,
+				32F2C42426AAEFA1000BDC24 /* RecoveredTableViewCell.swift in Sources */,
 				325C240C266BA1FF009E4E07 /* SceneDelegate.swift in Sources */,
 				32D4BC352674051800A36F46 /* SoundTableViewCell.swift in Sources */,
 			);

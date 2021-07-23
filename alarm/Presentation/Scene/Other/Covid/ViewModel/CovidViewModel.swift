@@ -34,4 +34,12 @@ struct CovidViewModel {
     var recovered : String {
         "\(covid.Recovered ?? 0)"
     }
+    
+    var mortalityRate : String {
+        "\(covid.Mortality_Rate ?? 0.0)"
+    }
+    
+    var incidentRate : String {
+        "\(covid.Incident_Rate ?? 0.0)"
+    }
 }

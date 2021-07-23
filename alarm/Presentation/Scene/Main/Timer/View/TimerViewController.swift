@@ -17,8 +17,8 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
     @IBOutlet weak var cancelView: UIView!
     @IBOutlet weak var startView: UIView!
     @IBOutlet weak var ringtoneRegisterLabel : UIButton!
-    var registerRingtoneLabel : String!
     
+    var registerRingtoneLabel : String!
     
     @IBOutlet weak var timerLabel          : UILabel!
     @IBOutlet weak var startAndPauseButton : UIButton!
@@ -139,7 +139,6 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
             
             timeLeftShapeLayer.isHidden   = true
             bgShapeLayer.isHidden         = true
-            
             
             timeLeft                      = 0
             isTimerRunning                = false

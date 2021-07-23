@@ -12,7 +12,6 @@ final class WorldClockCoordinator: CoordinatorProtocol {
     
     var coordinator: CoordinatorProtocol?
     
-    func passIndexAndCountry(with index: Int, and country: String) { }
     func goToCovidViewController() { }
 
     var networkManager: NetworkManagerProtocol?
@@ -32,19 +31,32 @@ final class WorldClockCoordinator: CoordinatorProtocol {
     }
     
     func didTapOnCell() {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Weather",  style: .default, handler: { [weak self] action in
-        }))
-        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
         alert.addAction(UIAlertAction(title: "Covid Stats", style: .default, handler: { [weak self] action in
             let sb = UIStoryboard(name: "CovidViewController", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "CovidViewController") as! CovidViewController
             self?.navigationController?.navigationBar.backgroundColor = .darkGray
-            self?.navigationController?.navigationBar.tintColor = .lightGray
+            self?.navigationController?.navigationBar.tintColor = .systemOrange
             self?.navigationController?.navigationBar.barTintColor = .black
             self?.navigationController?.pushViewController(vc, animated: true)
             
         }))
+        
+        alert.addAction(UIAlertAction(title: "Weather",  style: .default, handler: { [weak self] action in
+            let sb = UIStoryboard(name: "WeatherViewController", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
+            self?.navigationController?.navigationBar.backgroundColor = .darkGray
+            self?.navigationController?.navigationBar.tintColor = .systemOrange
+            self?.navigationController?.navigationBar.barTintColor = .black
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }))
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { [weak self] action in
+        }))
+        
         self.navigationController?.present(alert, animated: true)
     }
+    
+    
 }

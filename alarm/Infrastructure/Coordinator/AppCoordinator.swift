@@ -39,7 +39,7 @@ class AppCoordinator: CoordinatorProtocol {
     func didTapOnCell() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Weather",  style: .default, handler: { [weak self] action in
-            // go to weather vc
+            self?.goToWeatherViewController()
         }))
         
         alert.addAction(UIAlertAction(title: "Covid Stats", style: .default, handler: { [weak self] action in
@@ -54,6 +54,11 @@ class AppCoordinator: CoordinatorProtocol {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func goToWeatherViewController() {
+        let sb = UIStoryboard(name: "WeatherViewController", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 

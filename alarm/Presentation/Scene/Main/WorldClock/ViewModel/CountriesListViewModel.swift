@@ -14,24 +14,27 @@ protocol CountriesListViewModelProtocol: AnyObject {
     var controller: CoordinatorDelegate { get }
     
     func getCovidData(completion: @escaping (([CovidViewModel]) -> Void))
-
-    init(with countriesManager: CountriesManagerProtocol, controller: CoordinatorDelegate, covidManager: CovidManagerProtocol)
+    func getWeatherData(with cityname: String,completion: @escaping ((ForecastViewModel) -> Void))
+    
+    init(with countriesManager: CountriesManagerProtocol, controller: CoordinatorDelegate, covidManager: CovidManagerProtocol, weatherManager: WeatherManagerProtocol)
 }
 
 final class CountriesListViewModel: CountriesListViewModelProtocol {
-        
+   
     private(set) var controller: CoordinatorDelegate
     
-    private var countriesManager: CountriesManagerProtocol!
-    private var covidManager: CovidManagerProtocol!
+    private var countriesManager : CountriesManagerProtocol!
+    private var covidManager     : CovidManagerProtocol!
+    private var weatherManager   : WeatherManagerProtocol!
     
     var didFinishedLoading: (() -> Void)?
     var navigationItem: UINavigationItem?
     
-    init(with countriesManager: CountriesManagerProtocol, controller: CoordinatorDelegate, covidManager: CovidManagerProtocol)  {
+    init(with countriesManager: CountriesManagerProtocol, controller: CoordinatorDelegate, covidManager: CovidManagerProtocol, weatherManager: WeatherManagerProtocol)  {
         self.countriesManager = countriesManager
         self.controller       = controller
         self.covidManager     = covidManager
+        self.weatherManager   = weatherManager
     }
     
     func getCountriesList(completion: @escaping (([CountryViewModel]) -> Void)) {
@@ -46,12 +49,23 @@ final class CountriesListViewModel: CountriesListViewModelProtocol {
     
     func getCovidData(completion: @escaping (([CovidViewModel]) -> Void)) {
         covidManager.fetchCovidStats { result in
-            
+
             DispatchQueue.main.async {
                 let covidViewModel = result.map { CovidViewModel(covid: $0) }
                 completion(covidViewModel)
             }
         }
+    }
+    
+    func getWeatherData(with cityname: String, completion: @escaping ((ForecastViewModel) -> Void)) {
+
+        weatherManager.fetchWeatherLocation(with: cityname) { result in
+            DispatchQueue.main.async {
+//                let weatherViewModel = result.forecast.forecastday.map  { ForecastViewModel(weather: $0 ) }
+//                completion(weatherViewModel)
+            }
+        }
+        
     }
     
     func setTitle(with text: String, on navigationItem: UINavigationItem) {

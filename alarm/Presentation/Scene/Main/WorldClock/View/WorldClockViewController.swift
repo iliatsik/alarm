@@ -16,6 +16,7 @@ class WorldClockViewController: BaseViewController {
     private var dataSource       : CountriesDataSource!
     private var countriesManager : CountriesManagerProtocol!
     private var covidManager     : CovidManagerProtocol!
+    private var weatherManager   : WeatherManagerProtocol!
     
     
     override func viewDidLoad() {
@@ -42,9 +43,10 @@ class WorldClockViewController: BaseViewController {
     }
     
     private func configureViewModel() {
+        weatherManager   = WeatherManager()
         countriesManager = CountriesManager()
         covidManager     = CovidManager()
-        viewModel        = CountriesListViewModel(with: countriesManager, controller: self, covidManager: covidManager)
+        viewModel        = CountriesListViewModel(with: countriesManager, controller: self, covidManager: covidManager, weatherManager: weatherManager)
         dataSource       = CountriesDataSource(with: tableView, viewModel: viewModel)
     }
     

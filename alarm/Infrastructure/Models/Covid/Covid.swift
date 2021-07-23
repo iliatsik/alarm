@@ -7,14 +7,12 @@
 
 import Foundation
 
-struct CovidAttributes : Codable {
-    let attributes : [Covid]
-}
-
 struct Covid : Codable {
     let Recovered        : Int?
     let Confirmed        : Int?
     let Deaths           : Int?
     let Active           : Int?
     let Country_Region   : String?
+    let Incident_Rate    : Double?
+    let Mortality_Rate   : Double?
 }

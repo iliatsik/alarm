@@ -13,7 +13,11 @@ protocol SecondAlarmDelegate {
     func finishPassing(hour: String, minute: String, label: String, index: Int, songName: String )
 }
 
-class SecondAlarmViewController: UIViewController, LabelDelegate, SoundDelegate, TimeDelegate {
+class SecondAlarmViewController: UIViewController, LabelDelegate, SoundDelegate, TimeDelegate, RepeatDelegate {
+    func finishPassingRepeat(string: String) {
+        passedRepeatString = string
+        tableView.reloadData()
+    }
     func finishPassingTime(hour: Int, minute: Int) {
         hours   = hour
         minutes = minute
@@ -53,18 +57,20 @@ class SecondAlarmViewController: UIViewController, LabelDelegate, SoundDelegate,
     
     let center = UNUserNotificationCenter.current()
     
-    var passedLabelString : String!
-    var passedSoundString : String!
+    var passedLabelString  : String!
+    var passedSoundString  : String!
+    var passedRepeatString : String!
     
     var audioStr : String!
     var soundTableCell : SoundTableViewCell!
     
     @IBOutlet weak var tableView: UITableView!
     
-    var hours    : Int = 0
-    var minutes  : Int = 0
-    var seconds  : Int = 0
-    var index    : Int = 0
+    var hours    : Int  = 0
+    var minutes  : Int  = 0
+    var seconds  : Int  = 0
+    var index    : Int  = 0
+    var vibrate  : Bool = false
     
     var hoursInString : String!
     var minutesInString : String!
@@ -105,6 +111,9 @@ class SecondAlarmViewController: UIViewController, LabelDelegate, SoundDelegate,
         if let destination = segue.destination as? SoundTableViewController{
             destination.delegate = self
         }
+        if let destination = segue.destination as? RepeatTableViewController{
+            destination.delegate = self
+        }
     }
     
 }
@@ -123,7 +132,8 @@ extension SecondAlarmViewController : UITableViewDelegate, UITableViewDataSource
             return cell
         }
         if indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "repeat", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "repeat", for: indexPath) as! RepeatTableViewCell
+            cell.repeatLabel.text = "\(passedRepeatString ?? "Once") >"
             return cell
         }
         
@@ -139,8 +149,12 @@ extension SecondAlarmViewController : UITableViewDelegate, UITableViewDataSource
             cell.soundLabel.text = "\(passedSoundString ?? "613") >"
             return cell
         }
+        
         if indexPath.row == 4 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "snooze", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "snooze", for: indexPath) as! SnoozeTableViewCell
+            if (cell.vibrationSwitch.isOn == true) {
+                vibrate = true
+            }
             return cell
         }
         return cell
@@ -158,21 +172,13 @@ extension SecondAlarmViewController : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         if indexPath.row == 1 {
-            let sb = UIStoryboard(name: "RepeatTableViewCell", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "RepeatTableViewController")
-            present(vc, animated: true)
+            performSegue(withIdentifier: "repeat_segue", sender: nil)
         }
         if indexPath.row == 2 {
             performSegue(withIdentifier: "label_segue", sender: nil)
-            let sb = UIStoryboard(name: "LabelTableViewCell", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "LabelTableViewController")
-            present(vc, animated: true)
         }
         if indexPath.row == 3 {
             performSegue(withIdentifier: "sound_segue", sender: nil)
-            let sb = UIStoryboard(name: "SoundTableViewCell", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "SoundTableViewController")
-            present(vc, animated: true)
         }
 
     }
@@ -211,6 +217,10 @@ extension SecondAlarmViewController {
         let request = UNNotificationRequest(identifier: uuidString ,
                     content: content, trigger: trigger)
 
+        if vibrate == true {
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        }
+        
         UNUserNotificationCenter.current().add(request) { error in
           if let error = error {
               print(error)
