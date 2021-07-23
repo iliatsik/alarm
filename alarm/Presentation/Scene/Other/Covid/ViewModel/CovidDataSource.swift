@@ -128,7 +128,7 @@ class CovidDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 { return 200}
+        if indexPath.row == 0 { return 400}
         else                  { return 90 }
     }
 }

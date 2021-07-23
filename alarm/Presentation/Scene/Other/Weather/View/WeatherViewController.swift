@@ -7,10 +7,17 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, CoordinatorDelegate {
+    var coordinator: CoordinatorProtocol?
+    
 
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    
+    private var weatherList     = [Weather]()
+    private var weatherManager  : WeatherManagerProtocol!
+    private var viewModel       : WeatherListViewModelProtocol!
+    private var dataSource      : WeatherDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +25,26 @@ class WeatherViewController: UIViewController {
         tableView.backgroundColor = .clear
         tableView.separatorColor  = .white
         tableView.tintColor       = .white
+        configureViewModel()
+        setupLayout()
+    }
+    private func configureViewModel() {
+        weatherManager   = WeatherManager()
+        viewModel        = WeatherListViewModel(controller: self)
+        dataSource       = WeatherDataSource(with: tableView, viewModel: viewModel)
     }
     
+    private func setupLayout() {
+        tableView.registerNib(class: MainCell.self)
+        tableView.registerNib(class: HourlyCell.self)
+        tableView.registerNib(class: WeeklyCell.self)
+        tableView.registerNib(class: SunriseCell.self)
+        tableView.registerNib(class: SunsetCell.self)
+        tableView.registerNib(class: HumidityCell.self)
+        tableView.registerNib(class: ChanceofRainCell.self)
+        tableView.registerNib(class: WindCell.self)
+        tableView.registerNib(class: FeelsLikeCell.self)
+        tableView.registerNib(class: PressureCell.self)
+    }
+
 }
