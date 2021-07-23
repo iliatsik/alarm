@@ -18,6 +18,8 @@ class CovidDataSource: NSObject, UITableViewDataSource {
     
     var coordinator : CoordinatorProtocol?
     
+    var filteredData : [CovidViewModel]?
+
     init(with tableView: UITableView, viewModel: CovidListViewModelProtocol) {
         super.init()
         
@@ -34,6 +36,9 @@ class CovidDataSource: NSObject, UITableViewDataSource {
 //            self.filteredCitiesList.append(contentsOf: countries)
 //            self.tableView.reloadData()
 //        }
+        filteredData = viewModel.controller.coordinator?.filteredData
+    
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,7 +60,7 @@ class CovidDataSource: NSObject, UITableViewDataSource {
         
         if indexPath.row == 1 {
             let cell = tableView.deque(CovidConfirmedTableViewCell.self, for: indexPath)
-            cell.textLabel?.text = "Confirmed:"
+            cell.textLabel?.text = "Confirmed: \(String(describing: filteredData))"
             cell.detailTextLabel?.text = "2"
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white

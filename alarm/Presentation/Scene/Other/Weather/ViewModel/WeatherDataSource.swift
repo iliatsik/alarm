@@ -19,13 +19,13 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
     
     var coordinator : CoordinatorProtocol?
     
+    
     init(with tableView: UITableView, viewModel: WeatherListViewModelProtocol) {
         super.init()
         
         self.tableView = tableView
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
         self.viewModel = viewModel
     }
     

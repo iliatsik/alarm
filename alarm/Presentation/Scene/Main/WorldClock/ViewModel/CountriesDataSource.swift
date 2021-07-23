@@ -17,7 +17,9 @@ class CountriesDataSource: NSObject, UITableViewDataSource {
     private var filteredCitiesList = [CountryViewModel]()
     private var citiesList = [CountryViewModel]()
     
+    var filteredData = [CovidViewModel]()
     var coordinator : CoordinatorProtocol?
+    var currentCountry = ""
     
     init(with tableView: UITableView, viewModel: CountriesListViewModelProtocol) {
         super.init()
@@ -25,7 +27,6 @@ class CountriesDataSource: NSObject, UITableViewDataSource {
         self.tableView = tableView
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
         self.viewModel = viewModel
     }
     
@@ -70,17 +71,19 @@ extension CountriesDataSource: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.controller.coordinator?.didTapOnCell()
-    
+        
+        currentCountry = filteredCitiesList[indexPath.row].name
+        
         viewModel.getCovidData { [weak self] result in
-            
-            let filteredData = result.filter { $0.name == ""}
-//            print(filteredData)
+            self?.filteredData = result.filter { $0.name == self?.currentCountry }
+            self?.viewModel.controller.coordinator?.filteredData = self?.filteredData
+            print(self?.filteredData ?? "")
         }
         
         viewModel.getWeatherData(with: "Germany") { [weak self] result in
-            print(result)
-            
+//            print(result)
         }
+        
         print(indexPath.row)
     }
 }

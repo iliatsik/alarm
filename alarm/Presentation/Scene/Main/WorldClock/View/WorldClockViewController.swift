@@ -46,7 +46,10 @@ class WorldClockViewController: BaseViewController {
         weatherManager   = WeatherManager()
         countriesManager = CountriesManager()
         covidManager     = CovidManager()
-        viewModel        = CountriesListViewModel(with: countriesManager, controller: self, covidManager: covidManager, weatherManager: weatherManager)
+        viewModel        = CountriesListViewModel(with:           countriesManager,
+                                                  controller:     self,
+                                                  covidManager:   covidManager,
+                                                  weatherManager: weatherManager)
         dataSource       = CountriesDataSource(with: tableView, viewModel: viewModel)
     }
     

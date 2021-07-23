@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -118,6 +118,7 @@
 		32F2C46026AB1911000BDC24 /* HourlyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C45E26AB1911000BDC24 /* HourlyCell.xib */; };
 		32F2C46326AB1926000BDC24 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C46126AB1926000BDC24 /* MainCell.swift */; };
 		32F2C46426AB1926000BDC24 /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C46226AB1926000BDC24 /* MainCell.xib */; };
+		32F2C46926AB41D6000BDC24 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 32F2C46826AB41D6000BDC24 /* Kingfisher */; };
 		32FC1651267206CF007C60DC /* TimerLocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC1650267206CF007C60DC /* TimerLocalNotification.swift */; };
 		32FC165626722DC5007C60DC /* Daybreak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC165326722DC4007C60DC /* Daybreak.mp3 */; };
 		32FC165726722DC5007C60DC /* EarlyRiser.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32FC165426722DC4007C60DC /* EarlyRiser.mp3 */; };
@@ -275,6 +276,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F2C46926AB41D6000BDC24 /* Kingfisher in Frameworks */,
 				61C2AE66942BA8E3F96E82B1 /* Pods_alarm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,9 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				32F2C3B426A3F381000BDC24 /* StopWatchCoordinator */,
-				325C2422266BA2B0009E4E07 /* StopWatchViewController.swift */,
-				32D4BC512674E94400A36F46 /* StopwatchTableViewCell.swift */,
-				32F2C39A26A08B67000BDC24 /* StopWatchViewController.storyboard */,
+				32F2C46526AB2390000BDC24 /* View */,
 			);
 			path = StopWatch;
 			sourceTree = "<group>";
@@ -975,6 +975,24 @@
 			path = PressureCell;
 			sourceTree = "<group>";
 		};
+		32F2C46526AB2390000BDC24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32F2C46626AB23AD000BDC24 /* StopwatchCell */,
+				325C2422266BA2B0009E4E07 /* StopWatchViewController.swift */,
+				32F2C39A26A08B67000BDC24 /* StopWatchViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		32F2C46626AB23AD000BDC24 /* StopwatchCell */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BC512674E94400A36F46 /* StopwatchTableViewCell.swift */,
+			);
+			path = StopwatchCell;
+			sourceTree = "<group>";
+		};
 		32FC164D2671FCD1007C60DC /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
@@ -1037,6 +1055,9 @@
 			dependencies = (
 			);
 			name = alarm;
+			packageProductDependencies = (
+				32F2C46826AB41D6000BDC24 /* Kingfisher */,
+			);
 			productName = alarm;
 			productReference = 325C2406266BA1FF009E4E07 /* alarm.app */;
 			productType = "com.apple.product-type.application";
@@ -1064,6 +1085,9 @@
 				Base,
 			);
 			mainGroup = 325C23FD266BA1FF009E4E07;
+			packageReferences = (
+				32F2C46726AB41D6000BDC24 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 325C2407266BA1FF009E4E07 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1451,6 +1475,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		32F2C46726AB41D6000BDC24 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		32F2C46826AB41D6000BDC24 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32F2C46726AB41D6000BDC24 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 325C23FE266BA1FF009E4E07 /* Project object */;
 }

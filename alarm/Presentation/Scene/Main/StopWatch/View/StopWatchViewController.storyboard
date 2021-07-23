@@ -22,10 +22,10 @@
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="GuJ-Rn-m7u" customClass="StopwatchTableViewCell" customModule="alarm" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="400" height="44"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="400" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GuJ-Rn-m7u" id="piQ-m0-3PN">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lap" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tm-pH-eIk">
@@ -35,10 +35,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJs-eX-X2t">
-                                                    <rect key="frame" x="221" y="11" width="155" height="21.5"/>
+                                                    <rect key="frame" x="114" y="11" width="262" height="22.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="Ef4-IR-haE"/>
-                                                        <constraint firstAttribute="width" constant="155" id="RBD-5F-bOQ"/>
+                                                        <constraint firstAttribute="height" constant="22" id="Ef4-IR-haE"/>
+                                                        <constraint firstAttribute="width" constant="262" id="RBD-5F-bOQ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -7,8 +7,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, CoordinatorDelegate {
-    var coordinator: CoordinatorProtocol?
+class WeatherViewController: BaseViewController {
     
 
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -28,6 +27,7 @@ class WeatherViewController: UIViewController, CoordinatorDelegate {
         configureViewModel()
         setupLayout()
     }
+    
     private func configureViewModel() {
         weatherManager   = WeatherManager()
         viewModel        = WeatherListViewModel(controller: self)

@@ -23,6 +23,7 @@ class CovidViewController: BaseViewController {
         imgView.image = UIImage(named: "covid")
         setupLayout()
         configureViewModel()
+        dataSource.refresh()
     }
 
     private func setupLayout() {

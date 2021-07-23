@@ -19,7 +19,7 @@ protocol CoordinatorProtocol: AnyObject {
     
     func goToCovidViewController()
     
-    var currentCountry : String? { get }
+    var filteredData : [CovidViewModel]? {get}
     
     func goToSecondAlarm()
 }
@@ -31,8 +31,8 @@ extension CoordinatorProtocol {
         get { nil }
     }
     
-    var currentCountry : String? {
-        set { print("") }
+    var filteredData: [CovidViewModel]? {
+        set { print("")}
         get { nil }
     }
 
