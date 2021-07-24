@@ -15,31 +15,31 @@ struct CovidViewModel {
         self.covid = covid
     }
     
-    var active: String {
-        "\(covid.Active ?? 0)"
-    }
-    
-    var death: String {
-        "\(covid.Deaths ?? 0)"
-    }
-    
-    var confirmed: String {
-        "\(covid.Confirmed ?? 0)"
-    }
-    
     var name : String {
         "\(covid.Country_Region ?? "")"
     }
- 
-    var recovered : String {
-        "\(covid.Recovered ?? 0)"
+    
+    var active : Int {
+        covid.Active ?? 0
     }
     
-    var mortalityRate : String {
-        "\(covid.Mortality_Rate ?? 0.0)"
+    var death : Int {
+        covid.Deaths ?? 0
     }
     
-    var incidentRate : String {
-        "\(covid.Incident_Rate ?? 0.0)"
+    var confirmed : Int {
+        covid.Confirmed ?? 0
+    }
+    
+    var recovered : Int {
+        covid.Recovered ?? 0
+    }
+    
+    var mortalityRate : Double {
+        Double( round (1000 * (covid.Mortality_Rate ?? 0.0)) / 1000)
+    }
+    
+    var incidentRate : Double {
+        Double( round (1000 * (covid.Incident_Rate ?? 0.0)) / 1000)
     }
 }

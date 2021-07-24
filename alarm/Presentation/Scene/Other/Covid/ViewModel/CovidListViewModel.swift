@@ -13,9 +13,9 @@ protocol CovidListViewModelProtocol: AnyObject {
     var navigationItem: UINavigationItem? { get set }
     func setTitle(with text: String, on navigationItem: UINavigationItem)
     var controller: CoordinatorDelegate { get }
-    
+    func getCovidData(completion: @escaping (([CovidViewModel]) -> Void))
  
-    init(controller: CoordinatorDelegate)
+    init(controller: CoordinatorDelegate, covidManager : CovidManagerProtocol)
 }
 
 final class CovidListViewModel: CovidListViewModelProtocol {
@@ -29,10 +29,20 @@ final class CovidListViewModel: CovidListViewModelProtocol {
     var didFinishedLoading: (() -> Void)?
     var navigationItem: UINavigationItem?
     
-    init(controller: CoordinatorDelegate)  {
-        self.controller       = controller
+    init(controller: CoordinatorDelegate, covidManager : CovidManagerProtocol)  {
+        self.controller    = controller
+        self.covidManager  = covidManager
     }
     
+    func getCovidData(completion: @escaping (([CovidViewModel]) -> Void)) {
+        covidManager.fetchCovidStats { result in
+
+            DispatchQueue.main.async {
+                let covidViewModel = result.map { CovidViewModel(covid: $0) }
+                completion(covidViewModel)
+            }
+        }
+    }
   
     func setTitle(with text: String, on navigationItem: UINavigationItem) {
         navigationItem.title = text

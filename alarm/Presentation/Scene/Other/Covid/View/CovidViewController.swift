@@ -17,6 +17,8 @@ class CovidViewController: BaseViewController {
     private var viewModel        : CovidListViewModelProtocol!
     private var dataSource       : CovidDataSource!
     
+    var currentCountry : String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         covidManager = CovidManager()
@@ -25,7 +27,7 @@ class CovidViewController: BaseViewController {
         configureViewModel()
         dataSource.refresh()
     }
-
+    
     private func setupLayout() {
         tableView.registerNib(class: ChartTableViewCell.self)
         tableView.registerNib(class: IncidentTableViewCell.self)
@@ -38,19 +40,8 @@ class CovidViewController: BaseViewController {
     
     private func configureViewModel() {
         covidManager     = CovidManager()
-        viewModel        = CovidListViewModel(controller: self)
-        dataSource       = CovidDataSource(with: tableView, viewModel: viewModel)
+        viewModel        = CovidListViewModel(controller: self, covidManager: covidManager)
+        dataSource       = CovidDataSource(with: tableView, viewModel: viewModel, countryName: currentCountry ?? "Georgia")
     }
     
-
-
-    
-    func configure(with item: CovidViewModel) {
-        DispatchQueue.main.async {
-//            self.labelActive.text    = "Active: \(item.active)"
-//            self.labelDeaths.text    = "Death: \(item.death)"
-//            self.labelRecovered.text = "Recovored: \(item.recovered )"
-//            self.labelConfirmed.text = "Confirmed: \(item.confirmed)"
-        }
-    }
 }

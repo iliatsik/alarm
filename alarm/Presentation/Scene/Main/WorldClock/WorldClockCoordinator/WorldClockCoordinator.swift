@@ -17,7 +17,6 @@ final class WorldClockCoordinator: CoordinatorProtocol {
     var networkManager: NetworkManagerProtocol?
     var navigationController: UINavigationController?
     
-    var filteredData: [CovidViewModel]?
     
     init(_ window: UIWindow? = nil, navigationController: UINavigationController? = UINavigationController()) {
         self.navigationController = navigationController
@@ -60,5 +59,9 @@ final class WorldClockCoordinator: CoordinatorProtocol {
         self.navigationController?.present(alert, animated: true)
     }
     
-    
+    func passCountry(countryName: String) {
+        let vc = CovidViewController.instantiateFromStoryboard()
+        vc.coordinator    = self
+        vc.currentCountry = countryName
+    }
 }

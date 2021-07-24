@@ -18,10 +18,11 @@ protocol CoordinatorProtocol: AnyObject {
     func didTapOnCell()
     
     func goToCovidViewController()
-    
-    var filteredData : [CovidViewModel]? {get}
-    
+        
     func goToSecondAlarm()
+    
+    func passCountry(countryName : String)
+
 }
 
 extension CoordinatorProtocol {
@@ -30,14 +31,11 @@ extension CoordinatorProtocol {
         set { print("") }
         get { nil }
     }
-    
-    var filteredData: [CovidViewModel]? {
-        set { print("")}
-        get { nil }
-    }
-
+  
     func start(){}
     
     func goToSecondAlarm() {}
     
+    func passCountry(countryName : String) { }
+
 }

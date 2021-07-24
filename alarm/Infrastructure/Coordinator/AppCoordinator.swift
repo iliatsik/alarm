@@ -17,7 +17,6 @@ class AppCoordinator: CoordinatorProtocol {
     
     // MARK: - Internal properties
     
-    var filteredData: [CovidViewModel]?
     
     required init(_ window: UIWindow?, navigationController: UINavigationController?) {
         self.window = window

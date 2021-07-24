@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class WorldClockViewController: BaseViewController {
 
     @IBOutlet weak var searchBar : UISearchBar!
@@ -18,7 +19,7 @@ class WorldClockViewController: BaseViewController {
     private var covidManager     : CovidManagerProtocol!
     private var weatherManager   : WeatherManagerProtocol!
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()

@@ -7,38 +7,45 @@
 
 import UIKit
 
+
 class CovidDataSource: NSObject, UITableViewDataSource {
+    
     
     // MARK: - Private properties
     
-    private var tableView: UITableView!
-    private var viewModel: CovidListViewModelProtocol!
-    
+    private var tableView : UITableView!
+    private var viewModel : CovidListViewModelProtocol!
     private var covidList = [CovidViewModel]()
     
     var coordinator : CoordinatorProtocol?
     
-    var filteredData : [CovidViewModel]?
+    var filteredData   : [CovidViewModel]?
 
-    init(with tableView: UITableView, viewModel: CovidListViewModelProtocol) {
+    var currentCountry : String?
+    
+
+    init(with tableView: UITableView, viewModel: CovidListViewModelProtocol, countryName : String) {
         super.init()
         
         self.tableView = tableView
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        self.viewModel = viewModel
+        self.viewModel      = viewModel
+        self.currentCountry = countryName
     }
     
     func refresh() {
-//        viewModel.getCountriesList { countries in
-//            self.citiesList.append(contentsOf: countries)
-//            self.filteredCitiesList.append(contentsOf: countries)
-//            self.tableView.reloadData()
-//        }
-        filteredData = viewModel.controller.coordinator?.filteredData
-    
-        
+        viewModel.getCovidData { [weak self] result in
+            self?.filteredData = result.filter { $0.name == self?.currentCountry }
+            
+            DispatchQueue.main.async {
+//              self?.viewModel.controller.coordinator?.filteredData = self?.filteredData
+                self?.covidList = (self?.filteredData)!
+            }
+            
+            print(self?.filteredData ?? "")
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,7 +67,7 @@ class CovidDataSource: NSObject, UITableViewDataSource {
         
         if indexPath.row == 1 {
             let cell = tableView.deque(CovidConfirmedTableViewCell.self, for: indexPath)
-            cell.textLabel?.text = "Confirmed: \(String(describing: filteredData))"
+            cell.textLabel?.text = "Confirmed: \(covidList.map { $0.confirmed })"
             cell.detailTextLabel?.text = "2"
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
@@ -72,7 +79,7 @@ class CovidDataSource: NSObject, UITableViewDataSource {
         }
         if indexPath.row == 2 {
             let cell = tableView.deque(ActiveTableViewCell.self, for: indexPath)
-            cell.textLabel?.text = "Active:"
+            cell.textLabel?.text = "Active: \(covidList.map { $0.active })"
             cell.detailTextLabel?.text = "2"
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
@@ -84,7 +91,7 @@ class CovidDataSource: NSObject, UITableViewDataSource {
         }
         if indexPath.row == 3 {
             let cell = tableView.deque(DeathTableViewCell.self, for: indexPath)
-            cell.textLabel?.text = "Death:"
+            cell.textLabel?.text = "Death: \(covidList.map { $0.death })"
             cell.detailTextLabel?.text = "2"
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
@@ -96,7 +103,7 @@ class CovidDataSource: NSObject, UITableViewDataSource {
         }
         if indexPath.row == 4 {
             let cell = tableView.deque(RecoveredTableViewCell.self, for: indexPath)
-            cell.textLabel?.text = "Recovered:"
+            cell.textLabel?.text = "Recovered: \(covidList.map { $0.recovered })"
             cell.detailTextLabel?.text = "2"
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
@@ -108,7 +115,7 @@ class CovidDataSource: NSObject, UITableViewDataSource {
         }
         if indexPath.row == 5 {
             let cell = tableView.deque(IncidentTableViewCell.self, for: indexPath)
-            cell.textLabel?.text = "Incident Rate:"
+            cell.textLabel?.text = "Incident Rate: \(covidList.map { $0.incidentRate })"
             cell.detailTextLabel?.text = "2"
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
@@ -120,7 +127,7 @@ class CovidDataSource: NSObject, UITableViewDataSource {
         }
         else {
             let cell = tableView.deque(MortalityTableViewCell.self, for: indexPath)
-            cell.textLabel?.text = "Mortality Rate:"
+            cell.textLabel?.text = "Mortality Rate: \(covidList.map { $0.mortalityRate })"
             cell.detailTextLabel?.text = "2"
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
@@ -143,9 +150,7 @@ class CovidDataSource: NSObject, UITableViewDataSource {
 extension CovidDataSource: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        viewModel.controller.coordinator?.didTapOnCell()
-    
-       
+//      viewModel.controller.coordinator?.didTapOnCell()
         print(indexPath.row)
     }
 }
