@@ -18,7 +18,6 @@ class SecondAlarmViewController: UIViewController, LabelDelegate, SoundDelegate,
         passedRepeatString = string
         tableView.reloadData()
     }
-    
     func finishPassingTime(hour: Int, minute: Int) {
         hours   = hour
         minutes = minute

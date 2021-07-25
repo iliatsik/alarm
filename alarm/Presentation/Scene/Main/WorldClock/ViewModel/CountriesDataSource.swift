@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class CountriesDataSource: NSObject, UITableViewDataSource {
     
     // MARK: - Private properties
@@ -18,7 +17,7 @@ class CountriesDataSource: NSObject, UITableViewDataSource {
     private var filteredCitiesList = [CountryViewModel]()
     private var citiesList = [CountryViewModel]()
     
-    var coordinator : CoordinatorProtocol?
+    var coordinator  : CoordinatorProtocol?
     
     init(with tableView: UITableView, viewModel: CountriesListViewModelProtocol) {
         super.init()
@@ -64,13 +63,15 @@ class CountriesDataSource: NSObject, UITableViewDataSource {
     }
 }
 
+
+
 extension CountriesDataSource: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.controller.coordinator?.didTapOnCell()
-
+        
         viewModel.controller.coordinator?.passCountry(countryName: filteredCitiesList[indexPath.row].name)
-
+        
         viewModel.getWeatherData(with: "Germany") { [weak self] result in
 //            print(result)
         }

@@ -15,23 +15,23 @@ struct CovidViewModel {
         self.covid = covid
     }
     
-    var name : String {
+    var name : String? {
         "\(covid.Country_Region ?? "")"
     }
     
-    var active : Int {
+    var active: Int? {
         covid.Active ?? 0
     }
     
-    var death : Int {
+    var death: Int? {
         covid.Deaths ?? 0
     }
     
-    var confirmed : Int {
+    var confirmed: Int? {
         covid.Confirmed ?? 0
     }
     
-    var recovered : Int {
+    var recovered : Int? {
         covid.Recovered ?? 0
     }
     

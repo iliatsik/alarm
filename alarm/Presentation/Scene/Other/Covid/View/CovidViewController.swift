@@ -12,16 +12,14 @@ class CovidViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imgView: UIImageView!
     
-    private var covidList = [Covid]()
-    private var covidManager : CovidManagerProtocol!
+    private var covidManager     : CovidManagerProtocol!
     private var viewModel        : CovidListViewModelProtocol!
     private var dataSource       : CovidDataSource!
     
     var currentCountry : String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        covidManager = CovidManager()
         imgView.image = UIImage(named: "covid")
         setupLayout()
         configureViewModel()
@@ -43,5 +41,4 @@ class CovidViewController: BaseViewController {
         viewModel        = CovidListViewModel(controller: self, covidManager: covidManager)
         dataSource       = CovidDataSource(with: tableView, viewModel: viewModel, countryName: currentCountry ?? "Georgia")
     }
-    
 }
