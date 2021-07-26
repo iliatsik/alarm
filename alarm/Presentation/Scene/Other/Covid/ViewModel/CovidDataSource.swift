@@ -152,7 +152,6 @@ extension CovidDataSource: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        viewModel.controller.coordinator?.didTapOnCell()
     
-       
         print(indexPath.row)
     }
 }

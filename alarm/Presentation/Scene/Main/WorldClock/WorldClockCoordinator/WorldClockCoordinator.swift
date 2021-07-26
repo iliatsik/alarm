@@ -19,6 +19,8 @@ final class WorldClockCoordinator: CoordinatorProtocol {
     
     var filteredData: [CovidViewModel]?
     
+    var currentCountry : String?
+    
     init(_ window: UIWindow? = nil, navigationController: UINavigationController? = UINavigationController()) {
         self.navigationController = navigationController
         self.navigationController?.isNavigationBarHidden = true
@@ -38,10 +40,13 @@ final class WorldClockCoordinator: CoordinatorProtocol {
         alert.addAction(UIAlertAction(title: "Covid Stats", style: .default, handler: { [weak self] action in
             let sb = UIStoryboard(name: "CovidViewController", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "CovidViewController") as! CovidViewController
+            vc.currentCountry = self?.currentCountry
             self?.navigationController?.navigationBar.backgroundColor = .darkGray
             self?.navigationController?.navigationBar.tintColor = .systemOrange
             self?.navigationController?.navigationBar.barTintColor = .black
             self?.navigationController?.pushViewController(vc, animated: true)
+            
+            
             
         }))
         
@@ -54,16 +59,14 @@ final class WorldClockCoordinator: CoordinatorProtocol {
             self?.navigationController?.pushViewController(vc, animated: true)
         }))
 
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { [weak self] action in
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
         }))
         
         self.navigationController?.present(alert, animated: true)
     }
     
     func passCountry(countryName: String) {
-        let vc = CovidViewController.instantiateFromStoryboard()
-        vc.coordinator    = self
-        vc.currentCountry = countryName
+           currentCountry = countryName
     }
     
 }

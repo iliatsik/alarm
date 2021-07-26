@@ -50,7 +50,7 @@ final class CountriesListViewModel: CountriesListViewModelProtocol {
 
         weatherManager.fetchWeatherLocation(with: cityname) { result in
             DispatchQueue.main.async {
-//                let weatherViewModel = result.forecast.forecastday.map  { ForecastViewModel(weather: $0 ) }
+//                let weatherViewModel = result.forecast  { ForecastViewModel(weather: $0 ) }
 //                completion(weatherViewModel)
             }
         }

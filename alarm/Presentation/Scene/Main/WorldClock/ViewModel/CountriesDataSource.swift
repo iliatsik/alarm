@@ -73,7 +73,7 @@ extension CountriesDataSource: UITableViewDelegate {
         viewModel.controller.coordinator?.passCountry(countryName: filteredCitiesList[indexPath.row].name)
         
         viewModel.getWeatherData(with: "Germany") { [weak self] result in
-//            print(result)
+            print(result)
         }
         
         print(indexPath.row)

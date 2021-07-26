@@ -23,9 +23,12 @@ class CovidViewController: BaseViewController {
         imgView.image = UIImage(named: "covid")
         setupLayout()
         configureViewModel()
-        dataSource.refresh()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        dataSource.filteredData?.removeAll()
+    }
     private func setupLayout() {
         tableView.registerNib(class: ChartTableViewCell.self)
         tableView.registerNib(class: IncidentTableViewCell.self)
@@ -40,5 +43,6 @@ class CovidViewController: BaseViewController {
         covidManager     = CovidManager()
         viewModel        = CovidListViewModel(controller: self, covidManager: covidManager)
         dataSource       = CovidDataSource(with: tableView, viewModel: viewModel, countryName: currentCountry ?? "Georgia")
+        dataSource.refresh()
     }
 }

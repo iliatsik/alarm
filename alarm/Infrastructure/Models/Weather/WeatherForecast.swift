@@ -22,7 +22,7 @@ struct Astro : Codable {
 }
 
 struct Hour : Codable {
-    let temp_c    : String?
+    let temp_c    : Double?
     let time      : String?
     let condition : Condition?
 }
