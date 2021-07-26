@@ -12,10 +12,14 @@ class ChartTableViewCell: UITableViewCell, ChartViewDelegate {
     
     var barChart = BarChartView()
     
+    var arrayOfData = [Int]()
+    var index = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         barChart.delegate = self
+        index = 0
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -49,8 +53,10 @@ class ChartTableViewCell: UITableViewCell, ChartViewDelegate {
         contentView.addSubview(barChart)
         var entries = [BarChartDataEntry]()
 
-        for x in 0..<6 {
-            entries.append(BarChartDataEntry(x: Double(x), y: Double(x)))
+        for x in arrayOfData {
+
+            entries.append(BarChartDataEntry(x: Double(index), y: Double(x)))
+            index += 1
         }
         let set = BarChartDataSet(entries: entries)
         

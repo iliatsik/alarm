@@ -9,6 +9,8 @@ import UIKit
 
 class CovidConfirmedTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var labelConfirmed: UILabel!
+    @IBOutlet weak var labelNumber: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,4 +36,7 @@ class CovidConfirmedTableViewCell: UITableViewCell {
         }
     }
     
+    func configure(with item: CovidViewModel) {
+        textLabel?.text = "\(item.confirmed)"
+    }
 }

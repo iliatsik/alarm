@@ -18,7 +18,6 @@ class CovidManager : CovidManagerProtocol {
         NetworkManager.shared.get(url: url) { (result: (Result<(CovidResponse), Error>)) in
             switch result {
             case .success(let response):
-//                print(response.features.map { $0.attributes })
                 completion(response.features.map { $0.attributes })
             case .failure(let err):
                 print(err)

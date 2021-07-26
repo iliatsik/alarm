@@ -9,6 +9,8 @@ import UIKit
 
 class DeathTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var labelDeath: UILabel!
+    @IBOutlet weak var labelNumber: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

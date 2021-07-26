@@ -10,10 +10,10 @@ import Foundation
 struct Covid : Codable {
     
     let Country_Region   : String?
-    let Recovered        : Int?
     let Confirmed        : Int?
-    let Deaths           : Int?
     let Active           : Int?
+    let Recovered        : Int?
+    let Deaths           : Int?
     let Incident_Rate    : Double?
     let Mortality_Rate   : Double?
     

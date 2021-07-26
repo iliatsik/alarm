@@ -9,6 +9,8 @@ import UIKit
 
 class RecoveredTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var labelNumber: UILabel!
+    @IBOutlet weak var labelRecovered: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

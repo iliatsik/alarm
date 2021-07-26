@@ -9,6 +9,8 @@ import UIKit
 
 class IncidentTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var labelNumber: UILabel!
+    @IBOutlet weak var labelIncident: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

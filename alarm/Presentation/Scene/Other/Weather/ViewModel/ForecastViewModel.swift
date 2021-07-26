@@ -49,7 +49,8 @@ struct ForecastViewModel {
     }
     
     var s : String {
-        "\(String(describing: weather.forecast.forecastday))"
+//        "\(String(describing: weather.forecast.forecastday.map { $0. }))"
+        ""
     }
     
  
