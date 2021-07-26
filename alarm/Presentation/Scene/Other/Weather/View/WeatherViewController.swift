@@ -40,7 +40,7 @@ class WeatherViewController: BaseViewController {
     private func setupLayout() {
         tableView.registerNib(class: MainCell.self)
         tableView.registerNib(class: HourlyCell.self)
-        tableView.registerNib(class: WeeklyCell.self)
+//        tableView.registerNib(class: WeeklyCell.self)
         tableView.registerNib(class: SunriseCell.self)
         tableView.registerNib(class: SunsetCell.self)
         tableView.registerNib(class: HumidityCell.self)

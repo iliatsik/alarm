@@ -22,7 +22,7 @@ class WeatherManager : WeatherManagerProtocol {
         NetworkManager.shared.get(url: url) { (result: (Result<(Weather), Error>)) in
             switch result {
             case .success(let response):
-                print(response)
+//                print(response)
                 completion(response)
             case .failure(let err):
                 print(err)

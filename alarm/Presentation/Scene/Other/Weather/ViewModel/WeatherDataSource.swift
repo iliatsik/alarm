@@ -58,7 +58,10 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
         
         if indexPath.row == 1 {
             let cell = tableView.deque(HourlyCell.self, for: indexPath)
-            cell.textLabel?.text = ""
+//            cell.updateCellWith(row: arr!)
+            if let weath = weather {
+                cell.updateCellWith(row: weath)
+            }
             cell.backgroundColor = UIColor.clear
        
             cell.selectionStyle = .none
@@ -66,17 +69,17 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
 
             return cell
         }
+//        if indexPath.row == 2 {
+//            let cell = tableView.deque(WeeklyCell.self, for: indexPath)
+//            cell.textLabel?.text = ""
+//            cell.backgroundColor = UIColor.clear
+//
+//            cell.alpha = 0.0
+//            cell.selectionStyle = .none
+//
+//            return cell
+//        }
         if indexPath.row == 2 {
-            let cell = tableView.deque(WeeklyCell.self, for: indexPath)
-            cell.textLabel?.text = ""
-            cell.backgroundColor = UIColor.clear
-
-            cell.alpha = 0.0
-            cell.selectionStyle = .none
-
-            return cell
-        }
-        if indexPath.row == 3 {
             let cell = tableView.deque(SunriseCell.self, for: indexPath)
             cell.labelSunrise.text = "\(weather.map { $0.forecast.forecastday.map {$0.astro.sunrise} } ?? ["05:02AM"] )"
             cell.labelSunrise.text?.removeFirst()
@@ -88,7 +91,7 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
 
             return cell
         }
-        if indexPath.row == 4 {
+        if indexPath.row == 3 {
             let cell = tableView.deque(SunsetCell.self, for: indexPath)
             cell.labelSunset.text = "\(weather.map { $0.forecast.forecastday.map {$0.astro.sunset} } ?? ["21:02PM"] )"
             cell.labelSunset.text?.removeFirst()
@@ -100,7 +103,7 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
 
             return cell
         }
-        if indexPath.row == 5 {
+        if indexPath.row == 4 {
             let cell = tableView.deque(HumidityCell.self, for: indexPath)
             cell.labelHumidity.text = "\(weather.map { $0.current.humidity } ?? 12)%"
 
@@ -108,7 +111,7 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
 
             return cell
         }
-        if indexPath.row == 6 {
+        if indexPath.row == 5 {
             let cell = tableView.deque(ChanceofRainCell.self, for: indexPath)
             cell.labelRain.text = "\(weather.map { $0.current.pressure_mb} ?? 3)%"
 
@@ -116,7 +119,7 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
 
             return cell
         }
-        if indexPath.row == 7 {
+        if indexPath.row == 6 {
             let cell = tableView.deque(WindCell.self, for: indexPath)
             cell.labelWind.text = "\(weather.map { $0.current.wind_kph} ?? 12) km/hr"
    
@@ -124,7 +127,7 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
 
             return cell
         }
-        if indexPath.row == 8 {
+        if indexPath.row == 7 {
             let cell = tableView.deque(FeelsLikeCell.self, for: indexPath)
             cell.labelFeelsLike.text = "\(weather.map { $0.current.feelslike_c} ?? 24)°"
 
@@ -144,8 +147,7 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if      indexPath.row == 0 { return 350 }
-        else if indexPath.row == 1 { return 120 }
-        else if indexPath.row == 2 { return 250 }
+        else if indexPath.row == 1 { return 140 }
         else                       { return 90  }
     }
 }

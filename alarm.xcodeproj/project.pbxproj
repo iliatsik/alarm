@@ -42,6 +42,8 @@
 		32D4BC732675101400A36F46 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC702675101400A36F46 /* CountryViewModel.swift */; };
 		32D4BC742675101400A36F46 /* CountriesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BC712675101400A36F46 /* CountriesDataSource.swift */; };
 		32D4BC792676239600A36F46 /* SecondTimerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D4BC782676239600A36F46 /* SecondTimerViewController.storyboard */; };
+		32E8FAAE26AF168D00C4CC6E /* HourlyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E8FAAC26AF168D00C4CC6E /* HourlyCollectionCell.swift */; };
+		32E8FAAF26AF168D00C4CC6E /* HourlyCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E8FAAD26AF168D00C4CC6E /* HourlyCollectionCell.xib */; };
 		32F2C39526A086F7000BDC24 /* WorldClockViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C39426A086F7000BDC24 /* WorldClockViewController.storyboard */; };
 		32F2C39726A0879D000BDC24 /* AlarmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C39626A0879D000BDC24 /* AlarmViewController.storyboard */; };
 		32F2C39926A087DE000BDC24 /* SecondAlarmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C39826A087DE000BDC24 /* SecondAlarmViewController.storyboard */; };
@@ -177,6 +179,8 @@
 		32D4BC702675101400A36F46 /* CountryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
 		32D4BC712675101400A36F46 /* CountriesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesDataSource.swift; sourceTree = "<group>"; };
 		32D4BC782676239600A36F46 /* SecondTimerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondTimerViewController.storyboard; sourceTree = "<group>"; };
+		32E8FAAC26AF168D00C4CC6E /* HourlyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCollectionCell.swift; sourceTree = "<group>"; };
+		32E8FAAD26AF168D00C4CC6E /* HourlyCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyCollectionCell.xib; sourceTree = "<group>"; };
 		32F2C39426A086F7000BDC24 /* WorldClockViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorldClockViewController.storyboard; sourceTree = "<group>"; };
 		32F2C39626A0879D000BDC24 /* AlarmViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmViewController.storyboard; sourceTree = "<group>"; };
 		32F2C39826A087DE000BDC24 /* SecondAlarmViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondAlarmViewController.storyboard; sourceTree = "<group>"; };
@@ -546,6 +550,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		32E8FAAB26AF166700C4CC6E /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				32E8FAAC26AF168D00C4CC6E /* HourlyCollectionCell.swift */,
+				32E8FAAD26AF168D00C4CC6E /* HourlyCollectionCell.xib */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
 		32F2C39326A086A8000BDC24 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -897,6 +910,7 @@
 		32F2C43426AB180F000BDC24 /* HourlyCell */ = {
 			isa = PBXGroup;
 			children = (
+				32E8FAAB26AF166700C4CC6E /* CollectionCell */,
 				32F2C45D26AB1910000BDC24 /* HourlyCell.swift */,
 				32F2C45E26AB1911000BDC24 /* HourlyCell.xib */,
 			);
@@ -1120,6 +1134,7 @@
 				32FC165F26722DD2007C60DC /* Happyday.mp3 in Resources */,
 				32F2C45C26AB1904000BDC24 /* WeeklyCell.xib in Resources */,
 				32F2C45826AB18F4000BDC24 /* SunriseCell.xib in Resources */,
+				32E8FAAF26AF168D00C4CC6E /* HourlyCollectionCell.xib in Resources */,
 				32F2C3B126A1D926000BDC24 /* MainTabBarViewController.storyboard in Resources */,
 				327D6F562677A4C50090A3ED /* MainTableViewCell.xib in Resources */,
 				32F2C42526AAEFA1000BDC24 /* RecoveredTableViewCell.xib in Resources */,
@@ -1225,6 +1240,7 @@
 				32D4BC5826750BDF00A36F46 /* Country.swift in Sources */,
 				32F2C3BC26A3F4D9000BDC24 /* StopWatchCoordinator.swift in Sources */,
 				32F2C3CD26A4370A000BDC24 /* CovidResponse.swift in Sources */,
+				32E8FAAE26AF168D00C4CC6E /* HourlyCollectionCell.swift in Sources */,
 				32FC1651267206CF007C60DC /* TimerLocalNotification.swift in Sources */,
 				32F2C3F426A80472000BDC24 /* WeatherManager.swift in Sources */,
 				32F2C44F26AB18D8000BDC24 /* HumidityCell.swift in Sources */,
