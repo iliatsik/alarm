@@ -9,6 +9,7 @@ import UIKit
 
 class ChanceofRainCell: UITableViewCell {
 
+    @IBOutlet weak var labelRain: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

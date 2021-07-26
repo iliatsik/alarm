@@ -9,6 +9,7 @@ import UIKit
 
 class SunsetCell: UITableViewCell {
 
+    @IBOutlet weak var labelSunset: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

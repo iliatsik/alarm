@@ -9,6 +9,7 @@ import UIKit
 
 class WindCell: UITableViewCell {
 
+    @IBOutlet weak var labelWind: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

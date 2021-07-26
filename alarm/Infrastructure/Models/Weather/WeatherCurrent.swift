@@ -12,6 +12,8 @@ struct WeatherCurrent : Codable {
     let wind_kph    : Double
     let pressure_mb : Double
     let condition   : CurrentCondition
+    let humidity    : Int
+    let temp_c      : Int 
 }
 
 

@@ -9,6 +9,7 @@ import UIKit
 
 class FeelsLikeCell: UITableViewCell {
 
+    @IBOutlet weak var labelFeelsLike: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

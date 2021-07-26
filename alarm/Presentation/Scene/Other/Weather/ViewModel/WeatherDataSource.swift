@@ -7,6 +7,7 @@
 
 
 import UIKit
+import Kingfisher
 
 class WeatherDataSource: NSObject, UITableViewDataSource {
     
@@ -47,12 +48,10 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.deque(MainCell.self, for: indexPath)
-            cell.textLabel?.text = ""
-            cell.detailTextLabel?.text = ""
-            cell.backgroundColor = UIColor.clear
-            cell.textLabel?.textColor = UIColor.white
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
-            cell.alpha = 0.0
+            cell.labelCity.text        = "\(weather.map { $0.location.name} ?? "Tbilisi")"
+            cell.labelTemperature.text = "\(weather.map { $0.current.temp_c } ?? 2)°"
+            cell.labelCondition.text   = "\(weather.map { $0.current.condition.text} ?? "Sunny")"
+
             cell.selectionStyle = .none
 
             return cell        }
@@ -60,10 +59,8 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
         if indexPath.row == 1 {
             let cell = tableView.deque(HourlyCell.self, for: indexPath)
             cell.textLabel?.text = ""
-            cell.detailTextLabel?.text = "2"
             cell.backgroundColor = UIColor.clear
-            cell.textLabel?.textColor = UIColor.white
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
+       
             cell.selectionStyle = .none
             cell.alpha = 0.0
 
@@ -72,10 +69,8 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
         if indexPath.row == 2 {
             let cell = tableView.deque(WeeklyCell.self, for: indexPath)
             cell.textLabel?.text = ""
-            cell.detailTextLabel?.text = "2"
             cell.backgroundColor = UIColor.clear
-            cell.textLabel?.textColor = UIColor.white
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
+
             cell.alpha = 0.0
             cell.selectionStyle = .none
 
@@ -83,84 +78,64 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
         }
         if indexPath.row == 3 {
             let cell = tableView.deque(SunriseCell.self, for: indexPath)
-            cell.textLabel?.text = "SUNRISE: \(weather.map { $0.forecast.forecastday.map {$0.astro.sunrise} } )"
-            cell.detailTextLabel?.text = "2"
-            cell.backgroundColor = UIColor.clear
-            cell.textLabel?.textColor = UIColor.white
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
-            cell.alpha = 0.0
+            cell.labelSunrise.text = "\(weather.map { $0.forecast.forecastday.map {$0.astro.sunrise} } ?? ["05:02AM"] )"
+            cell.labelSunrise.text?.removeFirst()
+            cell.labelSunrise.text?.removeFirst()
+            cell.labelSunrise.text?.removeLast()
+            cell.labelSunrise.text?.removeLast()
+
             cell.selectionStyle = .none
 
             return cell
         }
         if indexPath.row == 4 {
             let cell = tableView.deque(SunsetCell.self, for: indexPath)
-            cell.textLabel?.text = "SUNSET:"
-            cell.detailTextLabel?.text = "2"
-            cell.backgroundColor = UIColor.clear
-            cell.textLabel?.textColor = UIColor.white
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
-            cell.alpha = 0.0
+            cell.labelSunset.text = "\(weather.map { $0.forecast.forecastday.map {$0.astro.sunset} } ?? ["21:02PM"] )"
+            cell.labelSunset.text?.removeFirst()
+            cell.labelSunset.text?.removeFirst()
+            cell.labelSunset.text?.removeLast()
+            cell.labelSunset.text?.removeLast()
+
             cell.selectionStyle = .none
 
             return cell
         }
         if indexPath.row == 5 {
             let cell = tableView.deque(HumidityCell.self, for: indexPath)
-            cell.textLabel?.text = "HUMIDITY"
-            cell.detailTextLabel?.text = "2"
-            cell.backgroundColor = UIColor.clear
-            cell.textLabel?.textColor = UIColor.white
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
-            cell.alpha = 0.0
+            cell.labelHumidity.text = "\(weather.map { $0.current.humidity } ?? 12)%"
+
             cell.selectionStyle = .none
 
             return cell
         }
         if indexPath.row == 6 {
             let cell = tableView.deque(ChanceofRainCell.self, for: indexPath)
-            cell.textLabel?.text = "CHANCE OF RAIN"
-            cell.detailTextLabel?.text = "2"
-            cell.backgroundColor = UIColor.clear
-            cell.textLabel?.textColor = UIColor.white
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
-            cell.alpha = 0.0
+            cell.labelRain.text = "\(weather.map { $0.current.pressure_mb} ?? 3)%"
+
             cell.selectionStyle = .none
 
             return cell
         }
         if indexPath.row == 7 {
             let cell = tableView.deque(WindCell.self, for: indexPath)
-            cell.textLabel?.text = "WIND"
-            cell.detailTextLabel?.text = "2"
-            cell.backgroundColor = UIColor.clear
-            cell.textLabel?.textColor = UIColor.white
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
-            cell.alpha = 0.0
+            cell.labelWind.text = "\(weather.map { $0.current.wind_kph} ?? 12) km/hr"
+   
             cell.selectionStyle = .none
 
             return cell
         }
         if indexPath.row == 8 {
             let cell = tableView.deque(FeelsLikeCell.self, for: indexPath)
-            cell.textLabel?.text = "FEELS LIKE"
-            cell.detailTextLabel?.text = "2"
-            cell.backgroundColor = UIColor.clear
-            cell.textLabel?.textColor = UIColor.white
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
-            cell.alpha = 0.0
+            cell.labelFeelsLike.text = "\(weather.map { $0.current.feelslike_c} ?? 24)°"
+
             cell.selectionStyle = .none
 
             return cell
         }
         else {
             let cell = tableView.deque(PressureCell.self, for: indexPath)
-            cell.textLabel?.text = "PRESSURE"
-            cell.detailTextLabel?.text = "2"
-            cell.backgroundColor = UIColor.clear
-            cell.textLabel?.textColor = UIColor.white
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
-            cell.alpha = 0.0
+            cell.labelPressure.text = "\(weather.map { $0.current.pressure_mb} ?? 3) hPa"
+
             cell.selectionStyle = .none
 
             return cell
@@ -180,9 +155,7 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
 extension WeatherDataSource: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        viewModel.controller.coordinator?.didTapOnCell()
-    
-       
+//      viewModel.controller.coordinator?.didTapOnCell()
         print(indexPath.row)
     }
 }

@@ -9,6 +9,7 @@ import UIKit
 
 class HumidityCell: UITableViewCell {
 
+    @IBOutlet weak var labelHumidity: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
