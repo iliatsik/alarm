@@ -53,6 +53,7 @@ final class WorldClockCoordinator: CoordinatorProtocol {
         alert.addAction(UIAlertAction(title: "Weather",  style: .default, handler: { [weak self] action in
             let sb = UIStoryboard(name: "WeatherViewController", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
+            vc.currentCountry = self?.currentCountry
             self?.navigationController?.navigationBar.backgroundColor = .darkGray
             self?.navigationController?.navigationBar.tintColor = .systemOrange
             self?.navigationController?.navigationBar.barTintColor = .black

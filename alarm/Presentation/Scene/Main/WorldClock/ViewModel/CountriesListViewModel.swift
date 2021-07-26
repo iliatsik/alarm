@@ -12,9 +12,7 @@ protocol CountriesListViewModelProtocol: AnyObject {
     var navigationItem: UINavigationItem? { get set }
     func setTitle(with text: String, on navigationItem: UINavigationItem)
     var controller: CoordinatorDelegate { get }
-    
-    func getWeatherData(with cityname: String,completion: @escaping ((ForecastViewModel) -> Void))
-    
+        
     init(with countriesManager: CountriesManagerProtocol, controller: CoordinatorDelegate, covidManager: CovidManagerProtocol, weatherManager: WeatherManagerProtocol)
 }
 
@@ -43,16 +41,6 @@ final class CountriesListViewModel: CountriesListViewModelProtocol {
                 let countriesViewModels =  countries.map { CountryViewModel(country: $0 ) }
                 completion(countriesViewModels)
            }
-        }
-    }
-    
-    func getWeatherData(with cityname: String, completion: @escaping ((ForecastViewModel) -> Void)) {
-
-        weatherManager.fetchWeatherLocation(with: cityname) { result in
-            DispatchQueue.main.async {
-//                let weatherViewModel = result.forecast  { ForecastViewModel(weather: $0 ) }
-//                completion(weatherViewModel)
-            }
         }
     }
     

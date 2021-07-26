@@ -22,15 +22,12 @@ class CovidDataSource: NSObject, UITableViewDataSource {
     
     var currentCountry : String?
     
-    var confirmed : String?
-
     init(with tableView: UITableView, viewModel: CovidListViewModelProtocol, countryName : String) {
         super.init()
         
         self.tableView = tableView
         self.tableView.dataSource = self
         self.tableView.delegate   = self
-    
         self.viewModel      = viewModel
         self.currentCountry = countryName
     }
@@ -40,9 +37,6 @@ class CovidDataSource: NSObject, UITableViewDataSource {
         viewModel.getCovidData { [weak self] result in
             self?.filteredData = result.filter { $0.name == self?.currentCountry }
             
-            DispatchQueue.main.async {
-//                self?.covidList = (self?.filteredData)!
-            }
             self?.covidList = (self?.filteredData)!
 
             print(self?.filteredData ?? "")
@@ -70,7 +64,9 @@ class CovidDataSource: NSObject, UITableViewDataSource {
             cell.arrayOfData += covidList.map { $0.death }
             cell.arrayOfData += covidList.map { $0.recovered }
             
-            return cell        }
+            return cell
+            
+        }
         
         if indexPath.row == 1 {
             let cell = tableView.deque(CovidConfirmedTableViewCell.self, for: indexPath)
@@ -78,7 +74,6 @@ class CovidDataSource: NSObject, UITableViewDataSource {
             cell.labelNumber.text?.removeFirst()
             cell.labelNumber.text?.removeLast()
 
-//            cell.textLabel?.text = "Confirmed: \(String(describing: covidList.map { $0.confirmed } ) )"
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
@@ -93,7 +88,6 @@ class CovidDataSource: NSObject, UITableViewDataSource {
             cell.labelNumber.text?.removeFirst()
             cell.labelNumber.text?.removeLast()
 
-//            cell.textLabel?.text = "Active: \(String(describing: covidList.map { $0.active } ) )"
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
@@ -108,7 +102,6 @@ class CovidDataSource: NSObject, UITableViewDataSource {
             cell.labelNumber.text?.removeFirst()
             cell.labelNumber.text?.removeLast()
 
-//            cell.textLabel?.text = "Death: \(String(describing: covidList.map { $0.death } )) "
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
@@ -122,8 +115,6 @@ class CovidDataSource: NSObject, UITableViewDataSource {
             cell.labelNumber.text = "\(String(describing: covidList.map { $0.recovered } ))"
             cell.labelNumber.text?.removeFirst()
             cell.labelNumber.text?.removeLast()
-
-//            cell.textLabel?.text = "Recovered: \(String(describing: covidList.map { $0.recovered } ))"
         
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
@@ -139,7 +130,6 @@ class CovidDataSource: NSObject, UITableViewDataSource {
             cell.labelNumber.text?.removeFirst()
             cell.labelNumber.text?.removeLast()
 
-//            cell.textLabel?.text = "Incident Rate: \(String(describing: covidList.map { $0.incidentRate } ))"
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
@@ -154,7 +144,6 @@ class CovidDataSource: NSObject, UITableViewDataSource {
             cell.labelNumber.text?.removeFirst()
             cell.labelNumber.text?.removeLast()
 
-//            cell.textLabel?.text = "Mortality Rate: \(String(describing: covidList.map { $0.mortalityRate } ))"
          
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
@@ -178,7 +167,6 @@ extension CovidDataSource: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        viewModel.controller.coordinator?.didTapOnCell()
-    
         print(indexPath.row)
     }
 }

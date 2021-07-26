@@ -8,23 +8,23 @@
 import Foundation
 
 struct WeatherForecast : Codable {
-    let forecastday : [ForecastDay]?
+    let forecastday : [ForecastDay]
 }
 
 struct ForecastDay : Codable {
-    let astro : Astro?
-    let hour  : [Hour]?
+    let astro : Astro
+    let hour  : [Hour]
 }
 
 struct Astro : Codable {
-    let sunrise : String?
-    let sunset  : String?
+    let sunrise : String
+    let sunset  : String
 }
 
 struct Hour : Codable {
-    let temp_c    : Double?
-    let time      : String?
-    let condition : Condition?
+    let temp_c    : Double
+    let time      : String
+    let condition : Condition
 }
 
 struct Condition : Codable {

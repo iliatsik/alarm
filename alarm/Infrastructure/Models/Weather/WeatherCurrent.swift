@@ -8,14 +8,14 @@
 import Foundation
 
 struct WeatherCurrent : Codable {
-    let feelslike_c : Double?
-    let wind_kph    : Double?
-    let pressure_mb : Double?
-    let condition   : CurrentCondition?
+    let feelslike_c : Double
+    let wind_kph    : Double
+    let pressure_mb : Double
+    let condition   : CurrentCondition
 }
 
 
 struct CurrentCondition : Codable {
-    let text : String?
-    let icon : String?
+    let text : String
+    let icon : String
 }

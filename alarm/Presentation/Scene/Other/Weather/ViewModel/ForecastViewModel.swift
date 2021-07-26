@@ -16,13 +16,13 @@ struct ForecastViewModel {
         self.weather = weather
     }
  
-    var icon : String {
-        "\(String(describing: weather.current.condition?.icon))"
-    }
-    
-    var text : String {
-        "\(String(describing: weather.current.condition?.text))"
-    }
+//    var icon : String {
+//        "\(String(describing: weather.current.condition?.icon))"
+//    }
+//    
+//    var text : String {
+//        "\(String(describing: weather.current.condition?.text))"
+//    }
     
     var feelsLike : String {
         "\(String(describing: weather.current.feelslike_c))"

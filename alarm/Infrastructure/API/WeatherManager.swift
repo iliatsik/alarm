@@ -24,7 +24,6 @@ class WeatherManager : WeatherManagerProtocol {
             case .success(let response):
                 print(response)
                 completion(response)
-                
             case .failure(let err):
                 print(err)
             }

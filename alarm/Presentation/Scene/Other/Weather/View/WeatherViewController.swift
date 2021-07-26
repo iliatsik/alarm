@@ -18,6 +18,8 @@ class WeatherViewController: BaseViewController {
     private var viewModel       : WeatherListViewModelProtocol!
     private var dataSource      : WeatherDataSource!
     
+    var currentCountry : String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundImage.image = UIImage(named: "cloudy")
@@ -30,8 +32,9 @@ class WeatherViewController: BaseViewController {
     
     private func configureViewModel() {
         weatherManager   = WeatherManager()
-        viewModel        = WeatherListViewModel(controller: self)
-        dataSource       = WeatherDataSource(with: tableView, viewModel: viewModel)
+        viewModel        = WeatherListViewModel(controller: self,weatherManager: weatherManager)
+        dataSource       = WeatherDataSource(with: tableView, viewModel: viewModel, countryName: currentCountry ?? "Georgia")
+        dataSource.refresh()
     }
     
     private func setupLayout() {

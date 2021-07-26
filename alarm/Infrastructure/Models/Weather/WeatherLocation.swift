@@ -8,7 +8,7 @@
 import Foundation
 
 struct WeatherLocation : Codable {
-    let name : String?
-    let lat  : Double?
-    let lon  : Double?
+    let name : String
+    let lat  : Double
+    let lon  : Double
 }

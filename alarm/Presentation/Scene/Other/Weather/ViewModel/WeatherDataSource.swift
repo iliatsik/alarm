@@ -14,27 +14,30 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
     
     private var tableView: UITableView!
     private var viewModel: WeatherListViewModelProtocol!
+         
+    var coordinator  : CoordinatorProtocol?
+    var weather : Weather?
+
+    var currentCountry : String?
     
-    private var weatherList = [ForecastViewModel]()
-    
-    var coordinator : CoordinatorProtocol?
-    
-    
-    init(with tableView: UITableView, viewModel: WeatherListViewModelProtocol) {
+    init(with tableView: UITableView, viewModel: WeatherListViewModelProtocol, countryName : String) {
         super.init()
         
-        self.tableView = tableView
+        self.tableView            = tableView
         self.tableView.dataSource = self
-        self.tableView.delegate = self
-        self.viewModel = viewModel
+        self.tableView.delegate   = self
+        self.viewModel            = viewModel
+        self.currentCountry       = countryName
     }
     
     func refresh() {
-//        viewModel.getCountriesList { countries in
-//            self.citiesList.append(contentsOf: countries)
-//            self.filteredCitiesList.append(contentsOf: countries)
-//            self.tableView.reloadData()
-//        }
+        viewModel.getWeatherData(with: currentCountry ?? "Georgia") { [weak self] result in
+            self?.weather = result
+            
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,7 +83,7 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
         }
         if indexPath.row == 3 {
             let cell = tableView.deque(SunriseCell.self, for: indexPath)
-            cell.textLabel?.text = "SUNRISE:"
+            cell.textLabel?.text = "SUNRISE: \(weather.map { $0.forecast.forecastday.map {$0.astro.sunrise} } )"
             cell.detailTextLabel?.text = "2"
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white

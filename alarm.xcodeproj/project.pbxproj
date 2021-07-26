@@ -685,9 +685,9 @@
 		32F2C3D226A57FE7000BDC24 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				32F2C40C26AAE8ED000BDC24 /* CovidListViewModel.swift */,
 				32F2C3D326A57FF6000BDC24 /* CovidViewModel.swift */,
 				32F2C40A26AAE8DC000BDC24 /* CovidDataSource.swift */,
-				32F2C40C26AAE8ED000BDC24 /* CovidListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
