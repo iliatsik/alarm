@@ -153,6 +153,7 @@ class CovidDataSource: NSObject, UITableViewDataSource {
 
             return cell
         }
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -166,7 +167,13 @@ class CovidDataSource: NSObject, UITableViewDataSource {
 extension CovidDataSource: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        viewModel.controller.coordinator?.didTapOnCell()
-        print(indexPath.row)
+//        if indexPath.row == 7 {
+//            let sb = UIStoryboard(name: "MapViewController", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+//
+//            vc.latitude  =  covidList.map { $0.latitude  }
+//            vc.longitude =  covidList.map { $0.longitude }
+//            viewModel.controller.navigationController?.pushViewController(vc, animated: true)
+//        }
     }
 }

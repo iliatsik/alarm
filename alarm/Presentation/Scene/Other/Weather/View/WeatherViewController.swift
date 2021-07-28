@@ -49,6 +49,7 @@ class WeatherViewController: BaseViewController {
         tableView.registerNib(class: WindCell.self)
         tableView.registerNib(class: FeelsLikeCell.self)
         tableView.registerNib(class: PressureCell.self)
+        tableView.registerNib(class: MapCell.self)
     }
 
  

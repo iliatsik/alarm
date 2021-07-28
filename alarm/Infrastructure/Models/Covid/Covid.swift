@@ -16,6 +16,5 @@ struct Covid : Codable {
     let Deaths           : Int?
     let Incident_Rate    : Double?
     let Mortality_Rate   : Double?
-    
 }
 

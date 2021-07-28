@@ -123,8 +123,6 @@ class StopWatchViewController: BaseViewController {
         let decisecond = String(format: "%.1f", counter).components(separatedBy: ".").last!
         timerLabel.text = "\(minuteString):\(secondString),\(decisecond)"
     }
-   
-  
     
 }
 

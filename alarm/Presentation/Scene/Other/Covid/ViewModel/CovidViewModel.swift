@@ -42,4 +42,5 @@ struct CovidViewModel {
     var incidentRate : Double {
         Double( round (1000 * (covid.Incident_Rate ?? 0.0)) / 1000)
     }
+    
 }

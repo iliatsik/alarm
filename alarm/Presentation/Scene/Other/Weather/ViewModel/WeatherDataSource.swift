@@ -42,7 +42,7 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -126,12 +126,22 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
 
             return cell
         }
-        else {
+        if indexPath.row == 8 {
             let cell = tableView.deque(PressureCell.self, for: indexPath)
             cell.labelPressure.text = "\(weather.map { $0.current.pressure_mb} ?? 3) hPa"
 
             cell.selectionStyle = .none
 
+            return cell
+        }
+        else {
+            let cell = tableView.deque(MapCell.self, for: indexPath)
+            
+            cell.backgroundColor = UIColor.clear
+            cell.textLabel?.textColor = UIColor.white
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
+            cell.alpha = 0.0
+            cell.selectionStyle = .none
             return cell
         }
     }
@@ -148,7 +158,13 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
 extension WeatherDataSource: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//      viewModel.controller.coordinator?.didTapOnCell()
-        print(indexPath.row)
+        if indexPath.row == 9 {
+              let sb = UIStoryboard(name: "MapViewController", bundle: nil)
+              let vc = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+  
+            vc.latitude  =  weather.map { $0.location.lat  }
+            vc.longitude =  weather.map { $0.location.lon }
+              viewModel.controller.navigationController?.pushViewController(vc, animated: true)
+          }
     }
 }

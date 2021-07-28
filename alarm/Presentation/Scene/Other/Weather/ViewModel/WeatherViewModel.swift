@@ -34,11 +34,7 @@ final class WeatherListViewModel: WeatherListViewModelProtocol {
     }
     
     func getWeatherData(with cityname: String, completion: @escaping ((Weather) -> Void)) {
-        weatherManager.fetchWeatherLocation(with: cityname, completion: completion ) // { result in
-//            DispatchQueue.main.async {
-//
-//            }
-//        }
+        weatherManager.fetchWeatherLocation(with: cityname, completion: completion ) 
     }
   
     func setTitle(with text: String, on navigationItem: UINavigationItem) {
