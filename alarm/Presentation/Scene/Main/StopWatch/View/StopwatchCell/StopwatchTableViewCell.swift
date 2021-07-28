@@ -13,14 +13,28 @@ class StopwatchTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+       super.awakeFromNib()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        if selected {
+            UIView.animate(withDuration: 0.5,
+                           delay: 0.3,
+                           options: [],
+                           animations: { [weak self] in
+                            self?.contentView.alpha = 0.1
+                           }, completion: nil)
+            
+            UIView.animate(withDuration: 0.5,
+                           delay: 0.1,
+                           options: [],
+                           animations: { [weak self] in
+                            self?.contentView.alpha = 1
+                           }, completion: nil)
+        }
     }
     
    

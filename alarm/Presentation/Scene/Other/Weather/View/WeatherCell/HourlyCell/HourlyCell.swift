@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WidgetKit
 
 class HourlyCell: UITableViewCell {
 
@@ -20,7 +21,6 @@ class HourlyCell: UITableViewCell {
         // Register the xib for collection view cell
         let cellNib = UINib(nibName: "HourlyCollectionCell", bundle: nil)
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "HourlyCollectionCell")
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -60,8 +60,8 @@ extension HourlyCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourlyCollectionCell", for: indexPath) as? HourlyCollectionCell {
-            cell.labelTime.text = "0\(indexPath.row) "
-
+            if indexPath.row < 10 { cell.labelTime.text = "0\(indexPath.row) "}
+            else { cell.labelTime.text = "\(indexPath.row) " }
 
             
             cell.labelTemp.text = "\( self.row?.forecast.forecastday.map { $0.hour[indexPath.row].temp_c} ?? [0.0] )"
@@ -91,6 +91,13 @@ extension HourlyCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
        }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0 
     }
 }

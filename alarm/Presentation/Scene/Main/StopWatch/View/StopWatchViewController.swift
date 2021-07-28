@@ -138,7 +138,7 @@ extension StopWatchViewController : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StopwatchTableViewCell
         cell.backgroundColor = UIColor.black
         cell.timeLabel.text = arrayOfTimer[indexPath.row]
-        cell.lapLabel.text  = "Lap: \(indexPath.row)"
+        cell.lapLabel.text  = "Lap: \(indexPath.row + 1)"
         
         if arrayOfTimer[indexPath.row] == arrayOfTimer.max() {
             cell.timeLabel.textColor = .red

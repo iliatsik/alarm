@@ -16,11 +16,11 @@ extension TimerViewController {
         center.delegate = self
         
         let content = UNMutableNotificationContent()
-        content.title = "Clock"
-        content.body = "Timer"
+        content.title              = "Clock"
+        content.body               = "Timer"
         content.categoryIdentifier = "Alarm"
-        content.userInfo = ["customData": "fizzbuzz"]
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "\(selectedAudio ?? "613").mp3"))
+        content.userInfo           = ["customData": "fizzbuzz"]
+        content.sound              = UNNotificationSound(named: UNNotificationSoundName(rawValue: "\(selectedAudio ?? "613").mp3"))
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01,
                                                         repeats: false)

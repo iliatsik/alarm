@@ -114,8 +114,6 @@
 		32F2C45426AB18E6000BDC24 /* SunsetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C45226AB18E6000BDC24 /* SunsetCell.xib */; };
 		32F2C45726AB18F4000BDC24 /* SunriseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C45526AB18F4000BDC24 /* SunriseCell.swift */; };
 		32F2C45826AB18F4000BDC24 /* SunriseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C45626AB18F4000BDC24 /* SunriseCell.xib */; };
-		32F2C45B26AB1904000BDC24 /* WeeklyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C45926AB1904000BDC24 /* WeeklyCell.swift */; };
-		32F2C45C26AB1904000BDC24 /* WeeklyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C45A26AB1904000BDC24 /* WeeklyCell.xib */; };
 		32F2C45F26AB1911000BDC24 /* HourlyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C45D26AB1910000BDC24 /* HourlyCell.swift */; };
 		32F2C46026AB1911000BDC24 /* HourlyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F2C45E26AB1911000BDC24 /* HourlyCell.xib */; };
 		32F2C46326AB1926000BDC24 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2C46126AB1926000BDC24 /* MainCell.swift */; };
@@ -251,8 +249,6 @@
 		32F2C45226AB18E6000BDC24 /* SunsetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SunsetCell.xib; sourceTree = "<group>"; };
 		32F2C45526AB18F4000BDC24 /* SunriseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunriseCell.swift; sourceTree = "<group>"; };
 		32F2C45626AB18F4000BDC24 /* SunriseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SunriseCell.xib; sourceTree = "<group>"; };
-		32F2C45926AB1904000BDC24 /* WeeklyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCell.swift; sourceTree = "<group>"; };
-		32F2C45A26AB1904000BDC24 /* WeeklyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeeklyCell.xib; sourceTree = "<group>"; };
 		32F2C45D26AB1910000BDC24 /* HourlyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCell.swift; sourceTree = "<group>"; };
 		32F2C45E26AB1911000BDC24 /* HourlyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyCell.xib; sourceTree = "<group>"; };
 		32F2C46126AB1926000BDC24 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
@@ -339,7 +335,7 @@
 				32D4BC5926750C8700A36F46 /* Infrastructure */,
 				323FD769269CC4C100B91750 /* Presentation */,
 				325C2425266BA2D1009E4E07 /* Resources */,
-				325C2417266BA205009E4E07 /* Info.plist */,
+				32E8FAB526B0947200C4CC6E /* Supporting Files */,
 			);
 			path = alarm;
 			sourceTree = "<group>";
@@ -358,7 +354,6 @@
 			children = (
 				32FC165226722DB0007C60DC /* NotificationSounds */,
 				32FC164D2671FCD1007C60DC /* Reusables */,
-				325C2414266BA205009E4E07 /* LaunchScreen.storyboard */,
 				325C2412266BA205009E4E07 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -559,6 +554,15 @@
 			path = CollectionCell;
 			sourceTree = "<group>";
 		};
+		32E8FAB526B0947200C4CC6E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				325C2414266BA205009E4E07 /* LaunchScreen.storyboard */,
+				325C2417266BA205009E4E07 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		32F2C39326A086A8000BDC24 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -647,7 +651,6 @@
 				32FC166B26722F58007C60DC /* SecondTimer */,
 				32C59EF1266FD5F500CA6D68 /* SecondAlarm */,
 				32F2C3C226A4343C000BDC24 /* Weather */,
-				32F2C3C126A43435000BDC24 /* Covid */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 			children = (
 				32F2C3F526A80EAD000BDC24 /* ViewModel */,
 				32F2C3F026A80332000BDC24 /* View */,
+				32F2C3C126A43435000BDC24 /* Covid */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -775,7 +779,6 @@
 				32F2C43826AB1836000BDC24 /* HumidityCell */,
 				32F2C43726AB182D000BDC24 /* SunsetCell */,
 				32F2C43626AB1821000BDC24 /* SunriseCell */,
-				32F2C43526AB1819000BDC24 /* WeeklyCell */,
 				32F2C43426AB180F000BDC24 /* HourlyCell */,
 				32F2C43326AB1805000BDC24 /* MainCell */,
 			);
@@ -915,15 +918,6 @@
 				32F2C45E26AB1911000BDC24 /* HourlyCell.xib */,
 			);
 			path = HourlyCell;
-			sourceTree = "<group>";
-		};
-		32F2C43526AB1819000BDC24 /* WeeklyCell */ = {
-			isa = PBXGroup;
-			children = (
-				32F2C45926AB1904000BDC24 /* WeeklyCell.swift */,
-				32F2C45A26AB1904000BDC24 /* WeeklyCell.xib */,
-			);
-			path = WeeklyCell;
 			sourceTree = "<group>";
 		};
 		32F2C43626AB1821000BDC24 /* SunriseCell */ = {
@@ -1132,7 +1126,6 @@
 				325C2416266BA205009E4E07 /* LaunchScreen.storyboard in Resources */,
 				32D4BC792676239600A36F46 /* SecondTimerViewController.storyboard in Resources */,
 				32FC165F26722DD2007C60DC /* Happyday.mp3 in Resources */,
-				32F2C45C26AB1904000BDC24 /* WeeklyCell.xib in Resources */,
 				32F2C45826AB18F4000BDC24 /* SunriseCell.xib in Resources */,
 				32E8FAAF26AF168D00C4CC6E /* HourlyCollectionCell.xib in Resources */,
 				32F2C3B126A1D926000BDC24 /* MainTabBarViewController.storyboard in Resources */,
@@ -1229,7 +1222,6 @@
 				32F2C43126AAF52F000BDC24 /* ChartTableViewCell.swift in Sources */,
 				32F2C41226AAEF31000BDC24 /* CovidConfirmedTableViewCell.swift in Sources */,
 				32F2C3B926A3F46E000BDC24 /* AlarmClockCoordinator.swift in Sources */,
-				32F2C45B26AB1904000BDC24 /* WeeklyCell.swift in Sources */,
 				32F2C43F26AB188D000BDC24 /* PressureCell.swift in Sources */,
 				32D4BC332674050D00A36F46 /* LabelTableViewCell.swift in Sources */,
 				32F2C40626A862A1000BDC24 /* WeatherForecast.swift in Sources */,
@@ -1437,7 +1429,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PN3BW3P27A;
-				INFOPLIST_FILE = alarm/Info.plist;
+				INFOPLIST_FILE = "alarm/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1457,7 +1449,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PN3BW3P27A;
-				INFOPLIST_FILE = alarm/Info.plist;
+				INFOPLIST_FILE = "alarm/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

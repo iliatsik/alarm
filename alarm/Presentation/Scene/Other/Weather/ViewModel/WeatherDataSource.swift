@@ -42,7 +42,7 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 9
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,16 +69,7 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
 
             return cell
         }
-//        if indexPath.row == 2 {
-//            let cell = tableView.deque(WeeklyCell.self, for: indexPath)
-//            cell.textLabel?.text = ""
-//            cell.backgroundColor = UIColor.clear
-//
-//            cell.alpha = 0.0
-//            cell.selectionStyle = .none
-//
-//            return cell
-//        }
+
         if indexPath.row == 2 {
             let cell = tableView.deque(SunriseCell.self, for: indexPath)
             cell.labelSunrise.text = "\(weather.map { $0.forecast.forecastday.map {$0.astro.sunrise} } ?? ["05:02AM"] )"

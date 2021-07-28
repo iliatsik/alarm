@@ -14,8 +14,8 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
     }
     
     
-    @IBOutlet weak var cancelView: UIView!
-    @IBOutlet weak var startView: UIView!
+    @IBOutlet weak var cancelView            : UIView!
+    @IBOutlet weak var startView             : UIView!
     @IBOutlet weak var ringtoneRegisterLabel : UIButton!
     
     var registerRingtoneLabel : String!
@@ -58,15 +58,15 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
             }
         }
         
-        cancelView.layer.cornerRadius = 40
+        cancelView.layer.cornerRadius  = 40
         cancelView.layer.masksToBounds = true
-        cancelView.layer.borderWidth = 1.5
-        cancelView.layer.borderColor = UIColor.darkGray.cgColor
+        cancelView.layer.borderWidth   = 1.5
+        cancelView.layer.borderColor   = UIColor.darkGray.cgColor
         
-        startView.layer.cornerRadius = 40
-        startView.layer.masksToBounds = true
-        startView.layer.borderWidth = 1.8
-        startView.layer.borderColor = UIColor(named: "start")?.cgColor
+        startView.layer.cornerRadius   = 40
+        startView.layer.masksToBounds  = true
+        startView.layer.borderWidth    = 1.8
+        startView.layer.borderColor    = UIColor(named: "start")?.cgColor
         
         
         UNUserNotificationCenter.current().delegate = self

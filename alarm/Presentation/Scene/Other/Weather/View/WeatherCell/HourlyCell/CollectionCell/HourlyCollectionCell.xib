@@ -22,11 +22,11 @@
                             <constraint firstAttribute="width" constant="47" id="9LK-If-0Hk"/>
                             <constraint firstAttribute="height" constant="15" id="WiP-o0-864"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XIy-XK-hOF">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XIy-XK-hOF">
                         <rect key="frame" x="20" y="33" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="0ZK-h4-tVT"/>
@@ -39,7 +39,7 @@
                             <constraint firstAttribute="width" constant="42" id="MFs-yd-5rx"/>
                             <constraint firstAttribute="height" constant="14" id="XHI-1o-qwh"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -54,6 +54,7 @@
                 <constraint firstItem="XIy-XK-hOF" firstAttribute="top" secondItem="b0D-a2-sIr" secondAttribute="bottom" constant="11" id="bqM-YF-kKe"/>
                 <constraint firstAttribute="trailing" secondItem="dhu-fr-F9h" secondAttribute="trailing" constant="12" id="iyF-2N-TY1"/>
                 <constraint firstItem="dhu-fr-F9h" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="11" id="jnw-0N-G9K"/>
+                <constraint firstItem="dhu-fr-F9h" firstAttribute="top" secondItem="XIy-XK-hOF" secondAttribute="bottom" constant="9" id="kPB-Ud-gu5"/>
                 <constraint firstItem="b0D-a2-sIr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="rng-Ug-dcl"/>
                 <constraint firstAttribute="trailing" secondItem="XIy-XK-hOF" secondAttribute="trailing" constant="20" id="wMv-Yp-T4J"/>
                 <constraint firstAttribute="bottom" secondItem="dhu-fr-F9h" secondAttribute="bottom" constant="9" id="wca-1o-8QU"/>

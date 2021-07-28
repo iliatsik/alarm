@@ -26,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIS-nN-Vwy">
-                        <rect key="frame" x="16" y="188" width="288" height="136"/>
+                        <rect key="frame" x="36" y="188" width="268" height="136"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="78"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -45,9 +45,9 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="nWR-Tk-fco" secondAttribute="trailing" constant="16" id="5vO-2x-mcy"/>
-                    <constraint firstItem="rIS-nN-Vwy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="EcK-G8-fXh"/>
                     <constraint firstItem="rIS-nN-Vwy" firstAttribute="top" secondItem="O5J-jV-av9" secondAttribute="bottom" constant="15" id="I4H-Cc-roW"/>
                     <constraint firstItem="O5J-jV-av9" firstAttribute="top" secondItem="nWR-Tk-fco" secondAttribute="bottom" constant="8" id="L3u-xl-VL1"/>
+                    <constraint firstItem="rIS-nN-Vwy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="LKo-eu-aPV"/>
                     <constraint firstItem="nWR-Tk-fco" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="O0e-OH-R5I"/>
                     <constraint firstAttribute="bottomMargin" secondItem="rIS-nN-Vwy" secondAttribute="bottom" constant="15" id="TtQ-0Q-Mn8"/>
                     <constraint firstItem="O5J-jV-av9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="cXn-a4-UZb"/>

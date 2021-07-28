@@ -10,6 +10,7 @@ import UIKit
 class WeatherViewController: BaseViewController {
     
 
+    @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,12 +18,13 @@ class WeatherViewController: BaseViewController {
     private var weatherManager  : WeatherManagerProtocol!
     private var viewModel       : WeatherListViewModelProtocol!
     private var dataSource      : WeatherDataSource!
-    
-    var currentCountry : String?
+
+    var currentCountry        : String?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        backgroundImage.image = UIImage(named: "cloudy")
+        backgroundImage.image = UIImage(named: "sky")
         tableView.backgroundColor = .clear
         tableView.separatorColor  = .white
         tableView.tintColor       = .white
@@ -40,7 +42,6 @@ class WeatherViewController: BaseViewController {
     private func setupLayout() {
         tableView.registerNib(class: MainCell.self)
         tableView.registerNib(class: HourlyCell.self)
-//        tableView.registerNib(class: WeeklyCell.self)
         tableView.registerNib(class: SunriseCell.self)
         tableView.registerNib(class: SunsetCell.self)
         tableView.registerNib(class: HumidityCell.self)
@@ -50,4 +51,5 @@ class WeatherViewController: BaseViewController {
         tableView.registerNib(class: PressureCell.self)
     }
 
+ 
 }

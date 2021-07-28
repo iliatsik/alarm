@@ -22,7 +22,7 @@ class CovidViewController: BaseViewController {
         super.viewDidLoad()
         configureViewModel()
         dataSource.refresh()
-        imgView.image = UIImage(named: "covid")
+        imgView.image = UIImage(named: "dark_covid")
         setupLayout()
     }
 
