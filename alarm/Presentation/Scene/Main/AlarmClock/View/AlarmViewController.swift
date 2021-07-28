@@ -67,7 +67,7 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.deque(MainTableViewCell.self, for: indexPath)
         cell.nameLabel.text = "\(passedLabel ?? "Alarm"), \(passedRingtone ?? "613")"
         cell.timeLabel.text = "\(passedHour  ?? "00"):\(passedMinute ?? "00")"
-
+        cell.selectionStyle = .none
         return cell
     }
 

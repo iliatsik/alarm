@@ -137,7 +137,8 @@ extension StopWatchViewController : UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = UIColor.black
         cell.timeLabel.text = arrayOfTimer[indexPath.row]
         cell.lapLabel.text  = "Lap: \(indexPath.row + 1)"
-        
+        cell.selectionStyle = .none
+
         if arrayOfTimer[indexPath.row] == arrayOfTimer.max() {
             cell.timeLabel.textColor = .red
         }

@@ -167,13 +167,6 @@ class CovidDataSource: NSObject, UITableViewDataSource {
 extension CovidDataSource: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.row == 7 {
-//            let sb = UIStoryboard(name: "MapViewController", bundle: nil)
-//            let vc = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-//
-//            vc.latitude  =  covidList.map { $0.latitude  }
-//            vc.longitude =  covidList.map { $0.longitude }
-//            viewModel.controller.navigationController?.pushViewController(vc, animated: true)
-//        }
+
     }
 }

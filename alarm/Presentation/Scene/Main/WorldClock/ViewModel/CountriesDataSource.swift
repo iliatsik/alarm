@@ -55,6 +55,7 @@ class CountriesDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.deque(CountryTableViewCell.self, for: indexPath)
         cell.configure(with: filteredCitiesList[indexPath.row])
+        cell.selectionStyle = .none
         return cell
     }
     

@@ -51,6 +51,8 @@ class SecondTimerViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.selectionStyle = .none
+
         cell.textLabel?.text      = arrayOfRingtones[indexPath.row]
         cell.textLabel?.textColor = .white
         cell.backgroundColor      = .darkGray

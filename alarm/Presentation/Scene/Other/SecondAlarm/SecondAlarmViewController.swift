@@ -129,11 +129,13 @@ extension SecondAlarmViewController : UITableViewDelegate, UITableViewDataSource
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "time", for: indexPath) as! TimeTableViewCell
             cell.delegate = self
+            cell.selectionStyle = .none
             return cell
         }
         if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "repeat", for: indexPath) as! RepeatTableViewCell
             cell.repeatLabel.text = "\(passedRepeatString ?? "Once") >"
+            cell.selectionStyle = .none
             return cell
         }
         
@@ -141,12 +143,14 @@ extension SecondAlarmViewController : UITableViewDelegate, UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: "label", for: indexPath) as! LabelTableViewCell
             cell.alarmLabel.text = "\(passedLabelString ?? "Alarm") >"
             cell.alarmLabel.textColor = .lightGray
+            cell.selectionStyle = .none
             return cell
         }
         
         if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "sound", for: indexPath) as! SoundTableViewCell
             cell.soundLabel.text = "\(passedSoundString ?? "613") >"
+            cell.selectionStyle = .none
             return cell
         }
         
@@ -155,6 +159,7 @@ extension SecondAlarmViewController : UITableViewDelegate, UITableViewDataSource
             if (cell.vibrationSwitch.isOn == true) {
                 vibrate = true
             }
+            cell.selectionStyle = .none
             return cell
         }
         return cell
