@@ -24,7 +24,7 @@ struct CountryViewModel {
     }
     
     var capital: String {
-        var capital = "\(String(describing: country.capital!))"
+        var capital = "\(String(describing: country.capital ?? "No Info"))"
         if capital == "" {
             capital = "\(String(describing: country.name!))"
         }
