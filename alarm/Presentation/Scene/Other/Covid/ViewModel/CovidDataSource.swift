@@ -13,13 +13,9 @@ class CovidDataSource: NSObject, UITableViewDataSource {
     
     private var tableView: UITableView!
     private var viewModel: CovidListViewModelProtocol!
-    
-    private var covidList = [CovidViewModel]()
-    
-    var coordinator    : CoordinatorProtocol?
-    
-    var filteredData   = [CovidViewModel]()
-    
+    private var covidList = [Covid]()
+        
+    var filteredData   = [Covid]()
     var currentCountry : String?
     
     init(with tableView: UITableView, viewModel: CovidListViewModelProtocol, countryName : String) {
@@ -33,16 +29,10 @@ class CovidDataSource: NSObject, UITableViewDataSource {
     }
     
     func refresh() {
-        
-        viewModel.getCovidData { [weak self] result in
-            self?.filteredData = result.filter { $0.name == self?.currentCountry }
-            
-            self?.covidList = (self?.filteredData)!
-
-            print(self?.filteredData ?? "")
-            self?.tableView.reloadData()
-        }
-        
+        let covid = viewModel.covid
+        filteredData = covid.filter { $0.countryRegion == self.currentCountry }
+        covidList = filteredData
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,10 +49,10 @@ class CovidDataSource: NSObject, UITableViewDataSource {
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
             cell.alpha = 0.0
             cell.selectionStyle = .none
-            cell.arrayOfData += covidList.map { $0.confirmed }
-            cell.arrayOfData += covidList.map { $0.active }
-            cell.arrayOfData += covidList.map { $0.death }
-            cell.arrayOfData += covidList.map { $0.recovered }
+            cell.arrayOfData += covidList.map { $0.confirmed ?? 0 }
+            cell.arrayOfData += covidList.map { $0.active ?? 0 }
+            cell.arrayOfData += covidList.map { $0.death ?? 0 }
+            cell.arrayOfData += covidList.map { $0.recovered ?? 0 }
             
             return cell
             
@@ -70,10 +60,10 @@ class CovidDataSource: NSObject, UITableViewDataSource {
         
         if indexPath.row == 1 {
             let cell = tableView.deque(CovidConfirmedTableViewCell.self, for: indexPath)
-            cell.labelNumber.text = "\(String(describing: covidList.map { $0.confirmed } ))"
+            cell.labelNumber.text = "\(String(describing: covidList.map { $0.confirmed ?? 0 } ))"
             cell.labelNumber.text?.removeFirst()
             cell.labelNumber.text?.removeLast()
-
+            cell.labelConfirmed.text = "confirmedLabel".localized()
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
@@ -84,10 +74,11 @@ class CovidDataSource: NSObject, UITableViewDataSource {
         }
         if indexPath.row == 2 {
             let cell = tableView.deque(ActiveTableViewCell.self, for: indexPath)
-            cell.labelNumber.text = "\(String(describing: covidList.map { $0.active } ))"
+            cell.labelNumber.text = "\(String(describing: covidList.map { $0.active ?? 0 } ))"
             cell.labelNumber.text?.removeFirst()
             cell.labelNumber.text?.removeLast()
-
+            cell.labelActive.text = "activeLabel".localized()
+            
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
@@ -98,10 +89,11 @@ class CovidDataSource: NSObject, UITableViewDataSource {
         }
         if indexPath.row == 3 {
             let cell = tableView.deque(DeathTableViewCell.self, for: indexPath)
-            cell.labelNumber.text = "\(String(describing: covidList.map { $0.death } ))"
+            cell.labelNumber.text = "\(String(describing: covidList.map { $0.death ?? 0 } ))"
             cell.labelNumber.text?.removeFirst()
             cell.labelNumber.text?.removeLast()
-
+            cell.labelDeath.text = "deathLabel".localized()
+            
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
@@ -112,10 +104,11 @@ class CovidDataSource: NSObject, UITableViewDataSource {
         }
         if indexPath.row == 4 {
             let cell = tableView.deque(RecoveredTableViewCell.self, for: indexPath)
-            cell.labelNumber.text = "\(String(describing: covidList.map { $0.recovered } ))"
+            cell.labelNumber.text = "\(String(describing: covidList.map { $0.recovered ?? 0 } ))"
             cell.labelNumber.text?.removeFirst()
             cell.labelNumber.text?.removeLast()
-        
+            cell.labelRecovered.text = "recoveredLabel".localized()
+            
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
@@ -126,10 +119,10 @@ class CovidDataSource: NSObject, UITableViewDataSource {
         }
         if indexPath.row == 5 {
             let cell = tableView.deque(IncidentTableViewCell.self, for: indexPath)
-            cell.labelNumber.text = "\(String(describing: covidList.map { $0.incidentRate } ))"
+            cell.labelNumber.text = "\(String(describing: covidList.map { $0.incidentRate ?? 0 } ))"
             cell.labelNumber.text?.removeFirst()
             cell.labelNumber.text?.removeLast()
-
+            cell.labelIncident.text = "incidentRateLabel".localized()
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
@@ -140,10 +133,10 @@ class CovidDataSource: NSObject, UITableViewDataSource {
         }
         else {
             let cell = tableView.deque(MortalityTableViewCell.self, for: indexPath)
-            cell.labelNumber.text = "\(String(describing: covidList.map { $0.mortalityRate } ))"
+            cell.labelNumber.text = "\(String(describing: covidList.map { $0.mortalityRate ?? 0 } ))"
             cell.labelNumber.text?.removeFirst()
             cell.labelNumber.text?.removeLast()
-
+            cell.labelMortality.text = "mortalityRateLabel".localized()
          
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white

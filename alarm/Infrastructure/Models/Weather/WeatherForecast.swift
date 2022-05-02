@@ -7,24 +7,30 @@
 
 import Foundation
 
-struct WeatherForecast : Codable {
+struct WeatherForecast : Decodable {
     let forecastday : [ForecastDay]
 }
 
-struct ForecastDay : Codable {
+struct ForecastDay : Decodable {
     let astro : Astro
     let hour  : [Hour]
 }
 
-struct Astro : Codable {
+struct Astro : Decodable {
     let sunrise : String
     let sunset  : String
 }
 
-struct Hour : Codable {
-    let temp_c    : Double
-    let time      : String
-    let condition : Condition
+struct Hour : Decodable {
+    let temperature : Double
+    let time        : String
+    let condition   : Condition
+    
+    enum CodingKeys: String, CodingKey {
+        case time, condition
+        case temperature = "temp_c"
+    }
+
 }
 
 struct Condition : Codable {

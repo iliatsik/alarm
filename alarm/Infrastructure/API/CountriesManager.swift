@@ -6,23 +6,17 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CountriesManagerProtocol: AnyObject {
-    func fetchCountries(completion: @escaping (([Country]) -> Void))
+    func fetchCountries(completion: @escaping (Result<[Country], Error>) -> Void)
 }
 
 class CountriesManager: CountriesManagerProtocol {
     
-    func fetchCountries(completion: @escaping (([Country]) -> Void)) {
-        let url = "https://restcountries.com/v2/all"
-        NetworkManager.shared.get(url: url) { (result: Result<[Country], Error>) in
-            switch result {
-            case .success(let countries):
-                completion(countries)
-            case .failure(let error):
-                print(error)
-                
-            }
-        }
+    func fetchCountries(completion: @escaping (Result<[Country], Error>) -> Void) {
+        let url = ApiEndpoints.countryURL
+        NetworkManager.shared.get(url: url, completion: completion)
+        
     }
 }

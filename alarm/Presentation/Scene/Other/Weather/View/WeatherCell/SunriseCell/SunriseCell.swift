@@ -9,6 +9,7 @@ import UIKit
 
 class SunriseCell: UITableViewCell {
 
+    @IBOutlet weak var sunriseOutlet: UILabel!
     @IBOutlet weak var labelSunrise: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

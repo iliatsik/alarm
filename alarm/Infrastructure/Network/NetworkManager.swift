@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NetworkManagerProtocol: AnyObject {
-    func get<T: Codable>(url: String, completion: @escaping ((Result<T, Error>) -> Void)) 
+    func get<T: Decodable>(url: String, completion: @escaping ((Result<T, Error>) -> Void))
 }
 
 class NetworkManager : NetworkManagerProtocol  {
@@ -17,7 +17,7 @@ class NetworkManager : NetworkManagerProtocol  {
     
     init() {}
     
-    func get<T: Codable>(url: String, completion: @escaping ((Result<T, Error>) -> Void)) {
+    func get<T: Decodable>(url: String, completion: @escaping ((Result<T, Error>) -> Void)) {
         guard let url = URL(string: url) else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in
             

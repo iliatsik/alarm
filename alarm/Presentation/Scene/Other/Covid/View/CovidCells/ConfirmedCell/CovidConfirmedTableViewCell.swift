@@ -36,7 +36,7 @@ class CovidConfirmedTableViewCell: UITableViewCell {
         }
     }
     
-    func configure(with item: CovidViewModel) {
-        textLabel?.text = "\(item.confirmed)"
+    func configure(with item: Covid) {
+        textLabel?.text = "\(String(describing: item.confirmed))"
     }
 }

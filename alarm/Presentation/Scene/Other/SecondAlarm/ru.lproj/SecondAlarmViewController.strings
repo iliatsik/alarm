@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "Repeat"; ObjectID = "0Gm-gj-oow"; */
+"0Gm-gj-oow.text" = "Repeat";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "79z-N7-gtO"; */
+"79z-N7-gtO.title" = "Save";
+
+/* Class = "UILabel"; text = "Default  >"; ObjectID = "A2i-6c-zh1"; */
+"A2i-6c-zh1.text" = "Default  >";
+
+/* Class = "UILabel"; text = "Never  >"; ObjectID = "F5w-pq-cel"; */
+"F5w-pq-cel.text" = "Never  >";
+
+/* Class = "UILabel"; text = "Snooze"; ObjectID = "G6V-St-MsY"; */
+"G6V-St-MsY.text" = "Snooze";
+
+/* Class = "UINavigationItem"; title = "Add Alarm"; ObjectID = "N6K-4g-J1t"; */
+"N6K-4g-J1t.title" = "Add Alarm";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "O5g-pR-zM5"; */
+"O5g-pR-zM5.title" = "Cancel";
+
+/* Class = "UILabel"; text = "Sound"; ObjectID = "Rns-5o-gLr"; */
+"Rns-5o-gLr.text" = "Sound";
+
+/* Class = "UILabel"; text = "Alarm  >"; ObjectID = "gbg-Qa-roJ"; */
+"gbg-Qa-roJ.text" = "Alarm  >";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "st2-fG-f07"; */
+"st2-fG-f07.text" = "Label";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "zKh-sy-WD8"; */
+"zKh-sy-WD8.text" = "Time";

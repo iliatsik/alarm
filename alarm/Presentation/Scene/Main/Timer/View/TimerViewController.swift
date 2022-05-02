@@ -13,6 +13,7 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
         selectedAudio = string
     }
     
+    var radius : CGFloat?
     
     @IBOutlet weak var cancelView            : UIView!
     @IBOutlet weak var startView             : UIView!
@@ -48,8 +49,10 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cancelButton.setTitle("cancelButton".localized(), for: .normal)
+        startAndPauseButton.setTitle("startButton".localized(), for: .normal)
         ringtoneRegisterLabel.layer.cornerRadius = 8
-        ringtoneRegisterLabel.setTitle("When Timer Ends", for: .normal)
+        ringtoneRegisterLabel.setTitle("whenTimerEndsButton".localized(), for: .normal)
         center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
                 print("Yay!")
@@ -89,9 +92,9 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
         
         startAndPauseButton.layer.borderWidth   = 1
         startAndPauseButton.layer.borderColor   = UIColor.black.cgColor
-        
-//        setUpNotification()
-  
+          
+        radius = timerLabel.frame.size.width / 2
+
     }
 
     
@@ -109,7 +112,7 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
             timerLabel.isHidden    = false
             startAndPauseButton.backgroundColor = UIColor(named: "pause")
             startAndPauseButton.setTitleColor(.orange, for: .normal)
-            startAndPauseButton.setTitle("Pause", for: .normal)
+            startAndPauseButton.setTitle("pauseButton".localized(), for: .normal)
             startView.layer.borderColor = UIColor(named: "pause")?.cgColor
 
             cancelButton.isEnabled = true
@@ -120,7 +123,7 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
         } else {
             startAndPauseButton.backgroundColor = UIColor(named: "start")
             startAndPauseButton.setTitleColor(.green, for: .normal)
-            startAndPauseButton.setTitle("Resume", for: .normal)
+            startAndPauseButton.setTitle("resumeButton".localized(), for: .normal)
             startView.layer.borderColor = UIColor(named: "start")?.cgColor
 
             
@@ -147,7 +150,7 @@ class TimerViewController: BaseViewController, SecondTimerDelegate {
             
             startAndPauseButton.backgroundColor = UIColor(named: "start")
             startAndPauseButton.setTitleColor(.green, for: .normal)
-            startAndPauseButton.setTitle("Start", for: .normal)
+        startAndPauseButton.setTitle("startButton".localized(), for: .normal)
             
             startView.layer.borderColor = UIColor(named: "start")?.cgColor
 

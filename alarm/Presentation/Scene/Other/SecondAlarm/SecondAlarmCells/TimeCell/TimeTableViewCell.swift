@@ -20,6 +20,7 @@ class TimeTableViewCell: UITableViewCell {
     var minutes : Int = 0
     
     
+    @IBOutlet weak var timeOutlet: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     
     

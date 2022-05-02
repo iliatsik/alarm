@@ -50,8 +50,9 @@ class SecondAlarmViewController: UIViewController, LabelDelegate, SoundDelegate,
         tableView.reloadData()
     }
     
+    @IBOutlet weak var cancelBarButton: UIBarButtonItem!
+    @IBOutlet weak var saveBarButton: UIBarButtonItem!
     
-    @IBOutlet weak var navigationBar: UINavigationBar!
     
     var delegate: SecondAlarmDelegate?
     
@@ -85,13 +86,15 @@ class SecondAlarmViewController: UIViewController, LabelDelegate, SoundDelegate,
             }
         }
         
+        title = "addAlarmLabel".localized()
+        saveBarButton.title = "saveNavigationBar".localized()
+        cancelBarButton.title = "cancelNavigationBar".localized()
         UNUserNotificationCenter.current().delegate = self
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor(named: "dark")
     }
    
-    
     @IBAction func saveData(_ sender: Any) {
         index += 1
         delegate?.finishPassing(hour: (hoursInString ?? "00"), minute: (minutesInString ?? "00"), label: (passedLabelString ?? "Alarm"), index: index, songName: (passedSoundString ?? "Default"))
@@ -104,20 +107,17 @@ class SecondAlarmViewController: UIViewController, LabelDelegate, SoundDelegate,
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? LabelTableViewController {
+        if let destination = segue.destination as? LabelViewController {
             destination.delegate = self
         }
-        
-        if let destination = segue.destination as? SoundTableViewController{
+        if let destination = segue.destination as? SoundViewController{
             destination.delegate = self
         }
-        if let destination = segue.destination as? RepeatTableViewController{
+        if let destination = segue.destination as? RepeatViewController{
             destination.delegate = self
         }
     }
-    
 }
-
 
 extension SecondAlarmViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -129,28 +129,34 @@ extension SecondAlarmViewController : UITableViewDelegate, UITableViewDataSource
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "time", for: indexPath) as! TimeTableViewCell
             cell.delegate = self
+            cell.timeOutlet.text = "timeLabel".localized()
             cell.selectionStyle = .none
             return cell
         }
         if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "repeat", for: indexPath) as! RepeatTableViewCell
-            cell.repeatLabel.text = "\(passedRepeatString ?? "Once") >"
+            cell.repeatLabel.text = "\(passedRepeatString ?? "onceLabel".localized()) >"
+            cell.repeatOutlet.text = "repeatLabel".localized()
             cell.selectionStyle = .none
+            cell.backgroundColor = .gray
             return cell
         }
         
         if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "label", for: indexPath) as! LabelTableViewCell
-            cell.alarmLabel.text = "\(passedLabelString ?? "Alarm") >"
-            cell.alarmLabel.textColor = .lightGray
+            cell.alarmLabel.text = "\(passedLabelString ?? "alarmLabel".localized()) >"
+            cell.labelOutlet.text = "textLabel".localized()
             cell.selectionStyle = .none
+            cell.backgroundColor = .gray
             return cell
         }
         
         if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "sound", for: indexPath) as! SoundTableViewCell
             cell.soundLabel.text = "\(passedSoundString ?? "613") >"
+            cell.soundOutlet.text = "soundLabel".localized()
             cell.selectionStyle = .none
+            cell.backgroundColor = .gray
             return cell
         }
         
@@ -159,7 +165,9 @@ extension SecondAlarmViewController : UITableViewDelegate, UITableViewDataSource
             if (cell.vibrationSwitch.isOn == true) {
                 vibrate = true
             }
+            cell.snoozeOutlet.text = "snoozeLabel".localized()
             cell.selectionStyle = .none
+            cell.backgroundColor = .gray
             return cell
         }
         return cell
@@ -174,19 +182,7 @@ extension SecondAlarmViewController : UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        if indexPath.row == 1 {
-            performSegue(withIdentifier: "repeat_segue", sender: nil)
-        }
-        if indexPath.row == 2 {
-            performSegue(withIdentifier: "label_segue", sender: nil)
-        }
-        if indexPath.row == 3 {
-            performSegue(withIdentifier: "sound_segue", sender: nil)
-        }
-
-    }
     
 }
 
@@ -199,10 +195,10 @@ extension SecondAlarmViewController {
         center.delegate = self
         
         let content = UNMutableNotificationContent()
-        content.title = "Alarm"
-        content.body = "Notification"
+        content.title = "alarmForNotification".localized()
+        content.body = "notifForNotification".localized()
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "\(passedSoundString ?? "613").mp3"))
-        content.categoryIdentifier = "Alarm"
+        content.categoryIdentifier = "alarmForNotification".localized()
         content.userInfo = ["customData": "fizzbuzz"]
         
         var calendar = Calendar.current
@@ -235,11 +231,11 @@ extension SecondAlarmViewController {
 
     }
 }
-//func removePendingNotificationRequests(withIdentifiers identifiers: [String]) to stop receive nots
+
 
 extension SecondAlarmViewController: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler( [.alert, .badge, .sound])
+        completionHandler( [.banner, .badge, .sound, .list])
  
     }
     

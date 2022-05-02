@@ -35,7 +35,7 @@ class AlarmViewController: BaseViewController, SecondAlarmDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.separatorColor = UIColor.white
+        title = "alarmTitle".localized()
         configureViewModel()
         setUpTableView()
         tableView.reloadData()
@@ -52,7 +52,7 @@ class AlarmViewController: BaseViewController, SecondAlarmDelegate {
          tableView.dataSource = self
     }
 
-    @IBAction func addFButton(_ sender: Any) {
+    @IBAction func addButton(_ sender: Any) {
         performSegue(withIdentifier: "main_alarm_segue", sender: self)
     }
     
@@ -65,7 +65,7 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.deque(MainTableViewCell.self, for: indexPath)
-        cell.nameLabel.text = "\(passedLabel ?? "Alarm"), \(passedRingtone ?? "613")"
+        cell.nameLabel.text = "\(passedLabel ?? "alarmLabel".localized()), \(passedRingtone ?? "613")"
         cell.timeLabel.text = "\(passedHour  ?? "00"):\(passedMinute ?? "00")"
         cell.selectionStyle = .none
         return cell

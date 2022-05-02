@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,14 +27,19 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="I9u-I1-EgE">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="I9u-I1-EgE" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="4RK-WU-XT8"/>
                             <constraint firstItem="4Dk-M4-PSo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="GOF-aq-iyU"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4Dk-M4-PSo" secondAttribute="trailing" id="T7c-5V-JyO"/>
                             <constraint firstItem="ghC-np-Mql" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="TSF-H0-g0l"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="4Dk-M4-PSo" secondAttribute="bottom" id="aTY-pd-n6S"/>
+                            <constraint firstItem="I9u-I1-EgE" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="eoN-Ra-0g4"/>
                             <constraint firstItem="4Dk-M4-PSo" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="l9m-GN-9mh"/>
                             <constraint firstItem="ghC-np-Mql" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="lnD-0c-boc"/>
                             <constraint firstItem="ghC-np-Mql" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="vch-U6-fxl"/>
@@ -42,6 +48,7 @@
                     </view>
                     <connections>
                         <outlet property="imgView" destination="ghC-np-Mql" id="TOZ-jW-yn1"/>
+                        <outlet property="spinner" destination="I9u-I1-EgE" id="wJk-NF-CXc"/>
                         <outlet property="tableView" destination="4Dk-M4-PSo" id="Hud-Wu-1sU"/>
                     </connections>
                 </viewController>

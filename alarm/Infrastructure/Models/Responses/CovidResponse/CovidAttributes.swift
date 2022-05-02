@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct CovidAttributes : Codable {
+struct CovidAttributes : Decodable {
     let attributes : Covid
 }

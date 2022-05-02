@@ -7,25 +7,26 @@
 import UIKit
 
 protocol CountriesListViewModelProtocol: AnyObject {
-    func getCountriesList(completion: @escaping (([CountryViewModel]) -> Void))
-    var didFinishedLoading: (() -> Void)? { get set }
-    var navigationItem: UINavigationItem? { get set }
-    func setTitle(with text: String, on navigationItem: UINavigationItem)
-    var controller: CoordinatorDelegate { get }
-        
+    var didFinishLoading: (() -> Void)?   { get set }
+    var didStartLoading: (() -> Void)?    { get set }
+    var controller: CoordinatorDelegate   { get }
+    func viewDidLoad()
+    var countries : [CountryViewModel]    { get }
+    
     init(with countriesManager: CountriesManagerProtocol, controller: CoordinatorDelegate, covidManager: CovidManagerProtocol, weatherManager: WeatherManagerProtocol)
 }
 
-final class CountriesListViewModel: CountriesListViewModelProtocol {
+final class CountriesListViewModel : CountriesListViewModelProtocol {
    
-    private(set) var controller: CoordinatorDelegate
-    
+    private(set) var controller  : CoordinatorDelegate
+    private(set) var countries = [CountryViewModel]()
+
     private var countriesManager : CountriesManagerProtocol!
     private var covidManager     : CovidManagerProtocol!
     private var weatherManager   : WeatherManagerProtocol!
-    
-    var didFinishedLoading: (() -> Void)?
-    var navigationItem: UINavigationItem?
+        
+    var didFinishLoading: (() -> Void)? 
+    var didStartLoading:  (() -> Void)?
     
     init(with countriesManager: CountriesManagerProtocol, controller: CoordinatorDelegate, covidManager: CovidManagerProtocol, weatherManager: WeatherManagerProtocol)  {
         self.countriesManager = countriesManager
@@ -34,17 +35,36 @@ final class CountriesListViewModel: CountriesListViewModelProtocol {
         self.weatherManager   = weatherManager
     }
     
-    func getCountriesList(completion: @escaping (([CountryViewModel]) -> Void)) {
-        countriesManager.fetchCountries { countries in
+    
+    private func showErrorMessage() {
+        var actions = [AlertAction]()
+        actions.append(AlertAction(title: "retryForAlert".localized(), action: { [weak self] in
+            self?.fetchData()
+        }))
+        actions.append(AlertAction(title: "okButtonTitle".localized(), action: { }))
+        self.controller.coordinator?.presentAlert(title: "errorAlertTitle".localized(), message: nil, actions: actions)
+    }
 
-            DispatchQueue.main.async {
-                let countriesViewModels =  countries.map { CountryViewModel(country: $0 ) }
-                completion(countriesViewModels)
-           }
-        }
+    func viewDidLoad() {
+        fetchData()
     }
     
-    func setTitle(with text: String, on navigationItem: UINavigationItem) {
-        navigationItem.title = text
+    
+    private func fetchData() {
+        self.didStartLoading?()
+
+        countriesManager.fetchCountries { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let countries):
+                    self?.countries = countries.map { CountryViewModel(country: $0 ) }
+                    self?.didFinishLoading?()
+                case .failure(let error):
+                    self?.showErrorMessage()
+                    self?.didFinishLoading?()
+                    print(error)
+                }
+            }
+        }
     }
 }

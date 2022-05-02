@@ -7,14 +7,24 @@
 
 import Foundation
 
-struct Covid : Codable {
+struct Covid : Decodable {
     
-    let Country_Region   : String?
-    let Confirmed        : Int?
-    let Active           : Int?
-    let Recovered        : Int?
-    let Deaths           : Int?
-    let Incident_Rate    : Double?
-    let Mortality_Rate   : Double?
+    let countryRegion   : String?
+    let confirmed       : Int?
+    let active          : Int?
+    let recovered       : Int?
+    let death           : Int?
+    let incidentRate    : Double?
+    let mortalityRate   : Double?
+    
+    enum CodingKeys: String, CodingKey {
+        case countryRegion = "Country_Region"
+        case confirmed     = "Confirmed"
+        case active        = "Active"
+        case recovered     = "Recovered"
+        case death         = "Deaths"
+        case incidentRate  = "Incident_Rate"
+        case mortalityRate = "Mortality_Rate"
+    }
 }
 

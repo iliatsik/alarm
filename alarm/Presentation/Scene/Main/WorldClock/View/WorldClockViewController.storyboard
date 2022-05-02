@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9yu-EY-lxX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9yu-EY-lxX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--World Clock View Controller-->
+        <!--NL-World Clock-->
         <scene sceneID="8JR-Og-dQK">
             <objects>
                 <viewController storyboardIdentifier="WorldClockViewController" id="xjS-sJ-ZZ4" customClass="WorldClockViewController" customModule="alarm" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,73 +16,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zAL-8E-Hy1">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="127"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" largeTitles="YES" id="OcU-vy-NIk">
-                                        <rect key="frame" x="0.0" y="41" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <textAttributes key="titleTextAttributes">
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </textAttributes>
-                                        <items>
-                                            <navigationItem largeTitleDisplayMode="always" id="z6T-DO-wpQ"/>
-                                        </items>
-                                    </navigationBar>
-                                </subviews>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="World Clock" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwh-ab-7Yg">
-                                <rect key="frame" x="20" y="107" width="192" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="192" id="DKv-AC-qO7"/>
-                                    <constraint firstAttribute="height" constant="39" id="XfC-tn-RC8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="33"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sn2-Ik-ndI">
-                                <rect key="frame" x="0.0" y="246" width="414" height="616"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="616" id="vaz-xq-LwK"/>
-                                    <constraint firstAttribute="width" constant="414" id="wqn-0Y-CB4"/>
-                                </constraints>
+                                <searchBar key="tableHeaderView" contentMode="redraw" text="" id="PLu-AA-No5">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="searchField.textColor">
+                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </searchBar>
                             </tableView>
-                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="PLu-AA-No5">
-                                <rect key="frame" x="0.0" y="146" width="414" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="searchField.textColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </searchBar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="KLb-5R-zK2">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Glk-uW-wvn"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="PLu-AA-No5" firstAttribute="leading" secondItem="Glk-uW-wvn" secondAttribute="leading" id="0vJ-NE-qbC"/>
+                            <constraint firstItem="KLb-5R-zK2" firstAttribute="centerY" secondItem="Fte-Pe-xWb" secondAttribute="centerY" id="3gw-Wh-Ule"/>
                             <constraint firstItem="Glk-uW-wvn" firstAttribute="bottom" secondItem="Sn2-Ik-ndI" secondAttribute="bottom" id="4jy-Wg-efw"/>
-                            <constraint firstItem="Bwh-ab-7Yg" firstAttribute="top" secondItem="Glk-uW-wvn" secondAttribute="top" constant="63" id="If4-99-rw0"/>
-                            <constraint firstItem="PLu-AA-No5" firstAttribute="trailing" secondItem="Glk-uW-wvn" secondAttribute="trailing" id="KCi-xO-G1z"/>
-                            <constraint firstItem="PLu-AA-No5" firstAttribute="top" secondItem="Bwh-ab-7Yg" secondAttribute="bottom" id="KUF-ng-rAz"/>
+                            <constraint firstItem="KLb-5R-zK2" firstAttribute="centerX" secondItem="Fte-Pe-xWb" secondAttribute="centerX" id="QoS-sf-FtI"/>
                             <constraint firstItem="Glk-uW-wvn" firstAttribute="trailing" secondItem="Sn2-Ik-ndI" secondAttribute="trailing" id="VPh-SM-kdM"/>
-                            <constraint firstItem="Sn2-Ik-ndI" firstAttribute="top" secondItem="PLu-AA-No5" secondAttribute="bottom" id="fvk-JG-a9o"/>
-                            <constraint firstItem="Bwh-ab-7Yg" firstAttribute="leading" secondItem="Glk-uW-wvn" secondAttribute="leading" constant="20" id="jqr-Kz-AtC"/>
+                            <constraint firstItem="Sn2-Ik-ndI" firstAttribute="top" secondItem="Glk-uW-wvn" secondAttribute="top" id="aSH-zX-V9F"/>
                             <constraint firstItem="Sn2-Ik-ndI" firstAttribute="leading" secondItem="Glk-uW-wvn" secondAttribute="leading" id="m9l-g8-QCQ"/>
-                            <constraint firstItem="Glk-uW-wvn" firstAttribute="trailing" secondItem="Bwh-ab-7Yg" secondAttribute="trailing" constant="202" id="ukV-CC-XiV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bz7-Qy-p7w"/>
+                    <navigationItem key="navigationItem" title="NL-World Clock" id="bz7-Qy-p7w"/>
                     <connections>
                         <outlet property="searchBar" destination="PLu-AA-No5" id="15R-KK-0R7"/>
+                        <outlet property="spinner" destination="KLb-5R-zK2" id="eO3-Fw-5gh"/>
                         <outlet property="tableView" destination="Sn2-Ik-ndI" id="8ja-sc-WMM"/>
                     </connections>
                 </viewController>
@@ -92,11 +63,15 @@
         <!--World Clock-->
         <scene sceneID="Evl-a6-6oU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="9yu-EY-lxX" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9yu-EY-lxX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="World Clock" image="network" catalog="system" id="OIf-vc-Oif"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xvh-Yz-7TM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

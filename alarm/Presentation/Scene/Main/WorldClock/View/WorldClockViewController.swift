@@ -10,10 +10,11 @@ import UIKit
 class WorldClockViewController: BaseViewController {
 
     @IBOutlet weak var searchBar : UISearchBar!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var tableView : UITableView!
 
     private var viewModel        : CountriesListViewModelProtocol!
-    private var dataSource       : CountriesDataSource!
+    private var dataSource       : CountriesDataSource?
     private var countriesManager : CountriesManagerProtocol!
     private var covidManager     : CovidManagerProtocol!
     private var weatherManager   : WeatherManagerProtocol!
@@ -21,25 +22,18 @@ class WorldClockViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "worldClockTitle".localized()
         setupLayout()
         configureViewModel()
-        dataSource.refresh()
-        viewModel.setTitle(with: "Countries", on: navigationItem)
+        addBindings()
+        viewModel.viewDidLoad()
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-
+ 
     private func setupLayout() {
         searchBar.delegate = self
         tableView.registerNib(class: CountryTableViewCell.self)
+        searchBar.barTintColor = .black
+        searchBar.backgroundColor = .black
     }
     
     private func configureViewModel() {
@@ -53,10 +47,19 @@ class WorldClockViewController: BaseViewController {
         dataSource       = CountriesDataSource(with: tableView, viewModel: viewModel)
     }
     
+    private func addBindings() {
+        viewModel.didStartLoading = { [weak self] in
+            self?.spinner.startAnimating()
+        }
+        viewModel.didFinishLoading = { [weak self] in
+            self?.dataSource?.refresh()
+            self?.spinner.stopAnimating()
+        }
+    }
 }
 
 extension WorldClockViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        dataSource.search(with: searchText)
+        dataSource?.search(with: searchText)
     }
 }

@@ -22,8 +22,8 @@ final class TimerCoordinator: CoordinatorProtocol {
         let vc = TimerViewController.instantiateFromStoryboard()
         vc.coordinator = self
         vc.tabBarItem.image = UIImage(named: "timer")
-        vc.title = "Timer"
-
+        vc.tabBarItem.title = "timerTitle".localized()
+        
         self.navigationController?.viewControllers = [vc]
     }
     

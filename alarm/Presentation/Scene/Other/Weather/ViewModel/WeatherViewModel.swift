@@ -9,13 +9,11 @@ import UIKit
 
 
 protocol WeatherListViewModelProtocol: AnyObject {
-    var didFinishedLoading: (() -> Void)? { get set }
-    var navigationItem: UINavigationItem? { get set }
-    func setTitle(with text: String, on navigationItem: UINavigationItem)
+    var didFinishLoading: (() -> Void)?   { get set }
+    var didStartLoading:  (() -> Void)?   { get set }
     var controller: CoordinatorDelegate { get }
-    func getWeatherData(with cityname: String, completion: @escaping ((Weather) -> Void))
- 
-    init(controller: CoordinatorDelegate, weatherManager: WeatherManagerProtocol)
+    func viewDidLoad()
+    var weather: Weather? { get }
 }
 
 final class WeatherListViewModel: WeatherListViewModelProtocol {
@@ -25,19 +23,46 @@ final class WeatherListViewModel: WeatherListViewModelProtocol {
     private var countriesManager : CountriesManagerProtocol!
     private var weatherManager   : WeatherManagerProtocol!
     
-    var didFinishedLoading: (() -> Void)?
-    var navigationItem: UINavigationItem?
+    var didFinishLoading: (() -> Void)?
+    var didStartLoading:  (() -> Void)?
+    private let cityName : String
+    private(set) var weather : Weather?
     
-    init(controller: CoordinatorDelegate, weatherManager: WeatherManagerProtocol)  {
+    init(controller: CoordinatorDelegate, weatherManager: WeatherManagerProtocol, cityName: String)  {
         self.controller     = controller
         self.weatherManager = weatherManager
+        self.cityName       = cityName
     }
     
-    func getWeatherData(with cityname: String, completion: @escaping ((Weather) -> Void)) {
-        weatherManager.fetchWeatherLocation(with: cityname, completion: completion ) 
+    private func showErrorMessage() {
+        var actions = [AlertAction]()
+        actions.append(AlertAction(title: "retryForAlert".localized(), action: { [weak self] in
+            self?.fetchData()
+        }))
+        actions.append(AlertAction(title: "okButtonTitle".localized(), action: { }))
+        self.controller.coordinator?.presentAlert(title: "errorAlertTitle".localized(), message: nil, actions: actions)
     }
-  
-    func setTitle(with text: String, on navigationItem: UINavigationItem) {
-        navigationItem.title = text
+
+    func viewDidLoad() {
+        fetchData()
+    }
+    
+    private func fetchData() {
+        didStartLoading?()
+    
+        weatherManager.fetchWeatherLocation(with: cityName) { [weak self] result in
+            DispatchQueue.main.async {
+                
+                switch result {
+                case .success(let response):
+                    self?.weather = response
+                    self?.didFinishLoading?()
+                case .failure(let err):
+                    self?.showErrorMessage()
+                    self?.didFinishLoading?()
+                    print(err)
+                }
+            }
+        }
     }
 }

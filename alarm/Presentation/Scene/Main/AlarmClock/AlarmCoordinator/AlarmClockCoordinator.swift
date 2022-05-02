@@ -18,13 +18,14 @@ final class AlarmClockCoordinator: CoordinatorProtocol {
     
     init(_ window: UIWindow? = nil, navigationController: UINavigationController? = UINavigationController()) {
         self.navigationController = navigationController
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         let vc = AlarmViewController.instantiateFromStoryboard()
         vc.coordinator = self
         vc.tabBarItem.image = UIImage(named: "alarmclock")
-        vc.title = "Alarm"
-        
+        vc.tabBarItem.title = "alarmTitle".localized()
         self.navigationController?.viewControllers = [vc]
         
     }

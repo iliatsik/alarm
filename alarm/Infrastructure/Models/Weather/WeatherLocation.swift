@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WeatherLocation : Codable {
+struct WeatherLocation : Decodable {
     let name : String
     let lat  : Double
     let lon  : Double

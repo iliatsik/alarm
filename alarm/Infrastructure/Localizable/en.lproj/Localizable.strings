@@ -1,0 +1,183 @@
+/* Used as button to make a laps for stopwatch */
+"lapButton" = "Lap";
+
+/* Used to see how many laps are shown in the cell */
+"lapInCell" = "Lap";
+
+/* Used as button to start action*/
+"startButton" = "Start";
+
+/* Used as button to reset current time in Stopwatch */
+"resetButton" = "Reset";
+
+/* Used as button to stop counting in stopwatch */
+"stopButton" = "Stop";
+
+/* Used as a tabBarController's name and as a title, which will be displayed everywhere at the bottom of the screen  */
+"stopwatchTitle" = "Stopwatch";
+
+/* Used as a tabBarController's name and as a title, which will be displayed everywhere at the bottom of the screen */
+"timerTitle" = "Timer";
+
+/* Used as a tabBarController's name and as a title, shows that currently we are in the world clock view controller */
+"worldClockTitle" = "World Clock";
+
+/* Used as a tabBarController's name and as a title, it show that this current alarl called alarm as default*/
+"alarmTitle" = "Alarm";
+
+/* A button title, tap on the button lets user to choose a ringtone to play when a timer ends */
+"whenTimerEndsButton" = "When Timer Ends";
+
+/* Button, which resumes paused timer */
+"resumeButton" = "Resume";
+
+/* Used to cancel current operation, such as: counting */
+"cancelButton" = "Cancel";
+
+/* Used to cancel popped up window and clear its operations */
+"cancelNavigationBar" = "Cancel";
+
+/* Used to pause current time in timer */
+"pauseButton" = "Pause";
+
+/* Used in timer to define hours */
+"hoursInPickerView" = "hours";
+
+/* Used in timer to define minutes */
+"minutesInPickerView" = "min";
+
+/* Used in timer to define seconds */
+"secondsInPickerView" = "sec";
+
+/* Used to set ringtone in timer */
+"setNavigationBar" = "Set";
+
+/* Used as a header in timer's ringtone window */
+"addRingtoneLabel" = "Add Ringtone";
+
+/* Used to return in the previous window */
+"backNavigationBar" = "Back";
+
+/* Used as a header in window, where we choose alarm's label */
+"labelNavigationBar" = "Label";
+
+/* Used as a header in window, where we choose alarm's ringtone*/
+"soundNavigationBar" = "Sound";
+
+/* Used as a header in window, where we choose alarm's cycle of repeat, exact times, when we want to repeat alarm*/
+"repeatNavigationBar" = "Repeat";
+
+/* Used for picking time for alarm to repeat in the weekends */
+"weekendLabel" = "Weekends";
+
+/* Used for picking times for alarm to repeat everyday */
+"everydayLabel" = "Everyday";
+
+/* Used for picking times for alarm to repeat in the weekdays */
+"weekdaysLabel" = "Weekdays";
+
+/* It shows when and/or if we want to repeat alarm*/
+"repeatLabel" = "Repeat";
+
+/* It shows us which sound should be chosen in the alarm*/
+"soundLabel" = "Sound";
+
+/* It shows us if we want to name the current alarm*/
+"textLabel" = "Label";
+
+/* It shows us if we want to provide alarm with snooze */
+"snoozeLabel" = "Snooze";
+
+/* It is default name of the alarm's label */
+"alarmLabel" = "Alarm";
+
+/* Default value of the alarm's repeat, in what frequency should be repeated */
+"neverLabel" = "Never";
+
+/* It shows us exact time of the alarm */
+"timeLabel" = "Time";
+
+/* It says that alarm should be repeated only once*/
+"onceLabel" = "Once";
+
+/* Used as a title of the alarm */
+"addAlarmLabel" = "Add Alarm";
+
+/* Used to save current window's data */
+"saveNavigationBar" = "Save";
+
+/* After tapping this, it goes in the current city's location */
+"countryLocationLabel" = "Country's Location";
+
+/* It shows us the pressure of the current capital city in the weather */
+"pressureLabel" = "PRESSURE";
+
+/* It shows us the how temperature feels like of the current capital city in the weather */
+"feelsLikeLabel" = "FEELS LIKE";
+
+/* It is abbreviation of the speed */
+"speedString" = "km/hr";
+
+/* It shows us the wind speed of the current capital city in the weather */
+"windLabel" = "WIND";
+
+/* It shows us the chances of rain of the current capital city in the weather */
+"rainLabel" = "CHANCES OF RAIN";
+
+/* It shows us the humidity of the current capital city in the weather */
+"humidityLabel" = "HUMIDITY";
+
+/* It shows us the sunset of the current capital city in the weather */
+"sunsetLabel" = "SUNSET";
+
+/* It shows us the sunrise of the current capital city in the weather */
+"sunriseLabel" = "SUNRISE";
+
+/* Abbreviation of the pressure, which is next to the pressure data of the capital city */
+"pressureString" = "hPa";
+
+/* It shows us covid's incident rate of the current city*/
+"incidentRateLabel" = "INCIDENT RATE";
+
+/* It shows us covid's mortality rate of the current city */
+"mortalityRateLabel" = "MORTALITY RATE";
+
+/* It shows us covid's recovered data of the current city */
+"recoveredLabel" = "RECOVERED";
+
+/* It shows us covid's death rate of the current city*/
+"deathLabel" = "DEATH";
+
+/* It shows us covid's active cases of the current city */
+"activeLabel" = "ACTIVE";
+
+/* It shows us covid's confirmed cases of the current city */
+"confirmedLabel" = "CONFIRMED";
+
+/* Used to show the title of the notification, while popping up the notification at the top of the device */
+"clockForNotification" = "Clock";
+
+/* Used to show the current window, title of the notification, while popping up the notification at the top of the device */
+"timerForNotification" = "Timer";
+
+/* Used to show name of the app, which is called category identifier, while popping up the notification at the top of the device */
+"alarmForNotification" = "Alarm";
+
+/* Used for alert, when there is an error while fetching the covid stats, this string is used for the title*/
+"covidStatisticActionSheetTitle" = "Covid Stats";
+
+/* Used for alert, when there is an error while fetching the weather stats, this string is used for the title*/
+"weatherStatisticActionSheetTitle" = "Weather";
+
+/* Used for alert, when everything clear with an error and user decided to close the alert*/
+"cancelForAlert" = "Cancel";
+
+/* Used for alert, when users wants to restart the data, which has problem with networking*/
+"retryForAlert" = "Retry";
+
+/* Used for alert, when users wants to end the task, which had a problem for fetching the data from the network*/
+"okButtonTitle" = "Ok";
+
+/* An error alert title, telling a user that the operation their performed failed */
+"errorAlertTitle" =  "Something Went Wrong";
+ 

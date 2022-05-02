@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vzf-7L-Aqf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vzf-7L-Aqf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Alarm View Controller-->
+        <!--NL-Alarm-->
         <scene sceneID="5Fg-Z1-FpM">
             <objects>
                 <viewController storyboardIdentifier="AlarmViewController" id="Gz8-cf-ekc" customClass="AlarmViewController" customModule="alarm" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,54 +18,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nQy-SA-s3k">
-                                <rect key="frame" x="0.0" y="135" width="414" height="727"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="727" id="hBg-aY-Agl"/>
-                                    <constraint firstAttribute="width" constant="414" id="mgM-hO-w9l"/>
-                                </constraints>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="KPS-ia-CNn">
-                                <rect key="frame" x="0.0" y="42" width="414" height="93"/>
-                                <items>
-                                    <navigationItem id="VpP-hR-AXn">
-                                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="mqg-38-bma">
-                                            <color key="tintColor" systemColor="systemOrangeColor"/>
-                                            <connections>
-                                                <action selector="addFButton:" destination="Gz8-cf-ekc" id="hpz-CP-XPj"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dff-iH-rbl">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="42"/>
-                                <color key="backgroundColor" red="0.070577852430000004" green="0.070594884459999993" blue="0.070574127139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="Svd-XB-UKT"/>
-                                    <constraint firstAttribute="width" constant="414" id="iMK-rc-R2X"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5ta-hu-q31"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nQy-SA-s3k" firstAttribute="bottom" secondItem="5ta-hu-q31" secondAttribute="bottom" id="AP1-bK-FTM"/>
-                            <constraint firstItem="KPS-ia-CNn" firstAttribute="leading" secondItem="5ta-hu-q31" secondAttribute="leading" id="CJF-zn-6fR"/>
-                            <constraint firstItem="dff-iH-rbl" firstAttribute="top" secondItem="Ees-bf-N3L" secondAttribute="top" id="I87-je-cMl"/>
-                            <constraint firstItem="dff-iH-rbl" firstAttribute="leading" secondItem="Ees-bf-N3L" secondAttribute="leading" id="JBr-Dt-vB1"/>
-                            <constraint firstItem="KPS-ia-CNn" firstAttribute="trailing" secondItem="5ta-hu-q31" secondAttribute="trailing" id="Lfx-y2-ucG"/>
-                            <constraint firstAttribute="trailing" secondItem="dff-iH-rbl" secondAttribute="trailing" id="PBV-VJ-9kG"/>
-                            <constraint firstItem="nQy-SA-s3k" firstAttribute="top" secondItem="KPS-ia-CNn" secondAttribute="bottom" id="UTO-vI-buT"/>
-                            <constraint firstItem="nQy-SA-s3k" firstAttribute="leading" secondItem="5ta-hu-q31" secondAttribute="leading" id="bfP-VW-QcP"/>
-                            <constraint firstItem="nQy-SA-s3k" firstAttribute="top" secondItem="KPS-ia-CNn" secondAttribute="bottom" id="gge-s8-2Cw"/>
-                            <constraint firstItem="nQy-SA-s3k" firstAttribute="trailing" secondItem="5ta-hu-q31" secondAttribute="trailing" id="hfu-97-fAC"/>
-                            <constraint firstItem="KPS-ia-CNn" firstAttribute="top" secondItem="Ees-bf-N3L" secondAttribute="top" constant="42" id="vg6-Oa-caH"/>
+                            <constraint firstItem="nQy-SA-s3k" firstAttribute="trailing" secondItem="5ta-hu-q31" secondAttribute="trailing" id="QZP-R0-xN0"/>
+                            <constraint firstItem="nQy-SA-s3k" firstAttribute="bottom" secondItem="5ta-hu-q31" secondAttribute="bottom" id="Rkr-6H-qYi"/>
+                            <constraint firstItem="nQy-SA-s3k" firstAttribute="leading" secondItem="5ta-hu-q31" secondAttribute="leading" id="U2m-sg-2Pf"/>
+                            <constraint firstItem="nQy-SA-s3k" firstAttribute="top" secondItem="5ta-hu-q31" secondAttribute="top" id="dnU-NT-OQb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="JJQ-zM-BPq"/>
+                    <navigationItem key="navigationItem" title="NL-Alarm" id="JJQ-zM-BPq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KDr-rn-Nx7">
+                            <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addButton:" destination="Gz8-cf-ekc" id="3s3-8l-vNp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="nQy-SA-s3k" id="xWb-1E-LNx"/>
+                        <outlet property="tableView" destination="nQy-SA-s3k" id="zpE-OR-stY"/>
                         <segue destination="shj-d9-uha" kind="presentation" identifier="main_alarm_segue" id="eWx-oC-hZV"/>
                     </connections>
                 </viewController>
@@ -85,11 +61,15 @@
         <!--Alarm-->
         <scene sceneID="LAz-Ae-Whd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="vzf-7L-Aqf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vzf-7L-Aqf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Alarm" image="alarm.fill" catalog="system" id="1Wd-Pr-qHl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OQZ-vs-ebE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -103,12 +83,8 @@
     </scenes>
     <resources>
         <image name="alarm.fill" catalog="system" width="124" height="128"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

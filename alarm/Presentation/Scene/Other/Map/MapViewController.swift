@@ -12,13 +12,11 @@ import MapKit
 class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
-    
     var latitude  : Double?
     var  longitude : Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let initialLocation = CLLocation(latitude: latitude!, longitude: longitude!)
         mapView.centerToLocation(initialLocation)
 
@@ -33,6 +31,8 @@ class MapViewController: UIViewController {
         
         let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 200000)
         mapView.setCameraZoomRange(zoomRange, animated: true)
+        navigationItem.largeTitleDisplayMode = .never
+        tabBarController?.tabBar.isHidden = true
     }
 
 }

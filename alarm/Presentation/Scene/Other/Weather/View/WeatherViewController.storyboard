@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,6 +24,9 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="MaE-bD-ifZ">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -30,8 +34,10 @@
                             <constraint firstAttribute="bottom" secondItem="1Db-1u-252" secondAttribute="bottom" id="BOR-ay-9jf"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pf2-KL-JkA" secondAttribute="bottom" id="BXG-Ct-ymu"/>
                             <constraint firstItem="pf2-KL-JkA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="SFz-Fd-VUO"/>
+                            <constraint firstItem="MaE-bD-ifZ" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="X8o-NZ-p9k"/>
                             <constraint firstItem="1Db-1u-252" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="bHg-Tf-xsW"/>
                             <constraint firstItem="1Db-1u-252" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="i1r-W6-4w2"/>
+                            <constraint firstItem="MaE-bD-ifZ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="oFn-BL-vYC"/>
                             <constraint firstItem="pf2-KL-JkA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="v0z-KG-VjR"/>
                             <constraint firstItem="1Db-1u-252" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="xys-c1-YNj"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pf2-KL-JkA" secondAttribute="trailing" id="z7S-44-487"/>
@@ -39,6 +45,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImage" destination="1Db-1u-252" id="egY-ab-L6F"/>
+                        <outlet property="spinner" destination="MaE-bD-ifZ" id="cAQ-XC-hAW"/>
                         <outlet property="tableView" destination="pf2-KL-JkA" id="syz-s7-16h"/>
                     </connections>
                 </viewController>

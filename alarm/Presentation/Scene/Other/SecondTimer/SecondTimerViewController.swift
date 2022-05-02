@@ -16,7 +16,8 @@ class SecondTimerViewController: UIViewController, UITableViewDelegate, UITableV
     var delegate: SecondTimerDelegate?
 
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var cancelBarButton: UIBarButtonItem!
+    @IBOutlet weak var setBarButton: UIBarButtonItem!
     var audioPlayer : AVAudioPlayer!
     var audioString : String!
     
@@ -37,10 +38,11 @@ class SecondTimerViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "addRingtoneLabel".localized()
+        cancelBarButton.title = "cancelNavigationBar".localized()
+        setBarButton.title = "setNavigationBar".localized()
         tableView.delegate                            = self
         tableView.dataSource                          = self
-        tableView.backgroundColor                     = .darkGray
-        tableView.sectionIndexBackgroundColor         = .darkGray
         tableView.separatorColor                      = .white
         tableView.sectionIndexTrackingBackgroundColor = .white
     }
@@ -55,7 +57,6 @@ class SecondTimerViewController: UIViewController, UITableViewDelegate, UITableV
 
         cell.textLabel?.text      = arrayOfRingtones[indexPath.row]
         cell.textLabel?.textColor = .white
-        cell.backgroundColor      = .darkGray
         cell.tintColor            = .systemOrange
         return cell
     }
@@ -68,7 +69,7 @@ class SecondTimerViewController: UIViewController, UITableViewDelegate, UITableV
         audioPlayer = try! AVAudioPlayer(contentsOf: url)
         delegate?.finishPassing(string: arrayOfRingtones[indexPath.row])
         audioPlayer.play()
-        } catch{}
+        } 
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

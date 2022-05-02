@@ -9,6 +9,7 @@ import UIKit
 
 class CovidViewController: BaseViewController {
 
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imgView: UIImageView!
     
@@ -16,14 +17,21 @@ class CovidViewController: BaseViewController {
     private var viewModel        : CovidListViewModelProtocol!
     private var dataSource       : CovidDataSource!
     
-    var currentCountry : String?
+    var currentCountry : String? {
+        didSet {
+            title = currentCountry
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewModel()
-        dataSource.refresh()
+        viewModel.viewDidLoad()
+        spinner.startAnimating()
         imgView.image = UIImage(named: "dark_covid")
         setupLayout()
+        addBindings()
+        navigationItem.largeTitleDisplayMode = .never
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -44,6 +52,16 @@ class CovidViewController: BaseViewController {
     private func configureViewModel() {
         covidManager     = CovidManager()
         viewModel        = CovidListViewModel(controller: self, covidManager: covidManager)
-        dataSource       = CovidDataSource(with: tableView, viewModel: viewModel, countryName: currentCountry ?? "Georgia")
+        dataSource       = CovidDataSource(with: tableView, viewModel: viewModel, countryName: currentCountry ?? "-")
+    }
+    
+    private func addBindings() {
+        viewModel.didStartLoading = { [weak self] in
+            self?.spinner.startAnimating()
+        }
+        viewModel.didFinishLoading = { [weak self] in
+            self?.dataSource.refresh()
+            self?.spinner.stopAnimating()
+        }
     }
 }

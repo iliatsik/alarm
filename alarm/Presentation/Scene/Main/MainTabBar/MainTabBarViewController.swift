@@ -18,8 +18,11 @@ class MainTabBarViewController: UITabBarController, Storyboarded, CoordinatorDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBar.barTintColor = .systemOrange
+        tabBar.barTintColor = .black
+        tabBar.backgroundColor = .black
         tabBar.unselectedItemTintColor = .lightGray
+        tabBar.tintColor = .systemOrange
+        tabBar.isTranslucent = true
         viewControllers = [
             worldclockCoordinator.navigationController!,
             alarmCoordinator.navigationController!,
@@ -28,12 +31,4 @@ class MainTabBarViewController: UITabBarController, Storyboarded, CoordinatorDel
         ]
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tabBar.barTintColor = .black
-        tabBar.unselectedItemTintColor = .lightGray
-        tabBar.tintColor = .systemOrange
-    }
-    
-
 }

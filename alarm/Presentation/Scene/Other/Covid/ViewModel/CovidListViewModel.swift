@@ -9,45 +9,63 @@ import UIKit
 
 
 protocol CovidListViewModelProtocol: AnyObject {
-    var didFinishedLoading: (() -> Void)? { get set }
-    var navigationItem: UINavigationItem? { get set }
-    func setTitle(with text: String, on navigationItem: UINavigationItem)
+    var didFinishLoading: (() -> Void)? { get set}
+    var didStartLoading:  (() -> Void)? { get set}
     var controller: CoordinatorDelegate { get }
-    
-    func getCovidData(completion: @escaping (([CovidViewModel]) -> Void))
- 
+    var covid : [Covid] { get }
+    func viewDidLoad() 
     init(controller: CoordinatorDelegate, covidManager : CovidManagerProtocol) 
 }
 
 final class CovidListViewModel: CovidListViewModelProtocol {
    
     private(set) var controller: CoordinatorDelegate
-    
+    private(set) var covid = [Covid]()
+
     private var countriesManager : CountriesManagerProtocol!
     private var covidManager     : CovidManagerProtocol!
     private var weatherManager   : WeatherManagerProtocol!
     
-    var didFinishedLoading: (() -> Void)?
-    var navigationItem: UINavigationItem?
+    var didFinishLoading: (() -> Void)?
+    var didStartLoading:  (() -> Void)?
     
     init(controller: CoordinatorDelegate, covidManager : CovidManagerProtocol)  {
         self.controller       = controller
         self.covidManager     = covidManager
     }
     
-    func getCovidData(completion: @escaping (([CovidViewModel]) -> Void)) {
-        covidManager.fetchCovidStats { result in
-
+    private func showErrorMessage() {
+        var actions = [AlertAction]()
+        actions.append(AlertAction(title: "retryForAlert".localized(), action: { [ weak self] in
+            self?.fetchData()
+        }))
+        actions.append(AlertAction(title: "okButtonTitle".localized(), action: { }))
+        controller.coordinator?.presentAlert(title: "errorAlertTitle".localized(), message: nil, actions: actions)
+        
+    }
+    
+    func viewDidLoad() {
+        fetchData()
+    }
+    
+    private func fetchData() {
+        self.didStartLoading?()
+        
+        covidManager.fetchCovidStats { [weak self] result in
             DispatchQueue.main.async {
-                let covidViewModel = result.map { CovidViewModel(covid: $0) }
-                completion(covidViewModel)
+                switch result {
+                case .success(let response):
+                    self?.covid = response.features.map { $0.attributes }
+                    self?.didFinishLoading?()
+                case .failure(let err):
+                    self?.showErrorMessage()
+                    self?.didFinishLoading?()
+                    print(err)
+                }
             }
         }
     }
-  
-    func setTitle(with text: String, on navigationItem: UINavigationItem) {
-        navigationItem.title = text
-    }
+    
 }
 
 

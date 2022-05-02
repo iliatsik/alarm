@@ -11,6 +11,7 @@ class SnoozeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var vibrationSwitch: UISwitch!
     
+    @IBOutlet weak var snoozeOutlet: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

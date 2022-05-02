@@ -64,7 +64,7 @@ extension HourlyCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             else { cell.labelTime.text = "\(indexPath.row) " }
 
             
-            cell.labelTemp.text = "\( self.row?.forecast.forecastday.map { $0.hour[indexPath.row].temp_c} ?? [0.0] )"
+            cell.labelTemp.text = "\( self.row?.forecast.forecastday.map { $0.hour[indexPath.row].temperature} ?? [0.0] )"
             cell.labelTemp.text?.removeFirst()
             cell.labelTemp.text?.removeLast()
             cell.labelTemp.text?.removeLast()

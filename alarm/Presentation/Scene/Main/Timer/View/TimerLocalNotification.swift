@@ -16,9 +16,9 @@ extension TimerViewController {
         center.delegate = self
         
         let content = UNMutableNotificationContent()
-        content.title              = "Clock"
-        content.body               = "Timer"
-        content.categoryIdentifier = "Alarm"
+        content.title              = "clockForNotification".localized()
+        content.body               = "timerForNotification".localized()
+        content.categoryIdentifier = "alarmForNotification".localized()
         content.userInfo           = ["customData": "fizzbuzz"]
         content.sound              = UNNotificationSound(named: UNNotificationSoundName(rawValue: "\(selectedAudio ?? "613").mp3"))
 
@@ -42,7 +42,7 @@ extension TimerViewController {
 
 extension TimerViewController: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler( [.alert, .badge, .sound])
+        completionHandler( [.banner, .badge, .sound, .list])
  
     }
     

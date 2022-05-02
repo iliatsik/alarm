@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct CovidResponse : Codable {
+struct CovidResponse : Decodable {
     let features : [CovidAttributes]
 }

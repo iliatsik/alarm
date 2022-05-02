@@ -41,6 +41,8 @@ class StopWatchViewController: BaseViewController {
         tableView.dataSource = self
         tableView.isEditing = !tableView.isEditing
         self.tableView.backgroundColor  = UIColor.black
+        startButton.setTitle("startButton".localized(), for: .normal)
+        lapButton.setTitle("lapButton".localized(), for: .normal)
         
         lapButton.layer.cornerRadius    = 35
         startButton.layer.cornerRadius  = 35
@@ -65,8 +67,8 @@ class StopWatchViewController: BaseViewController {
             
             startButton.backgroundColor = UIColor(named: "stop")
             startButton.setTitleColor(.red, for: .normal)
-            startButton.setTitle("Stop", for: .normal)
-            lapButton.setTitle("Lap", for: .normal)
+            startButton.setTitle("stopButton".localized(), for: .normal)
+            lapButton.setTitle("lapButton".localized(), for: .normal)
             startView.layer.borderColor = UIColor(named: "stop")?.cgColor
 
             
@@ -77,8 +79,8 @@ class StopWatchViewController: BaseViewController {
         } else {
             startButton.backgroundColor = UIColor(named: "start")
             startButton.setTitleColor(.green, for: .normal)
-            startButton.setTitle("Start", for: .normal)
-            lapButton.setTitle("Reset", for: .normal)
+            startButton.setTitle("startButton".localized(), for: .normal)
+            lapButton.setTitle("resetButton".localized(), for: .normal)
             startView.layer.borderColor = UIColor(named: "start")?.cgColor
             
             lapButton.isEnabled   = true
@@ -136,7 +138,7 @@ extension StopWatchViewController : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StopwatchTableViewCell
         cell.backgroundColor = UIColor.black
         cell.timeLabel.text = arrayOfTimer[indexPath.row]
-        cell.lapLabel.text  = "Lap: \(indexPath.row + 1)"
+        cell.lapLabel.text  = "lapInCell".localized() + ": \(indexPath.row + 1)"
         cell.selectionStyle = .none
 
         if arrayOfTimer[indexPath.row] == arrayOfTimer.max() {

@@ -44,9 +44,7 @@ struct CountryViewModel {
         let formatter = ISO8601DateFormatter()
 
         formatter.formatOptions = [ .withFullTime ]
-        
-//      formatter.timeZone = targetTz
-       
+               
         formatter.timeZone = initTz
 
         let index = formatter.string(from: case2TargetDate).index(formatter.string(from: case1TargetDate).startIndex, offsetBy: 5)

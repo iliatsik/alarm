@@ -18,27 +18,19 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
          
     var coordinator  : CoordinatorProtocol?
     var weather : Weather?
-
-    var currentCountry : String?
     
-    init(with tableView: UITableView, viewModel: WeatherListViewModelProtocol, countryName : String) {
+    init(with tableView: UITableView, viewModel: WeatherListViewModelProtocol) {
         super.init()
         
         self.tableView            = tableView
         self.tableView.dataSource = self
         self.tableView.delegate   = self
         self.viewModel            = viewModel
-        self.currentCountry       = countryName
     }
     
     func refresh() {
-        viewModel.getWeatherData(with: currentCountry ?? "Georgia") { [weak self] result in
-            self?.weather = result
-            
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
+        weather = viewModel.weather
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,9 +40,9 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.deque(MainCell.self, for: indexPath)
-            cell.labelCity.text        = "\(weather.map { $0.location.name} ?? "Tbilisi")"
-            cell.labelTemperature.text = "\(weather.map { $0.current.temp_c } ?? 2)°"
-            cell.labelCondition.text   = "\(weather.map { $0.current.condition.text} ?? "Sunny")"
+            cell.labelCity.text        = "\(weather.map { $0.location.name} ?? "-")"
+            cell.labelTemperature.text = "\(weather.map { $0.current.temperature } ?? 0)°"
+            cell.labelCondition.text   = "\(weather.map { $0.current.condition.text} ?? "-")"
 
             cell.selectionStyle = .none
 
@@ -58,37 +50,35 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
         
         if indexPath.row == 1 {
             let cell = tableView.deque(HourlyCell.self, for: indexPath)
-//            cell.updateCellWith(row: arr!)
             if let weath = weather {
                 cell.updateCellWith(row: weath)
             }
             cell.backgroundColor = UIColor.clear
-       
             cell.selectionStyle = .none
             cell.alpha = 0.0
-
             return cell
         }
 
         if indexPath.row == 2 {
             let cell = tableView.deque(SunriseCell.self, for: indexPath)
-            cell.labelSunrise.text = "\(weather.map { $0.forecast.forecastday.map {$0.astro.sunrise} } ?? ["05:02AM"] )"
+            cell.labelSunrise.text = "\(weather.map { $0.forecast.forecastday.map {$0.astro.sunrise} } ?? ["-"] )"
             cell.labelSunrise.text?.removeFirst()
             cell.labelSunrise.text?.removeFirst()
             cell.labelSunrise.text?.removeLast()
             cell.labelSunrise.text?.removeLast()
-
+            cell.sunriseOutlet.text = "sunriseLabel".localized()
             cell.selectionStyle = .none
 
             return cell
         }
         if indexPath.row == 3 {
             let cell = tableView.deque(SunsetCell.self, for: indexPath)
-            cell.labelSunset.text = "\(weather.map { $0.forecast.forecastday.map {$0.astro.sunset} } ?? ["21:02PM"] )"
+            cell.labelSunset.text = "\(weather.map { $0.forecast.forecastday.map {$0.astro.sunset} } ?? ["-"] )"
             cell.labelSunset.text?.removeFirst()
             cell.labelSunset.text?.removeFirst()
             cell.labelSunset.text?.removeLast()
             cell.labelSunset.text?.removeLast()
+            cell.sunsetOutlet.text = "sunsetLabel".localized()
 
             cell.selectionStyle = .none
 
@@ -96,47 +86,47 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
         }
         if indexPath.row == 4 {
             let cell = tableView.deque(HumidityCell.self, for: indexPath)
-            cell.labelHumidity.text = "\(weather.map { $0.current.humidity } ?? 12)%"
-
+            cell.labelHumidity.text = "\(weather.map { $0.current.humidity } ?? 0)%"
+            cell.humidityOutlet.text = "humidityLabel".localized()
             cell.selectionStyle = .none
 
             return cell
         }
         if indexPath.row == 5 {
             let cell = tableView.deque(ChanceofRainCell.self, for: indexPath)
-            cell.labelRain.text = "\(weather.map { $0.current.pressure_mb} ?? 3)%"
-
+            cell.labelRain.text = "\(weather.map { $0.current.pressure} ?? 0)%"
+            cell.rainOutlet.text = "rainLabel".localized()
             cell.selectionStyle = .none
 
             return cell
         }
         if indexPath.row == 6 {
             let cell = tableView.deque(WindCell.self, for: indexPath)
-            cell.labelWind.text = "\(weather.map { $0.current.wind_kph} ?? 12) km/hr"
-   
+            cell.labelWind.text = "\(weather.map { $0.current.windSpeed} ?? 0)"+"speedString".localized()
+            cell.windOutlet.text = "windLabel".localized()
             cell.selectionStyle = .none
 
             return cell
         }
         if indexPath.row == 7 {
             let cell = tableView.deque(FeelsLikeCell.self, for: indexPath)
-            cell.labelFeelsLike.text = "\(weather.map { $0.current.feelslike_c} ?? 24)°"
-
+            cell.labelFeelsLike.text = "\(weather.map { $0.current.feelslike} ?? 0)°"
+            cell.feelsLikeOutlet.text = "feelsLikeLabel".localized()
             cell.selectionStyle = .none
 
             return cell
         }
         if indexPath.row == 8 {
             let cell = tableView.deque(PressureCell.self, for: indexPath)
-            cell.labelPressure.text = "\(weather.map { $0.current.pressure_mb} ?? 3) hPa"
-
+            cell.labelPressure.text = "\(weather.map { $0.current.pressure} ?? 0)"+"pressureString".localized()
+            cell.pressureOutlet.text = "pressureLabel".localized()
             cell.selectionStyle = .none
 
             return cell
         }
         else {
             let cell = tableView.deque(MapCell.self, for: indexPath)
-            
+            cell.locationLabel.text = "countryLocationLabel".localized()
             cell.backgroundColor = UIColor.clear
             cell.textLabel?.textColor = UIColor.white
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
@@ -164,7 +154,7 @@ extension WeatherDataSource: UITableViewDelegate {
   
             vc.latitude  =  weather.map { $0.location.lat  }
             vc.longitude =  weather.map { $0.location.lon }
-              viewModel.controller.navigationController?.pushViewController(vc, animated: true)
+            viewModel.controller.navigationController?.pushViewController(vc, animated: true)
           }
     }
 }

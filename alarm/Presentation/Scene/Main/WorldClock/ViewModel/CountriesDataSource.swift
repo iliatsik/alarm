@@ -12,13 +12,11 @@ class CountriesDataSource: NSObject, UITableViewDataSource {
     // MARK: - Private properties
     
     private var tableView: UITableView!
-    private var viewModel: CountriesListViewModelProtocol!
+    private var viewModel: CountriesListViewModelProtocol?
     
     private var filteredCitiesList = [CountryViewModel]()
     private var citiesList = [CountryViewModel]()
-    
-    var coordinator  : CoordinatorProtocol?
-    
+        
     init(with tableView: UITableView, viewModel: CountriesListViewModelProtocol) {
         super.init()
         
@@ -29,13 +27,12 @@ class CountriesDataSource: NSObject, UITableViewDataSource {
     }
     
     func refresh() {
-        viewModel.getCountriesList { countries in
-            self.citiesList.append(contentsOf: countries)
-            self.filteredCitiesList.append(contentsOf: countries)
-            self.tableView.reloadData()
-        }
+        guard let countries = viewModel?.countries else { return }
+        citiesList = countries
+        filteredCitiesList = countries
+        tableView.reloadData()
     }
-    
+
     func search(with text: String) {
         filteredCitiesList.removeAll()
         
@@ -43,7 +40,6 @@ class CountriesDataSource: NSObject, UITableViewDataSource {
             if country.capital.lowercased().contains(text.lowercased()) {
                 filteredCitiesList.append(country)
             }
-        
         }
         tableView.reloadData()
     }
@@ -69,13 +65,9 @@ class CountriesDataSource: NSObject, UITableViewDataSource {
 extension CountriesDataSource: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.controller.coordinator?.didTapOnCell()
+        viewModel?.controller.coordinator?.didTapOnCell()
         
-        viewModel.controller.coordinator?.passCountry(countryName: filteredCitiesList[indexPath.row].name)
-        
-//        viewModel.getWeatherData(with: "Germany") { [weak self] result in
-//            print(result)
-//        }
+        viewModel?.controller.coordinator?.passCountry(countryName: filteredCitiesList[indexPath.row].name)
         
         print(indexPath.row)
     }

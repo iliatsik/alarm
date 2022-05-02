@@ -9,18 +9,20 @@ import UIKit
 
 class WeatherViewController: BaseViewController {
     
-
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    private var weatherList     = [Weather]()
     private var weatherManager  : WeatherManagerProtocol!
     private var viewModel       : WeatherListViewModelProtocol!
     private var dataSource      : WeatherDataSource!
 
-    var currentCountry        : String?
-
+    var currentCountry: String? {
+        didSet {
+            title = currentCountry
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +30,18 @@ class WeatherViewController: BaseViewController {
         tableView.backgroundColor = .clear
         tableView.separatorColor  = .white
         tableView.tintColor       = .white
+        spinner.startAnimating()
         configureViewModel()
         setupLayout()
+        addBindings()
+        viewModel.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     private func configureViewModel() {
         weatherManager   = WeatherManager()
-        viewModel        = WeatherListViewModel(controller: self,weatherManager: weatherManager)
-        dataSource       = WeatherDataSource(with: tableView, viewModel: viewModel, countryName: currentCountry ?? "Georgia")
-        dataSource.refresh()
+        viewModel        = WeatherListViewModel(controller: self, weatherManager: weatherManager, cityName: currentCountry ?? "Georgia")
+        dataSource       = WeatherDataSource(with: tableView, viewModel: viewModel)
     }
     
     private func setupLayout() {
@@ -52,5 +57,13 @@ class WeatherViewController: BaseViewController {
         tableView.registerNib(class: MapCell.self)
     }
 
- 
+    private func addBindings() {
+        viewModel.didStartLoading = { [weak self] in
+            self?.spinner.startAnimating()
+        }
+        viewModel.didFinishLoading = { [weak self] in
+            self?.dataSource.refresh()
+            self?.spinner.stopAnimating()
+        }
+    }
 }

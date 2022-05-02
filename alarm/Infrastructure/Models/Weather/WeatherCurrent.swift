@@ -7,17 +7,25 @@
 
 import Foundation
 
-struct WeatherCurrent : Codable {
-    let feelslike_c : Double
-    let wind_kph    : Double
-    let pressure_mb : Double
+struct WeatherCurrent : Decodable {
+    let feelslike   : Double
+    let windSpeed   : Double
+    let pressure    : Double
     let condition   : CurrentCondition
     let humidity    : Int
-    let temp_c      : Int 
+    let temperature : Int
+    
+    enum CodingKeys: String, CodingKey {
+        case feelslike   = "feelslike_c"
+        case windSpeed   = "wind_kph"
+        case pressure    = "pressure_mb"
+        case temperature = "temp_c"
+        case condition, humidity
+    }
 }
 
 
-struct CurrentCondition : Codable {
+struct CurrentCondition : Decodable {
     let text : String
     let icon : String
 }

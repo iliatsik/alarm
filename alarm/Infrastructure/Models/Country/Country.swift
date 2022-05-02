@@ -7,12 +7,11 @@
 
 import Foundation
 
-struct Country: Codable{
+struct Country: Decodable{
     
     let name        : String?
     let capital     : String?
     let region      : String?
     let timezones   : [String]?
-//  let timezones : [TimeZone]?
     
 }

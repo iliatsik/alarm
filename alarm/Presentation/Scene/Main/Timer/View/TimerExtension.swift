@@ -10,7 +10,6 @@ import UserNotifications
 import AVFoundation
 
 extension TimerViewController {
-    
     @objc func updateTime() {
         if timeLeft > 0 {
             timeLeft = endTime?.timeIntervalSinceNow ?? 0
@@ -22,7 +21,7 @@ extension TimerViewController {
 
             startAndPauseButton.backgroundColor = UIColor(named: "start")
             startAndPauseButton.setTitleColor(.green, for: .normal)
-            startAndPauseButton.setTitle("Start", for: .normal)
+            startAndPauseButton.setTitle("startButton".localized(), for: .normal)
             startView.layer.borderColor = UIColor(named: "start")?.cgColor
             
             timerLabel.isHidden         = true
@@ -47,22 +46,44 @@ extension TimerViewController {
     }
     
     func drawBgShape() {
-        bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX, y: view.frame.midY - 200 ),
-            radius: (view.frame.size.width / 2) - 17, startAngle: -90.degreesToRadians,
-            endAngle: 270.degreesToRadians, clockwise: true).cgPath
+        guard let radius = radius else {return}
+        bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: timerLabel.frame.midX ,
+                                                            y: timerLabel.frame.midY),
+                                         radius: radius,
+                                         startAngle: -90.degreesToRadians,
+                                         endAngle: 270.degreesToRadians, clockwise: true).cgPath
+        
         bgShapeLayer.strokeColor = UIColor.darkGray.cgColor
         bgShapeLayer.fillColor = UIColor.clear.cgColor
         bgShapeLayer.lineWidth = 9
         view.layer.addSublayer(bgShapeLayer)
     }
     
+    
     func drawTimeLeftShape() {
-        timeLeftShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX , y: view.frame.midY - 200), radius: (view.frame.size.width / 2) - 17 , startAngle: -90.degreesToRadians,
-            endAngle: 270.degreesToRadians, clockwise: true).cgPath
+        guard let radius = radius else {return}
+        timeLeftShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: timerLabel.frame.midX ,
+                                                                  y: timerLabel.frame.midY),
+                                               radius: radius,
+                                               
+                                               
+                                               startAngle: -90.degreesToRadians,
+                                               endAngle: 270.degreesToRadians, clockwise: true).cgPath
         timeLeftShapeLayer.strokeColor = UIColor.systemOrange.cgColor
         timeLeftShapeLayer.fillColor = UIColor.clear.cgColor
         timeLeftShapeLayer.lineWidth = 7
         view.layer.addSublayer(timeLeftShapeLayer)
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        switch UIDevice.current.orientation{
+        case .portrait:
+            radius = timerLabel.frame.size.width / 2
+        case .landscapeLeft, .landscapeRight:
+            radius = timerLabel.frame.size.width / 3.5
+        default:
+            radius = timerLabel.frame.size.width / 3.5
+        }
     }
 }
 
@@ -92,11 +113,11 @@ extension TimerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
          func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
              switch component {
              case 0:
-                 return "\(row) Hour"
+                 return "\(row)" + "hoursInPickerView".localized()
              case 1:
-                 return "\(row) Minute"
+                 return "\(row)" + "minutesInPickerView".localized()
              case 2:
-                 return "\(row) Second"
+                 return "\(row)" + "secondsInPickerView".localized()
              default:
                  return ""
              }
@@ -115,17 +136,17 @@ extension TimerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
          }
          func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
             if component == 0 {
-                let hourData = "\(row) hours"
+                let hourData = "\(row) "+"hoursInPickerView".localized()
                 let myHourData = NSAttributedString(string: hourData, attributes: [.foregroundColor:UIColor.white])
                 return myHourData
             }
             else if component == 1{
-                let minuteData = "\(row) min"
+                let minuteData = "\(row) "+"minutesInPickerView".localized()
                 let myMinuteData = NSAttributedString(string: minuteData, attributes: [.foregroundColor:UIColor.white])
                 return myMinuteData
             }
             else {
-                let secondData = "\(row) sec"
+                let secondData = "\(row) "+"secondsInPickerView".localized()
                 let mySecondData = NSAttributedString(string: secondData, attributes: [.foregroundColor:UIColor.white])
                 return mySecondData
            }

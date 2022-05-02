@@ -9,6 +9,7 @@ import UIKit
 
 class PressureCell: UITableViewCell {
 
+    @IBOutlet weak var pressureOutlet: UILabel!
     @IBOutlet weak var labelPressure: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
